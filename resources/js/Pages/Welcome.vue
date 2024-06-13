@@ -29,6 +29,7 @@ function handleImageError() {
 <template>
     <Head title="Welcome" />
     <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
+        <p>Hello</p>
         <img
             id="background"
             class="absolute -left-20 top-0 max-w-[877px]"
