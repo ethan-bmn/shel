@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('recommendations', function (Blueprint $table) {
+        Schema::create('shopping_carts', function (Blueprint $table) {
             $table->id()->primary();
-            $table->string('commentary');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('boardgame_id')->references('id')->on('boardgames');
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('recommendations');
+        Schema::dropIfExists('shopping_carts');
     }
 };

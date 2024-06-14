@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('recommendations', function (Blueprint $table) {
-            $table->id()->primary();
-            $table->string('commentary');
+        Schema::create('notify', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('boardgame_id')->references('id')->on('boardgames');
+            $table->foreign('notification_id')->references('id')->on('notifications');
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('recommendations');
+        Schema::dropIfExists('notify');
     }
 };
