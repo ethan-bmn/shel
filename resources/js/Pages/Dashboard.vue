@@ -1,10 +1,10 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
-import Navbar from "@/Components/composants/Navbar.vue";
-import Header from "@/Components/composants/Header.vue";
-import GameHonor from "@/Components/composants/GameHonor.vue";
-import GameProposition from "@/Components/composants/GameProposition.vue";
+import Navbar from "@/Components/Navbar.vue";
+import Header from "@/Components/Header.vue";
+import GameHonor from "@/Components/GameHonor.vue";
+import GameProposition from "@/Components/GameProposition.vue";
 import Historical from "@/Components/composants/Historical.vue";
 </script>
 
