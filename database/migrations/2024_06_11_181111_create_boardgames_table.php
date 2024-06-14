@@ -12,7 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('boardgames', function (Blueprint $table) {
-            $table->id();
+            $table->id()->primary();
+            $table->string('name');
+            $table->string('description');
+            $table->boolean('is_borrowed')->default(false);
+            $table->string('number_of_player');
+            $table->string('playing_time');
+            $table->integer('quantity');
+            $table->foreign('shopping_cart_id')->references('id')->on('shopping_carts');
             $table->timestamps();
         });
     }

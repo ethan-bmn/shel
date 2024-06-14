@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('photos', function (Blueprint $table) {
-            $table->id();
+            $table->id()->primary();
+            $table->foreign('boardgame_id')->references('id')->on('boardgames');
             $table->timestamps();
         });
     }
