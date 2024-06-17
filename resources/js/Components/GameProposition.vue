@@ -1,12 +1,13 @@
 <script setup>
-
 import CardGame from "@/Components/CardGame.vue";
+
+
 </script>
 
 <template>
-
-    <div class="col-2 navbar">
-        <CardGame/>
+    <div class="d-flex navbar" >
+        <CardGame class="carte"/>
+        <CardGame class="carte"/>
 
     </div>
 
@@ -16,6 +17,8 @@ import CardGame from "@/Components/CardGame.vue";
 .navbar{
     border: solid 1px red;
     border-radius: 15px;
-
+}
+.carte{
+    height: 20px;
 }
 </style>

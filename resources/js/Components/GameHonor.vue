@@ -1,5 +1,6 @@
 <template id="test">
-    <div class="col-7">
+    <div class="col-7 honor">
+        <span style="color: white; font: bold">Jeux à l'honneur</span>
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="d-flex justify-content-center ">
 
@@ -20,7 +21,11 @@
 </template>
 
 <style scoped>
+.honor{
+    max-height: 200px;
+}
 img{
+    max-height: 480px;
     border-radius: 15px;
 }
 </style>

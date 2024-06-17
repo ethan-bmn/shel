@@ -3,18 +3,21 @@ import GameHonor from "@/Components/GameHonor.vue";
 import Header from "@/Components/Header.vue";
 import Navbar from "@/Components/Navbar.vue";
 import GameProposition from "@/Components/GameProposition.vue";
+import BestLocation from "@/Components/BestLocation.vue";
 
 </script>
 
 <template >
     <div class="row">
-    <Header/>
+        <Header/>
     </div>
     <div class="row">
-    <Navbar/>
-    <GameHonor/>
+        <Navbar/>
+        <GameHonor/>
+        <BestLocation/>
+    </div>
+    <div class="row">
         <GameProposition/>
-
     </div>
 </template>
 

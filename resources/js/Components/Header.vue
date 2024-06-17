@@ -5,11 +5,12 @@
 <template>
 
     <div >
-        <div class="col-7 d-flex justify-content-center ">
+        <div class="col-10 d-flex justify-content-center ">
             <nav class="navbar navbar-expand-lg bc-color-input-search">
                 <div class="container-fluid d-flex justify-content-between">
+
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <img class="icon-link" src="../../../public/images/chercher.svg">
+                        <span><img class="icon-link" src="../../../public/images/chercher.svg"></span>
                         <form class="d-flex" role="search">
                             <input class="form-control me-2 perso" type="search" placeholder="Recherche" aria-label="Search" >
                         </form>
