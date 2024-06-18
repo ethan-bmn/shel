@@ -4,11 +4,10 @@
 
 <template>
 
-    <div >
-        <div class="col-10 d-flex justify-content-center ">
-            <nav class="navbar navbar-expand-lg bc-color-input-search">
+    <div>
+        <div class="col-10 ">
+            <nav class="navbar navbar-expand-lg bc-color-input-search entete">
                 <div class="container-fluid d-flex justify-content-between">
-
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <span><img class="icon-link" src="../../../public/images/chercher.svg"></span>
                         <form class="d-flex" role="search">
@@ -27,6 +26,11 @@
 </template>
 
 <style scoped>
+.entete{
+    padding-right: 0;
+    padding-left: 0;
+    max-height: 1550px;
+}
 .bc-color-input-search{
     background-image: linear-gradient(to right, #1f355e, #273c67, #2f4371, #374b7a, #3f5284);
     border-radius: 15px;

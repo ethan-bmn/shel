@@ -3,38 +3,48 @@
 </script>
 
 <template>
-    <!--
-    <div class="migniature">
-        <div class="card" >
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2iWB6jGX6Skzi0d0UQ_p1UjxaFT2PgVEHuA&s" class="d-block img-miniature w-100 d-50" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col">
+            <div class="card h-50 overflow-auto" style="border: solid 1px red">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/869241/header.jpg?t=1555788090" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text ">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+
             </div>
         </div>
-    </div>
-
-    <div>
-        <div class="card" style="width: 11rem;">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2iWB6jGX6Skzi0d0UQ_p1UjxaFT2PgVEHuA&s" class="card-img-top d-50" alt="...">
-            <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="col">
+            <div class="card h-50 overflow-hidden">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/869241/header.jpg?t=1555788090" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                </div>
             </div>
         </div>
-    </div>
-    -->
-    <div>
-        <div class="card" style="width: 25%; height: 25rem">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2iWB6jGX6Skzi0d0UQ_p1UjxaFT2PgVEHuA&s" class="card-img-top" alt="..." style height="15%">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="col">
+            <div class="card h-50 overflow-hidden">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/869241/header.jpg?t=1555788090" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
             </div>
-
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+        </div>
+        <div class="col">
+            <div class="card h-50 overflow-hidden">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/869241/header.jpg?t=1555788090" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                </div>
             </div>
         </div>
     </div>
