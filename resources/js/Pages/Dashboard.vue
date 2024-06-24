@@ -25,4 +25,5 @@ import BestLocation from "@/Components/BestLocation.vue";
 
 <style scoped>
 
+
 </style>

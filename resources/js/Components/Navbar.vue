@@ -13,10 +13,18 @@
 
 <style scoped>
 .navbar{
-    border: solid 1px red;
+
     border-radius: 15px;
     margin-left: 16px;
     color: white;
     justify-content: center;
+
 }
+.navbar:hover{
+   box-shadow:0px 0px 10px 2px rgba(3, 158, 192, 0.9000000095367432);
+    //filter: blur(1px);
+    border: 0.5px solid rgba(253, 253, 253, 0.4);
+    border-radius: 15px;
+}
+
 </style>

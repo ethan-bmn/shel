@@ -26,6 +26,7 @@
 </template>
 
 <style scoped>
+
 .entete{
     padding-right: 0;
     padding-left: 0;

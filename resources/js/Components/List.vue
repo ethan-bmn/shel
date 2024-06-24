@@ -18,7 +18,7 @@
             <img src="https://cf.geekdo-images.com/Oh3kHw6lweg6ru71Q16h2Q__imagepage/img/Yb3tBDagMIaGMxDlhomv8pLc3Zk=/fit-in/900x600/filters:no_upscale():strip_icc()/pic5235277.jpg" class="img-fluid image" alt="...">
         </button>
         <button type="button" class="list-group-item list-group-item-action cadre" disabled>
-            <img src="https://cf.geekdo-images.com/SPuwc6RJ6y4PnTH36Pegsg__imagepage/img/ivHc67HBVg5spOFT4f7CwUbNLT4=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3511783.png" class="img-fluid image" alt="...">
+            <img src="../../../public/images/v-commandos.png" class="img-fluid image" alt="..."/>
         </button>
 *
 
@@ -37,8 +37,12 @@
 .cadre{
     background-color: transparent;
     border: none;
-
-
     padding-right: 0;
+}
+.image:hover{
+    box-shadow:0px 0px 10px 2px rgba(3, 158, 192, 0.9000000095367432);
+    //filter: blur(1px);
+    border: 0.5px solid rgba(253, 253, 253, 0.4);
+    border-radius: 15px;
 }
 </style>
