@@ -13,11 +13,13 @@ import BestLocation from "@/Components/BestLocation.vue";
     </div>
     <div class="row">
         <Navbar/>
-        <GameHonor/>
+        <GameHonor image1="https://cf.geekdo-images.com/SPuwc6RJ6y4PnTH36Pegsg__imagepage/img/ivHc67HBVg5spOFT4f7CwUbNLT4=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3511783.png"
+        />
         <BestLocation/>
     </div>
     <div class="row">
         <GameProposition/>
+
     </div>
 </template>
 

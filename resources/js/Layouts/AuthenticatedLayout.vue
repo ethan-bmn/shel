@@ -6,6 +6,7 @@ import DropdownLink from '@/Components/old/DropdownLink.vue';
 import NavLink from '@/Components/old/NavLink.vue';
 import ResponsiveNavLink from '@/Components/old/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/vue3';
+import Games from "@/Pages/Games.vue";
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -25,6 +26,7 @@ const showingNavigationDropdown = ref(false);
                                         class="block h-9 w-auto fill-current text-gray-800"
                                     />
                                 </Link>
+
                             </div>
 
                             <!-- Navigation Links -->

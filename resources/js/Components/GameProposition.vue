@@ -7,7 +7,7 @@ import CardGame from "@/Components/CardGame.vue";
 
 <template>
     <div class=" navbar " >
-        <CardGame class="carte"/>
+        <CardGame class="carte" title_card-game="Titre dynamique" texte_card-game="texte dynamique"/>
         <CardGame class="carte"/>
 
 
