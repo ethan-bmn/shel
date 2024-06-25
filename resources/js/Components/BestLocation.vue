@@ -6,10 +6,8 @@ import List from "@/Components/List.vue";
 
 <template>
 
-    <div class="col-2 navbar d-flex">
         <List></List>
 
-    </div>
 
 </template>
 
