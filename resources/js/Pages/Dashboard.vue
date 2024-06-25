@@ -48,13 +48,13 @@ import BestLocation from "@/Components/BestLocation.vue";
 
 <style scoped>
 .row {
-    border: solid red;
+    //border: solid red;
 }
 .col-2 {
-    border: solid blue;
+    //border: solid blue;
 }
 .col-8 {
-    border: solid blue;
+    //border: solid blue;
 }
 
 </style>
