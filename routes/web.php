@@ -13,6 +13,18 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/profile', [ProfileController::class, 'show'])
         ->name('profile.show');
+
+    Route::get('/favorites', function () {
+        return Inertia::render('Favorites');
+    })->name('favorites');
+
+    Route::get('/games', function () {
+        return Inertia::render('Games');
+    })->name('games');
+
+    Route::get('/cart', function () {
+        return Inertia::render('Panier');
+    })->name('cart');
 });
 
 require __DIR__.'/auth.php';
