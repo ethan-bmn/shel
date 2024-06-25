@@ -4,6 +4,9 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -43,5 +46,35 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function notification(): BelongsToMany
+    {
+        return $this->belongsToMany(notification::class, 'notify');
+    }
+
+    public function loan() :HasMany
+    {
+        return $this->hasMany('App/Models/Loan');
+    }
+
+    public function reccomendation() :HasMany
+    {
+        return $this->hasMany('App/Models/Recommendation');
+    }
+
+    public function shopping_cart() :BelongsTo
+    {
+        return $this->belongsTo('App/Models/Shopping_cart');
+    }
+
+    public function photo_user() :BelongsTo
+    {
+        return $this->belongsTo('App/Models/Photo_User');
+    }
+
+    public function role() :BelongsTo
+    {
+        return $this->belongsTo('App/Models/Role');
     }
 }

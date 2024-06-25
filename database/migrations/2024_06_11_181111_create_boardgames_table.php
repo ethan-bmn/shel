@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->boolean('is_borrowed')->default(false);
+            $table->boolean('is_recommended')->default(false);
             $table->string('number_of_player');
             $table->string('playing_time');
             $table->integer('quantity');
