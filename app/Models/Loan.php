@@ -12,7 +12,7 @@ class Loan extends Model
     use HasFactory;
     public function boardgame(): BelongsToMany
     {
-        return $this->belongsToMany(loan::class, 'borrow');
+        return $this->belongsToMany(boardgame::class, 'borrow');
     }
 
     public function user(): BelongsTo
