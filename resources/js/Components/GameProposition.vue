@@ -1,17 +1,23 @@
 <script setup>
 import CardGame from "@/Components/CardGame.vue";
+import GameCard from "@/Components/GameCard.vue";
 
 
 
 </script>
 
 <template>
-    <div class=" navbar " >
-        <CardGame class="carte" title_card-game="Titre dynamique" texte_card-game="texte dynamique"/>
-        <CardGame class="carte"/>
+<!--        <CardGame class="carte"/>-->
+<!--        <CardGame class="carte"/>-->
 
-
-
+    <div
+        v-for="i in [...Array(5).keys()]"
+        class="col-2 px-0 hover-image"
+    >
+        <GameCard
+            title="Title"
+            image="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/869241/header.jpg?t=1555788090"
+            body="Body" />
     </div>
 
 </template>
@@ -28,6 +34,15 @@ import CardGame from "@/Components/CardGame.vue";
 .carte{
     height: 20px;
     width: 40rem;
+}
 
+
+.hover-image {
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hover-image:hover {
+    transform: scale(1.2);
 }
 </style>
