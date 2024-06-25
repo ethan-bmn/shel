@@ -12,7 +12,7 @@ import GameCard from "@/Components/GameCard.vue";
 
     <div
         v-for="i in [...Array(5).keys()]"
-        class="col-2 px-0 hover-image"
+        class="col-2 px-0 hover-image "
     >
         <GameCard
             title="Title"
@@ -40,9 +40,14 @@ import GameCard from "@/Components/GameCard.vue";
 .hover-image {
     height: auto;
     transition: transform 0.3s ease-in-out;
+    margin: 0.5rem ;
 }
 
 .hover-image:hover {
     transform: scale(1.2);
+    box-shadow:0px 0px 10px 2px rgba(3, 158, 192, 0.9000000095367432);
+    //filter: blur(1px);
+    border: 0.5px solid rgba(253, 253, 253, 0.4);
+    border-radius: 15px;
 }
 </style>
