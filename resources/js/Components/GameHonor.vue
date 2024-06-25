@@ -1,6 +1,6 @@
 <template id="test">
     <div class="row d-flex justify-content-center">
-        <div class="col-auto">
+        <div class="col-auto cadre">
             <span style="color: white; font: bold">Jeux à l'honneur</span>
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                 <div class="d-flex justify-content-center">
@@ -8,7 +8,7 @@
                         <div class="carousel-item active ">
                             <img
                                 src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/869241/header.jpg?t=1555788090"
-                                class="img-fluid mx-auto"
+                                class="img-fluid mx-auto image"
                                 alt="..."
                             />
                         </div>
@@ -25,6 +25,13 @@
     </div>
 </template>
 <style scoped>
+.cadre{
+    height: 500px;
+    width: 900px;
+
+
+
+}
 .cadre_image{
     border-radius: 15px;
 }
@@ -33,5 +40,9 @@
     //filter: blur(1px);
     border: 0.5px solid rgba(253, 253, 253, 0.4);
     border-radius: 15px;
+}
+.image{
+    width: 100%;
+    height: 100%;
 }
 </style>
