@@ -19,11 +19,11 @@ import BestLocation from "@/Components/BestLocation.vue";
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row ">
                     <div class="col-2 mh-100">
                         <Sidebar page="home"/>
                     </div>
-                    <div class="col-8 mh-100" >
+                    <div class="col-8 mh-100 panier" >
                         <div class="row mb-4">
                             <div class="col-12 infos" >
                                 <div class="entete ">
@@ -86,15 +86,6 @@ import BestLocation from "@/Components/BestLocation.vue";
 .body{
     overflow: hidden;
 }
-.row {
-    //border: solid red;
-}
-.col-2 {
-    //border: solid blue;
-}
-.col-8 {
-    //border: solid blue;
-}
 .infos{
     display: flex;
     flex-direction: row;
@@ -141,7 +132,9 @@ import BestLocation from "@/Components/BestLocation.vue";
 .commande{
     width: 15rem;
 }
-.piedPage{
-
+.panier{
+    border: solid 1px red;
+    max-height: 200px;
+    overflow-y: auto;
 }
 </style>
