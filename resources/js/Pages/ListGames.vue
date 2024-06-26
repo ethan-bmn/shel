@@ -45,36 +45,37 @@ import BestLocation from "@/Components/BestLocation.vue";
                         </div>
                         <div v-for="i in [...Array(10).keys()]"
                              class="col-12 px-0 hover-image ">
-                                <div class="row mb-4">
-                                    <div class="col-12 infos" entete>
-                                        <div class="card">
-                                            Jeux
-                                        </div>
-                                        <div class="card ">
-                                            Quantités
-                                        </div>
-                                        <div class="card ">
-                                            Début location
-                                        </div>
-                                        <div class="card ">
-                                            Fin location
-                                        </div>
-                                        <div class="card ">
-                                            Prix
-                                        </div>
+                            <div class="row mb-4">
+                                <div class="col-12 infos" entete>
+                                    <div class="card">
+                                        Jeux
+                                    </div>
+                                    <div class="card ">
+                                        Quantités
+                                    </div>
+                                    <div class="card ">
+                                        Début location
+                                    </div>
+                                    <div class="card ">
+                                        Fin location
+                                    </div>
+                                    <div class="card ">
+                                        Prix
                                     </div>
                                 </div>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <div class="row d-flex justify-content-end piedPage">
-                                    <div class="montant">TEst</div>
-                                    <button type="button" class="btn btn-primary btn-lg commande">Commander</button>
+                                <div class="row d-flex justify-content-center">
+                                    <GameProposition />
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    <div class="col-2">
+                        <BestLocation/>
+                    </div>
                 </div>
             </div>
 
@@ -137,11 +138,5 @@ import BestLocation from "@/Components/BestLocation.vue";
 .hover-image{
     display: flex;
     justify-content: center;
-}
-.commande{
-    width: 15rem;
-}
-.piedPage{
-
 }
 </style>

@@ -24,9 +24,7 @@ import GameCard from "@/Components/GameCard.vue";
         <button type="button" class="list-group-item list-group-item-action cadre">
             <img src="https://cf.geekdo-images.com/Oh3kHw6lweg6ru71Q16h2Q__imagepage/img/Yb3tBDagMIaGMxDlhomv8pLc3Zk=/fit-in/900x600/filters:no_upscale():strip_icc()/pic5235277.jpg" class="img-fluid image" alt="...">
         </button>
-        <button type="button" class="list-group-item list-group-item-action cadre">
-            <img src="https://cf.geekdo-images.com/Oh3kHw6lweg6ru71Q16h2Q__imagepage/img/Yb3tBDagMIaGMxDlhomv8pLc3Zk=/fit-in/900x600/filters:no_upscale():strip_icc()/pic5235277.jpg" class="img-fluid image" alt="...">
-        </button>
+
 
 
 
