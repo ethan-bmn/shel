@@ -1,9 +1,8 @@
 <script setup>
-import GameHonor from "@/Components/GameHonor.vue";
+import BestLocation from "@/Components/BestLocation.vue";
+import GameProposition from "@/Components/GameProposition.vue";
 import Header from "@/Components/Header.vue";
 import Sidebar from "@/Components/Sidebar.vue";
-import GameProposition from "@/Components/GameProposition.vue";
-import BestLocation from "@/Components/BestLocation.vue";
 //
 
 </script>
@@ -24,47 +23,52 @@ import BestLocation from "@/Components/BestLocation.vue";
                         <Sidebar page="home"/>
                     </div>
                     <div class="col-8 mh-100" >
-                        <div class="row mb-4">
-                            <div class="col-12 infos" >
-                                <div class="entete ">
-                                    Jeux
+                        <div class="listgames__border-list">
+                            <div class="listgames__scrollbar">
+                                <div class="row mb-4">
+                                    <div class="col-12 infos" >
+                                        <div class="entete ">
+                                            Jeux
+                                        </div>
+                                        <div class="entete ">
+                                            Quantités
+                                        </div>
+                                        <div class="entete ">
+                                            Début location
+                                        </div>
+                                        <div class="entete ">
+                                            Fin location
+                                        </div>
+                                        <div class="entete ">
+                                            Prix
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="entete ">
-                                    Quantités
-                                </div>
-                                <div class="entete ">
-                                    Début location
-                                </div>
-                                <div class="entete ">
-                                    Fin location
-                                </div>
-                                <div class="entete ">
-                                    Prix
+                                <div v-for="i in [...Array(10).keys()]"
+                                    class="col-12 px-0 hover-image ">
+                                    <div class="row mb-4">
+                                        <div class="col-12 infos" entete>
+                                            <div class="card">
+                                                Jeux
+                                            </div>
+                                            <div class="card ">
+                                                Quantités
+                                            </div>
+                                            <div class="card ">
+                                                Début location
+                                            </div>
+                                            <div class="card ">
+                                                Fin location
+                                            </div>
+                                            <div class="card ">
+                                                Prix
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div v-for="i in [...Array(10).keys()]"
-                             class="col-12 px-0 hover-image ">
-                            <div class="row mb-4">
-                                <div class="col-12 infos" entete>
-                                    <div class="card">
-                                        Jeux
-                                    </div>
-                                    <div class="card ">
-                                        Quantités
-                                    </div>
-                                    <div class="card ">
-                                        Début location
-                                    </div>
-                                    <div class="card ">
-                                        Fin location
-                                    </div>
-                                    <div class="card ">
-                                        Prix
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <div class="row">
                             <div class="col-12">
                                 <div class="row d-flex justify-content-center">
@@ -87,14 +91,30 @@ import BestLocation from "@/Components/BestLocation.vue";
 .body{
     overflow: hidden;
 }
+
+.listgames__border-list{
+    border: 1px solid #039EC0;
+    border-radius: 33px;
+
+    height: 670px;
+}
+.listgames__scrollbar{
+    height: calc(100% - 50px);
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    top: 25px;
+
+}
+
 .row {
-    //border: solid red;
+    /* border: solid red; */
 }
 .col-2 {
-    //border: solid blue;
+    /* border: solid blue; */
 }
 .col-8 {
-    //border: solid blue;
+    /* border: solid blue; */
 }
 .infos{
     display: flex;
@@ -112,7 +132,7 @@ import BestLocation from "@/Components/BestLocation.vue";
     width:180px;
     filter:drop-shadow(0px 0px 5px rgba(0.16470588743686676,0.49803921580314636,0.9882352948188782,0.7400000095367432));
     border-radius:20px;
-    //border:1px solid rgba(3, 158, 192, 0.7400000095367432);
+    /* border:1px solid rgba(3, 158, 192, 0.7400000095367432); */
     margin: 5px;
     display: flex;
     justify-content: center;
