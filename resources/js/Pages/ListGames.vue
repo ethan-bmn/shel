@@ -95,8 +95,7 @@ import Sidebar from "@/Components/Sidebar.vue";
 .listgames__border-list{
     border: 1px solid #039EC0;
     border-radius: 33px;
-
-    height: 670px;
+    height: 50%;
 }
 .listgames__scrollbar{
     height: calc(100% - 50px);
