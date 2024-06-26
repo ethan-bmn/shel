@@ -1,8 +1,9 @@
 <script setup>
-import BestLocation from "@/Components/BestLocation.vue";
-import GameProposition from "@/Components/GameProposition.vue";
+import GameHonor from "@/Components/GameHonor.vue";
 import Header from "@/Components/Header.vue";
 import Sidebar from "@/Components/Sidebar.vue";
+import GameProposition from "@/Components/GameProposition.vue";
+import BestLocation from "@/Components/BestLocation.vue";
 //
 
 </script>
@@ -44,36 +45,37 @@ import Sidebar from "@/Components/Sidebar.vue";
                         </div>
                         <div v-for="i in [...Array(10).keys()]"
                              class="col-12 px-0 hover-image ">
-                                <div class="row mb-4">
-                                    <div class="col-12 infos" entete>
-                                        <div class="card">
-                                            Jeux
-                                        </div>
-                                        <div class="card ">
-                                            Quantités
-                                        </div>
-                                        <div class="card ">
-                                            Début location
-                                        </div>
-                                        <div class="card ">
-                                            Fin location
-                                        </div>
-                                        <div class="card ">
-                                            Prix
-                                        </div>
+                            <div class="row mb-4">
+                                <div class="col-12 infos" entete>
+                                    <div class="card">
+                                        Jeux
+                                    </div>
+                                    <div class="card ">
+                                        Quantités
+                                    </div>
+                                    <div class="card ">
+                                        Début location
+                                    </div>
+                                    <div class="card ">
+                                        Fin location
+                                    </div>
+                                    <div class="card ">
+                                        Prix
                                     </div>
                                 </div>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <div class="row d-flex justify-content-end piedPage">
-                                    <div class="montant">TEst</div>
-                                    <button type="button" class="btn btn-primary btn-lg commande">Commander</button>
+                                <div class="row d-flex justify-content-center">
+                                    <GameProposition />
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    <div class="col-2">
+                        <BestLocation/>
+                    </div>
                 </div>
             </div>
 
@@ -86,13 +88,13 @@ import Sidebar from "@/Components/Sidebar.vue";
     overflow: hidden;
 }
 .row {
-    /* border: solid red; */
+    //border: solid red;
 }
 .col-2 {
-    /* border: solid blue; */
+    //border: solid blue;
 }
 .col-8 {
-    /* border: solid blue; */
+    //border: solid blue;
 }
 .infos{
     display: flex;
@@ -110,7 +112,7 @@ import Sidebar from "@/Components/Sidebar.vue";
     width:180px;
     filter:drop-shadow(0px 0px 5px rgba(0.16470588743686676,0.49803921580314636,0.9882352948188782,0.7400000095367432));
     border-radius:20px;
-    /* border:1px solid rgba(3, 158, 192, 0.7400000095367432); */
+    //border:1px solid rgba(3, 158, 192, 0.7400000095367432);
     margin: 5px;
     display: flex;
     justify-content: center;
@@ -136,11 +138,5 @@ import Sidebar from "@/Components/Sidebar.vue";
 .hover-image{
     display: flex;
     justify-content: center;
-}
-.commande{
-    width: 15rem;
-}
-.piedPage{
-
 }
 </style>

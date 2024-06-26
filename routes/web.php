@@ -9,7 +9,7 @@ Route::get('/', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
 Route::get('/favorites', function () {
-    return Inertia::render('Favorites');
+    return Inertia::render('Favoris');
 })->name('favorites');
 
 Route::get('/games', function () {
@@ -19,6 +19,9 @@ Route::get('/games', function () {
 Route::get('/cart', function () {
     return Inertia::render('Panier');
 })->name('cart');
+Route::get('/list',function (){
+    return Inertia::render('ListGames');
+})->name('list');
 Route::middleware('auth')->group(function () {
 
     Route::get('/profile', [ProfileController::class, 'show'])
