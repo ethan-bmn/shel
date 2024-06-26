@@ -1,9 +1,8 @@
 <script setup>
-import GameHonor from "@/Components/GameHonor.vue";
+import BestLocation from "@/Components/BestLocation.vue";
+import GameProposition from "@/Components/GameProposition.vue";
 import Header from "@/Components/Header.vue";
 import Sidebar from "@/Components/Sidebar.vue";
-import GameProposition from "@/Components/GameProposition.vue";
-import BestLocation from "@/Components/BestLocation.vue";
 //
 
 </script>
@@ -88,13 +87,13 @@ import BestLocation from "@/Components/BestLocation.vue";
     overflow: hidden;
 }
 .row {
-    //border: solid red;
+    /* border: solid red; */
 }
 .col-2 {
-    //border: solid blue;
+    /* border: solid blue; */
 }
 .col-8 {
-    //border: solid blue;
+    /* border: solid blue; */
 }
 .infos{
     display: flex;
@@ -112,7 +111,7 @@ import BestLocation from "@/Components/BestLocation.vue";
     width:200px;
     filter:drop-shadow(0px 0px 5px rgba(0.16470588743686676,0.49803921580314636,0.9882352948188782,0.7400000095367432));
     border-radius:20px;
-    //border:1px solid rgba(3, 158, 192, 0.7400000095367432);
+    /* border:1px solid rgba(3, 158, 192, 0.7400000095367432); */
     margin: 5px;
     display: flex;
     justify-content: center;
