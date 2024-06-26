@@ -26,7 +26,7 @@ import BestLocation from "@/Components/BestLocation.vue";
                     <div class="col-8 mh-100">
                         <div class="row mb-4">
                             <div class="col-12 d-flex-justify-content-center">
-                                $users= Users::all;
+
 
                             </div>
                         </div>

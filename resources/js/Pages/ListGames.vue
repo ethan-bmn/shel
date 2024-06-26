@@ -68,7 +68,7 @@ import Sidebar from "@/Components/Sidebar.vue";
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="row">
                             <div class="col-12">
                                 <div class="row d-flex justify-content-center">
@@ -106,15 +106,6 @@ import Sidebar from "@/Components/Sidebar.vue";
 
 }
 
-.row {
-    /* border: solid red; */
-}
-.col-2 {
-    /* border: solid blue; */
-}
-.col-8 {
-    /* border: solid blue; */
-}
 .infos{
     display: flex;
     flex-direction: row;
