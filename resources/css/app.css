@@ -1,7 +1,15 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 @import "https://use.fontawesome.com/releases/v5.7.2/css/all.css";
+@font-face {
+    font-family: 'Genos';
+    src: url('../../public/font/Genos-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 body{
     background-image: linear-gradient(to left top, #050505, #151431, #1a1d5b, #1a2689, #1a2db8);
+    font-family: 'Genos', sans-serif;
+    
 }
 
 
