@@ -18,11 +18,11 @@ import Sidebar from "@/Components/Sidebar.vue";
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row listegames__height-global">
                     <div class="col-2 mh-100">
                         <Sidebar page="home"/>
                     </div>
-                    <div class="col-8 mh-100" >
+                    <div class="col-8 mh-100 listegames__height" >
                         <div class="listgames__border-list">
                             <div class="listgames__scrollbar">
                                 <div class="row mb-4">
@@ -91,11 +91,16 @@ import Sidebar from "@/Components/Sidebar.vue";
 .body{
     overflow: hidden;
 }
-
+.listegames__height-global{
+    height: 100vh;
+}
+.listegames__height{
+    height: 100%;
+}
 .listgames__border-list{
     border: 1px solid #039EC0;
     border-radius: 33px;
-    height: 50%;
+    height: 70%;
 }
 .listgames__scrollbar{
     height: calc(100% - 50px);
