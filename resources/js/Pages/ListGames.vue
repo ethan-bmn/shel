@@ -1,8 +1,8 @@
 <script setup>
 import BestLocation from "@/Components/BestLocation.vue";
+import CardGame from "@/Components/CardGame.vue";
 import Header from "@/Components/Header.vue";
 import Sidebar from "@/Components/Sidebar.vue";
-import CardGame from "@/Components/CardGame.vue";
 
 //
 defineProps(['jeux']
@@ -23,18 +23,14 @@ defineProps(['jeux']
                 </div>
                 <div class="listgames__grid-game">
 
-                    <div class="  listgames__height" >
+                    <div class="listgames__height" >
                         <div class="listgames__border-list">
                             <div class="listgames__scrollbar">
 
-                                <div class=" mb-4 cardGame"  >
+                                <div class="cardGame">
                                     <div v-for="jeu in jeux" :key="jeu.id"
-                                         class=" px-0 hover-image ">
-                                        <div class=" mb-4" >
-
+                                         class=" px-0 listgame__card">
                                             <CardGame :playing_time="jeu.playing_time" :number_of_player="jeu.number_of_player" :description="jeu.description" :name="jeu.name"></CardGame>
-
-                                        </div>
                                     </div>
 
                                 </div>
@@ -76,6 +72,11 @@ defineProps(['jeux']
 }
 .listgames__height{
     height: 100%;
+}
+.listgame__card{
+    padding-bottom: 16px;
+    display: flex;
+    justify-content: center;
 }
 .listgames__border-list{
     border: 1px solid #039EC0;
@@ -126,10 +127,6 @@ defineProps(['jeux']
     color: white;
     text-shadow: 0px 0px 20px #020024;
     font-size: larger;
-}
-.hover-image{
-    width:50px;
-    height:300px;
 }
 .cardGame{
     display:grid;
