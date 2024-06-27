@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('number_of_player');
             $table->string('playing_time');
             $table->integer('quantity');
-            $table->foreignId('shopping_cart_id')->constrained('shopping_carts')->onDelete('cascade');
             $table->timestamps();
         });
     }
