@@ -5,23 +5,23 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
-{
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
-    {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id()->primary();
-            $table->string('name');
-            $table->string('surname');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->foreignId('role_id')->constrained('roles')->onDelete('cascade');
-            $table->rememberToken();
-            $table->timestamps();
-        });
+        {
+            /**
+             * Run the migrations.
+             */
+            public function up(): void
+            {
+                Schema::create('users', function (Blueprint $table) {
+                    $table->id()->primary();
+                    $table->string('name');
+                    $table->string('surname');
+                    $table->string('email')->unique();
+                    $table->timestamp('email_verified_at')->nullable();
+                    $table->string('password');
+                    $table->foreignId('role_id')->default(1)->constrained('roles')->onDelete('cascade');
+                    $table->rememberToken();
+                    $table->timestamps();
+                });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
