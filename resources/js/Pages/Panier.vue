@@ -9,18 +9,18 @@ import Sidebar from "@/Components/Sidebar.vue";
     <div class="container-fluid min-vh-100 body">
         <div class="row">
 
-            <div class="col-12">
+            <div class="panier__grid-global">
                 <div class="row">
-                    <div class="col-12">
+                    <div >
                         <Header/>
                     </div>
                 </div>
-
+                <div class="panier__grid-navbar mh-100">
+                    <Sidebar page="home"/>
+                </div>
                 <div class="row panier__height-global">
-                    <div class="col-2 mh-100">
-                        <Sidebar page="home"/>
-                    </div>
-                    <div class="col-8 mh-100 panier__height" >
+                    
+                    <div class="mh-100 panier__height" >
                         <div class="panier__border-list">
                             <div class="panier__scrollbar">
                                 <div class="row mb-4">
@@ -69,7 +69,7 @@ import Sidebar from "@/Components/Sidebar.vue";
                         
                         
                         <div class="row">
-                            <div class="col-12">
+                            <div >
                                 <div class=" d-flex justify-content-end piedPage">
                                     <div class="panier__total-order">
                                         TOTAL COMMANDE
@@ -92,16 +92,37 @@ import Sidebar from "@/Components/Sidebar.vue";
 </template>
 
 <style scoped>
-.panier__height-global{
+
+
+.panier__grid-global{
+    padding: 16px;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 20vh auto;
+    grid-template-rows: auto auto;
     height: 100vh;
 }
+.panier__grid-navbar{
+    grid-row-start: 1;
+    height: calc(100vh - 32px);
+    grid-row-end: 3;
+}
+
+.panier__grid-game{
+    display: grid;
+    grid-template-columns: auto 20%;
+    grid-template-rows: 100vh;
+}
+.panier__height-global{
+    height: calc(100vh - 32px);
+}
 .panier__height{
-    height: 100%;
+    height: 80%;
 }
 .panier__border-list{
     border: 1px solid #039EC0;
     border-radius: 33px;
-    height: 70%;
+    height: 100%;
 }
 .panier__scrollbar{
     height: calc(100% - 50px);

@@ -1,6 +1,5 @@
 <script setup>
 import BestLocation from "@/Components/BestLocation.vue";
-import GameProposition from "@/Components/GameProposition.vue";
 import Header from "@/Components/Header.vue";
 import Sidebar from "@/Components/Sidebar.vue";
 //
@@ -8,25 +7,24 @@ import Sidebar from "@/Components/Sidebar.vue";
 </script>
 
 <template>
-    <div class="container-fluid min-vh-100 body">
-        <div class="row">
+    <div class=" min-vh-100 body">
+        <div class=" listgames__grid-global">
 
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-12">
+                <div >
+                    <div >
                         <Header/>
                     </div>
                 </div>
-
-                <div class="row listgames__height-global">
-                    <div class="col-2 mh-100">
-                        <Sidebar page="home"/>
-                    </div>
-                    <div class="col-8 mh-100 listgames__height" >
+                <div class="mh-100 listgames__grid-navbar">
+                    <Sidebar page="home"/>
+                </div>
+                <div class="listgames__grid-game">
+                    
+                    <div class=" mh-100 listgames__height" >
                         <div class="listgames__border-list">
                             <div class="listgames__scrollbar">
-                                <div class="row mb-4">
-                                    <div class="col-12 infos" >
+                                <div class=" mb-4">
+                                    <div class=" infos" >
                                         <div class="entete ">
                                             Jeux
                                         </div>
@@ -45,9 +43,9 @@ import Sidebar from "@/Components/Sidebar.vue";
                                     </div>
                                 </div>
                                 <div v-for="i in [...Array(10).keys()]"
-                                    class="col-12 px-0 hover-image ">
-                                    <div class="row mb-4">
-                                        <div class="col-12 infos" entete>
+                                    class=" px-0 hover-image ">
+                                    <div class=" mb-4">
+                                        <div class=" infos" entete>
                                             <div class="card">
                                                 Jeux
                                             </div>
@@ -68,28 +66,34 @@ import Sidebar from "@/Components/Sidebar.vue";
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="row d-flex justify-content-center">
-                                    <GameProposition />
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <div class="col-2">
+                    <div >
                         <BestLocation/>
                     </div>
                 </div>
             </div>
 
         </div>
-    </div>
 </template>
 
 <style scoped>
-.listgames__height-global{
+.listgames__grid-global{
+    padding: 16px;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 20vh auto;
+    grid-template-rows: auto auto;
     height: 100vh;
+}
+.listgames__grid-navbar{
+    grid-row-start: 1;
+    height: calc(100vh - 32px);
+    grid-row-end: 3;
+}
+.listgames__grid-game{
+    display: grid;
+    grid-template-columns: auto 20%;
+    grid-template-rows: 100vh;
 }
 .listgames__height{
     height: 100%;
@@ -108,9 +112,6 @@ import Sidebar from "@/Components/Sidebar.vue";
 
 }
 
-.row {
-    /* border: solid red; */
-}
 .col-2 {
     /* border: solid blue; */
 }
