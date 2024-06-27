@@ -1,5 +1,4 @@
 <script setup>
-import CardGame from "@/Components/CardGame.vue";
 import GameCard from "@/Components/GameCard.vue";
 
 
@@ -46,7 +45,7 @@ import GameCard from "@/Components/GameCard.vue";
 .hover-image:hover {
     transform: scale(1.2);
     box-shadow:0px 0px 10px 2px rgba(3, 158, 192, 0.9000000095367432);
-    //filter: blur(1px);
+    /* filter: blur(1px); */
     border: 0.5px solid rgba(253, 253, 253, 0.4);
     border-radius: 15px;
 }
