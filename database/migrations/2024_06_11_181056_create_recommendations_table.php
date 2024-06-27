@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('recommendations', function (Blueprint $table) {
             $table->id()->primary();
             $table->string('commentary');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('boardgame_id')->references('id')->on('boardgames');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('boardgame_id')->constrained('boardgames')->onDelete('cascade');
             $table->timestamps();
         });
     }

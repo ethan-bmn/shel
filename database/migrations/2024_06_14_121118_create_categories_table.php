@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id()->primary();
             $table->string('name_category');
+            $table->foreignId('boardgame_id')->constrained('boardgames')->onDelete('cascade');
             $table->timestamps();
         });
     }

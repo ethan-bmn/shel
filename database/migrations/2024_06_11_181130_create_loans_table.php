@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->date('start_date');
             $table->date('end_date');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
