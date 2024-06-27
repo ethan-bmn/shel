@@ -19,8 +19,7 @@ return new class extends Migration
             $table->boolean('is_recommended')->default(false);
             $table->string('number_of_player');
             $table->string('playing_time');
-            $table->integer('quantity');
-            $table->foreignId('shopping_cart_id')->constrained('shopping_carts')->onDelete('cascade');
+            $table->string('photos')->nullable();
             $table->timestamps();
         });
     }
