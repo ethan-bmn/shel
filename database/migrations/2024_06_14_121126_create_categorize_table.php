@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('categorize', function (Blueprint $table) {
-            $table->foreign('boardgame_id')->references('id')->on('boardgames');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreignId('boardgame_id')->constrained('boardgames')->onDelete('cascade');
+            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }

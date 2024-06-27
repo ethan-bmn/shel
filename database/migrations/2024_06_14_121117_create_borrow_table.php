@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('borrow', function (Blueprint $table) {
-            $table->foreign('boardgame_id')->references('id')->on('boardgames');
-            $table->foreign('loan_id')->references('id')->on('loans');
+            $table->foreignId('boardgame_id')->constrained('boardgames')->onDelete('cascade');
+            $table->foreignId('loan_id')->constrained('loans')->onDelete('cascade');
             $table->timestamps();
         });
     }

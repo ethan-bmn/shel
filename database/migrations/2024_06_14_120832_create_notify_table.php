@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('notify', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('notification_id')->references('id')->on('notifications');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('notification_id')->constrained('notifications')->onDelete('cascade');
             $table->timestamps();
         });
     }
