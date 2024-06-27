@@ -5,7 +5,7 @@
 <template>
 
     <div>
-        <div class="col-10 ">
+        <div>
             <nav class="navbar navbar-expand-lg bc-color-input-search entete">
                 <div class="container-fluid d-flex justify-content-between">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
