@@ -9,24 +9,24 @@
 body{
     background-image: linear-gradient(to left top, #050505, #151431, #1a1d5b, #1a2689, #1a2db8);
     font-family: 'Genos', sans-serif;
-    overflow: hidden;
+    /*overflow: hidden;*/
     ::-webkit-scrollbar {
         width: 10px;
         height: 20px;
       }
-      
+
       /* Track */
       ::-webkit-scrollbar-track {
       }
-       
+
       /* Handle */
       ::-webkit-scrollbar-thumb {
-        background: #039EC0; 
+        background: #039EC0;
         border-radius: 33px;
         order: 3px solid transparent;
-        background-clip: padding-box; 
+        background-clip: padding-box;
       }
-      
+
       /* Handle on hover */
 }
 

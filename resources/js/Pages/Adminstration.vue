@@ -4,6 +4,7 @@ import Header from "@/Components/Header.vue";
 import Sidebar from "@/Components/Sidebar.vue";
 import GameProposition from "@/Components/GameProposition.vue";
 import BestLocation from "@/Components/BestLocation.vue";
+import AddGame from "@/Components/AddGame.vue";
 //
 
 </script>
@@ -24,18 +25,7 @@ import BestLocation from "@/Components/BestLocation.vue";
                         <Sidebar page="home"/>
                     </div>
                     <div class="col-8 mh-100">
-                        <div class="row mb-4">
-                            <div class="col-12 d-flex-justify-content-center">
-                                <GameHonor />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="row d-flex justify-content-center">
-                                    <GameProposition />
-                                </div>
-                            </div>
-                        </div>
+                        <AddGame/>
                     </div>
                     <div class="col-2">
                         <BestLocation/>

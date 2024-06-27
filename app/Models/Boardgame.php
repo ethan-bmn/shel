@@ -11,7 +11,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Boardgame extends Model
 {
     use HasFactory;
-
+    protected $fillable = [
+        'name',
+        'description',
+        'number_of_player',
+        'playing_time',
+        'quantity',
+    ];
     //Relation avec la table recommendation
     public function recommendation(): HasMany
     {
