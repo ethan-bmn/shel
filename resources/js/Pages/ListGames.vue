@@ -3,6 +3,7 @@ import BestLocation from "@/Components/BestLocation.vue";
 import GameProposition from "@/Components/GameProposition.vue";
 import Header from "@/Components/Header.vue";
 import Sidebar from "@/Components/Sidebar.vue";
+
 //
 
 </script>
@@ -44,7 +45,7 @@ import Sidebar from "@/Components/Sidebar.vue";
                                         </div>
                                     </div>
                                 </div>
-                                <div v-for="i in [...Array(10).keys()]"
+                                <div v-for="item in jeux" :key="item.id"
                                     class="col-12 px-0 hover-image ">
                                     <div class="row mb-4">
                                         <div class="col-12 infos" entete>

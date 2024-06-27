@@ -20,9 +20,22 @@ Route::get('/games', function () {
 Route::get('/cart', function () {
     return Inertia::render('Panier');
 })->name('cart');
-Route::get('/list',function (){
-    return Inertia::render('ListGames');
-})->name('list');
+
+Route::get('/administration',function (){
+    return Inertia::render('Administration');
+})->name('administration');
+
+
+/*Verb          Path                        Action  Route Name
+GET           /users                      index   users.index
+GET           /users/create               create  users.create
+POST          /users                      store   users.store
+GET           /users/{user}               show    users.show
+GET           /users/{user}/edit          edit    users.edit
+PUT|PATCH     /users/{user}               update  users.update
+DELETE        /users/{user}               destroy users.destroy*/
+Route::resource('/boardgames', App\Http\Controllers\BoardgameController::class);
+
 Route::middleware('auth')->group(function () {
 
     Route::get('/profile', [ProfileController::class, 'show'])
