@@ -2,8 +2,11 @@
 import BestLocation from "@/Components/BestLocation.vue";
 import Header from "@/Components/Header.vue";
 import Sidebar from "@/Components/Sidebar.vue";
-//
+import CardGame from "@/Components/CardGame.vue";
 
+//
+defineProps(['jeux']
+);
 </script>
 
 <template>
@@ -15,58 +18,34 @@ import Sidebar from "@/Components/Sidebar.vue";
                         <Header/>
                     </div>
                 </div>
-                <div class="mh-100 listgames__grid-navbar">
+                <div class=" listgames__grid-navbar">
                     <Sidebar page="home"/>
                 </div>
                 <div class="listgames__grid-game">
 
-                    <div class=" mh-100 listgames__height" >
+                    <div class="  listgames__height" >
                         <div class="listgames__border-list">
                             <div class="listgames__scrollbar">
-                                <div class=" mb-4">
-                                    <div class=" infos" >
-                                        <div class="entete ">
-                                            Jeux
-                                        </div>
-                                        <div class="entete ">
-                                            Quantités
-                                        </div>
-                                        <div class="entete ">
-                                            Début location
-                                        </div>
-                                        <div class="entete ">
-                                            Fin location
-                                        </div>
-                                        <div class="entete ">
-                                            Prix
+
+                                <div class=" mb-4 cardGame"  >
+                                    <div v-for="jeu in jeux" :key="jeu.id"
+                                         class=" px-0 hover-image ">
+                                        <div class=" mb-4" >
+
+                                            <CardGame :playing_time="jeu.playing_time" :number_of_player="jeu.number_of_player" :description="jeu.description" :name="jeu.name"></CardGame>
+
                                         </div>
                                     </div>
+
                                 </div>
-                                <div v-for="i in [...Array(10).keys()]"
-                                    class=" px-0 hover-image ">
-                                    <div class=" mb-4">
-                                        <div class=" infos" entete>
-                                            <div class="card">
-                                                Jeux
-                                            </div>
-                                            <div class="card ">
-                                                Quantités
-                                            </div>
-                                            <div class="card ">
-                                                Début location
-                                            </div>
-                                            <div class="card ">
-                                                Fin location
-                                            </div>
-                                            <div class="card ">
-                                                Prix
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
+
                             </div>
+
                         </div>
+
                     </div>
+
                     <div >
                         <BestLocation/>
                     </div>
@@ -109,14 +88,6 @@ import Sidebar from "@/Components/Sidebar.vue";
     overflow-x: hidden;
     overflow-y: auto;
     top: 25px;
-
-}
-
-.col-2 {
-    /* border: solid blue; */
-}
-.col-8 {
-    /* border: solid blue; */
 }
 .infos{
     display: flex;
@@ -140,7 +111,6 @@ import Sidebar from "@/Components/Sidebar.vue";
     justify-content: center;
     align-items: center;
     color: white;
-
 }
 .entete{
     background-color:transparent;
@@ -158,7 +128,12 @@ import Sidebar from "@/Components/Sidebar.vue";
     font-size: larger;
 }
 .hover-image{
-    display: flex;
-    justify-content: center;
+    width:50px;
+    height:300px;
+}
+.cardGame{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: repeat(auto-fill);
 }
 </style>

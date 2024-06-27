@@ -119,7 +119,7 @@ export default {
             window.location.href='/cart';
         },
         goToListPage(){
-            window.location.href='/list';
+            window.location.href='/boardgames';
         }
     }
 }

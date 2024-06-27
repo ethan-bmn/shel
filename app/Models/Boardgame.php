@@ -16,7 +16,7 @@ class Boardgame extends Model
         'description',
         'number_of_player',
         'playing_time',
-        'quantity',
+
     ];
     //Relation avec la table recommendation
     public function recommendation(): HasMany
