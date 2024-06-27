@@ -1,5 +1,5 @@
 <template id="test">
-    <div class="row d-flex fill">
+    <div class="row d-flex justify-content-center">
         <div class="col-auto cadre">
             <span  class="gamehonor__title">Jeux à l'honneur</span>
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -31,8 +31,7 @@
     font-size: 32px;
 }
 .cadre{
-    height: 100%;
-    width: 100%;
+    width: 90%;
 
 
 
