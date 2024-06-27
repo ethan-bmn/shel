@@ -24,7 +24,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="card" style="width: 18rem;">
+    <div class="card">
         <img :src="image" class="card-img-top" alt="...">
         <div>
             <div class="card-body">

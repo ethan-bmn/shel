@@ -26,26 +26,25 @@ defineProps(['jeux']
                     <div class="  listgames__height" >
                         <div class="listgames__border-list">
                             <div class="listgames__scrollbar">
-
                                 <div class=" mb-4 cardGame"  >
                                     <div v-for="jeu in jeux" :key="jeu.id"
                                          class=" px-0 hover-image ">
                                         <div class=" mb-4" >
+                                            <CardGame
+                                                :playing_time="jeu.playing_time"
+                                                :number_of_player="jeu.number_of_player"
+                                                :description="jeu.description"
+                                                :name="jeu.name">
+                                                :image="C:\Users\RAFAL\PhpstormProjects\shel\public\images\brassLancashire.png"
 
-                                            <CardGame :playing_time="jeu.playing_time" :number_of_player="jeu.number_of_player" :description="jeu.description" :name="jeu.name"></CardGame>
-
+                                            </CardGame>
                                         </div>
                                     </div>
-
                                 </div>
-
-
                             </div>
 
                         </div>
-
                     </div>
-
                     <div >
                         <BestLocation/>
                     </div>
@@ -133,7 +132,7 @@ defineProps(['jeux']
 }
 .cardGame{
     display:grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     grid-template-rows: repeat(auto-fill);
 }
 </style>
