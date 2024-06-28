@@ -24,7 +24,9 @@ Route::get('/cart', function () {
 Route::get('/administration',function (){
     return Inertia::render('Administration');
 })->name('administration');
-
+Route::get('/login', function(){
+    return Inertia::render('Login');
+})->name('login');
 
 /*Verb          Path                        Action  Route Name
 GET           /users                      index   users.index
@@ -37,6 +39,7 @@ DELETE        /users/{user}               destroy users.destroy*/
 Route::resource('/boardgames', App\Http\Controllers\BoardgameController::class);
 
 Route::middleware('auth')->group(function () {
+
 
     Route::get('/profile', [ProfileController::class, 'show'])
         ->name('profile.show');
