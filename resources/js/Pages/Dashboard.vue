@@ -1,50 +1,17 @@
 <script setup>
 import BestLocation from "@/Components/BestLocation.vue";
 import GameHonor from "@/Components/GameHonor.vue";
-import GameProposition from "@/Components/GameProposition.vue";
-import Header from "@/Components/Header.vue";
-import Sidebar from "@/Components/Sidebar.vue";
+import Layout from "@/Layouts/Default.vue";
 //
+
+defineOptions({
+    layout: Layout
+});
 
 </script>
 
 <template>
-    <div class="container-fluid min-vh-100 body">
-        <div class="row">
-
-            <div class="dashboard__grid-global">
-                <div class="row">
-                    <div >
-                        <Header/>
-                    </div>
-                </div>
-                <div class="dashboard__grid-navbar mh-100">
-                        <Sidebar page="home"/>
-                    </div>
-                <div class="row dashboard__grid-game">
-
-                    <div class=" mh-100">
-                        <div class="row mb-4">
-                            <div class=" d-flex-justify-content-center">
-                                <GameHonor />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div >
-                                <div class="row d-flex justify-content-center">
-                                    <GameProposition />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div >
-                        <BestLocation/>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
+    <GameHonor />
 </template>
 
 <style scoped>
