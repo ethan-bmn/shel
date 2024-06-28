@@ -24,8 +24,10 @@ Route::get('/cart', function () {
 Route::get('/administration',function (){
     return Inertia::render('Administration');
 })->name('administration');
+
+
 Route::get('/login', function(){
-    return Inertia::render('Login');
+    return Inertia::render('Auth/Login');
 })->name('login');
 
 /*Verb          Path                        Action  Route Name
