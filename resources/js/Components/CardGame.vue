@@ -24,12 +24,18 @@ defineProps({
 </script>
 
 <template>
-    <div class="cardgamme__card" >
+    <div class="cardgamme__card">
         <img src="../../../public/images/brassLancashire.png" class="cardgame__img" alt="...">
         <div class="cardgame__info cardgame__info--hover">
             <div class="cardgame__info-back cardgame__info-back--hover">
-                <div class="cardgame__position"><p>{{ name }}</p> <p>{{ number_of_player }}</p></div>
-                <div class="cardgame__hide cardgame__hide--hover"><p>{{ playing_time }}</p> <p>{{ name }}</p></div>
+                <div class="info">
+                    <p>{{ name }}</p>
+                    <p>{{ number_of_player }}</p>
+                </div>
+                <div class="additional-info">
+                    <p>{{ playing_time }}</p>
+                    <p>{{ description }}</p>
+                </div>
             </div>
         </div>
     </div>
@@ -53,39 +59,41 @@ defineProps({
     padding-top: 200px;
     height: 100%;
     position: relative;
-
+    transition: all 0.3s ease-in;
 }
-
 .cardgame__info--hover:hover{
-    z-index: 2;
-    bottom: 300px;
     padding-top: 0;
-    height: 100%;
-    position: relative;
-
 }
 .cardgame__info-back{
-    padding-top: 10px;
+    padding: 10px;
     color: white;
     background-color: rgba(31, 53, 94, 0.8);
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     border-radius: 0 0 33px 33px;
+    position: relative;
+    overflow: hidden;
 }
 .cardgame__info-back--hover:hover{
     border-radius: 33px;
 }
-.cardgame__position{
-    display: flex;
-    justify-content: center;
+
+.info{
+    width: 100%;
 }
-.cardgame__hide{
-    display: none;
+.additional-info{
+    opacity: 0;
+    width: 100%;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    bottom: 10px;
+    padding-left: 10px;
 }
-.cardgame__hide--hover:hover{
-    display: flex;
-    justify-content: center;
+.cardgame__info--hover:hover .additional-info{
+    opacity: 1;
 }
 </style>

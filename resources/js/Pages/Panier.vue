@@ -115,6 +115,8 @@ import Sidebar from "@/Components/Sidebar.vue";
 }
 .panier__height-global{
     height: calc(100vh - 32px);
+    padding-bottom: 25px;
+
 }
 .panier__height{
     height: 80%;

@@ -7,16 +7,11 @@
     <div>
         <div>
             <nav class="navbar navbar-expand-lg bc-color-input-search entete">
-                <div class="container-fluid d-flex justify-content-between">
+                <div class="container-fluid header__grid">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <span><img class="icon-link" src="../../../public/images/chercher.svg"></span>
                         <form class="d-flex" role="search">
-                            <input class="form-control me-2 perso" type="search" placeholder="Recherche" aria-label="Search" >
-                        </form>
-                    </div>
-                    <div class="collapse navbar-collapse d-flex justify-content-end">
-                        <form class="d-flex">
-                            <button class="btn btn-outline-success" type="submit">Chercher</button>
+                            <input class="form-control header__placeholder me-2 perso" type="search" placeholder="Recherche" aria-label="Search" >
                         </form>
                     </div>
                     <div>
@@ -36,7 +31,15 @@
 </template>
 
 <style scoped>
+.header__placeholde::placeholder{
+    font-size: 25px;
+}
 
+.header__grid{
+    display: grid;
+    grid-template-columns: 1fr 10%;
+    gap: 16px;
+}
 .entete{
     padding-right: 0;
     padding-left: 0;
