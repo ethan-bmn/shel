@@ -1,13 +1,16 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\Boardgame;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\BoardgameController;
 
 Route::get('/', function () {
-    return Inertia::render('Dashboard');
+    return Inertia::render('Dashboard', [
+        'jeuRandom'=> Boardgame::inRandomOrder()->take(1)->get()[0]
+    ]);
 })->name('dashboard');
 Route::get('/favorites', function () {
     return Inertia::render('Favoris');

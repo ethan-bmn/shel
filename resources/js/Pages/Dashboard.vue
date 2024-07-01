@@ -2,6 +2,12 @@
 import GameHonor from "@/Components/GameHonor.vue";
 import Layout from "@/Layouts/Default.vue";
 //
+defineProps({
+    jeuRandom: {
+        type: Object,
+        required: true
+    }
+});
 
 defineOptions({
     layout: Layout
@@ -10,7 +16,7 @@ defineOptions({
 </script>
 
 <template>
-    <GameHonor />
+    <GameHonor :jeuRandom />
 </template>
 
 <style scoped>
