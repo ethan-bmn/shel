@@ -13,10 +13,6 @@ Route::get('/favorites', function () {
     return Inertia::render('Favoris');
 })->name('favorites');
 
-Route::get('/games', function () {
-    return Inertia::render('Games');
-})->name('games');
-
 Route::get('/cart', function () {
     return Inertia::render('Panier');
 })->name('cart');
@@ -38,7 +34,7 @@ GET           /users/{user}               show    users.show
 GET           /users/{user}/edit          edit    users.edit
 PUT|PATCH     /users/{user}               update  users.update
 DELETE        /users/{user}               destroy users.destroy*/
-Route::resource('/boardgames', App\Http\Controllers\BoardgameController::class);
+Route::resource('/games', App\Http\Controllers\BoardgameController::class);
 
 Route::middleware('auth')->group(function () {
 

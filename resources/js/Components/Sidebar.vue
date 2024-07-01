@@ -27,7 +27,7 @@ function goToCartPage() {
 }
 
 function goToListPage() {
-        window.location.href='/boardgames';
+        window.location.href='/games';
 }
 
 </script>

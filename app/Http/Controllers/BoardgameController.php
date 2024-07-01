@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Boardgame;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -39,9 +40,12 @@ class BoardgameController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Boardgame $boardgame)
+    public function show(string $boardgame)
     {
-        //
+        $jeu = Boardgame::find($boardgame);
+        return Inertia::render('Games', [
+            'jeu' => $jeu,
+        ]);
     }
 
     /**
@@ -66,5 +70,15 @@ class BoardgameController extends Controller
     public function destroy(Boardgame $boardgame)
     {
         //
+    }
+
+    public function getRandomGames(): JsonResponse
+    {
+        // Sélectionner 3 articles aléatoires
+        $randomJeux = Boardgame::inRandomOrder()->take(3)->get();
+
+        // Retourner les articles en réponse JSON
+        return response()->json($randomJeux);
+
     }
 }
