@@ -24,10 +24,10 @@ defineProps({
 </script>
 
 <template>
-    <div class="cardgamme__card">
-        <img src="../../../public/images/brassLancashire.png" class="cardgame__img" alt="...">
-        <div class="cardgame__info cardgame__info--hover">
-            <div class="cardgame__info-back cardgame__info-back--hover">
+    <div class="listelem__card">
+        <img src="../../../public/images/brassLancashire.png" class="listelem__img" alt="...">
+        <div class="listelem__info listelem__info--hover">
+            <div class="listelem__info-back listelem__info-back--hover">
                 <div class="info">
                     <p>{{ name }}</p>
                     <p>{{ number_of_player }}</p>
@@ -42,18 +42,18 @@ defineProps({
 </template>
 
 <style scoped>
-.cardgamme__card{
+.listelem__card{
     width: 240px;
     height: 300px;
     border-radius: 33px;
 }
-.cardgame__img{
+.listelem__img{
     width: 100%;
     height: 100%;
     position: relative;
     border-radius: 33px;
 }
-.cardgame__info{
+.listelem__info{
     z-index: 2;
     bottom: 300px;
     padding-top: 200px;
@@ -61,10 +61,10 @@ defineProps({
     position: relative;
     transition: all 0.3s ease-in;
 }
-.cardgame__info--hover:hover{
+.listelem__info--hover:hover{
     padding-top: 0;
 }
-.cardgame__info-back{
+.listelem__info-back{
     padding: 10px;
     color: white;
     background-color: rgba(31, 53, 94, 0.8);
@@ -78,7 +78,7 @@ defineProps({
     position: relative;
     overflow: hidden;
 }
-.cardgame__info-back--hover:hover{
+.listelem__info-back--hover:hover{
     border-radius: 33px;
 }
 
@@ -93,7 +93,7 @@ defineProps({
     bottom: 10px;
     padding-left: 10px;
 }
-.cardgame__info--hover:hover .additional-info{
+.listelem__info--hover:hover .additional-info{
     opacity: 1;
 }
 </style>
