@@ -1,9 +1,7 @@
 <script setup>
-import GameHonor from "@/Components/GameHonor.vue";
+import BestLocation from "@/Components/BestLocation.vue";
 import Header from "@/Components/Header.vue";
 import Sidebar from "@/Components/Sidebar.vue";
-import GameProposition from "@/Components/GameProposition.vue";
-import BestLocation from "@/Components/BestLocation.vue";
 //
 
 </script>
@@ -93,13 +91,13 @@ import BestLocation from "@/Components/BestLocation.vue";
     overflow: hidden;
 }
 .row {
-    //border: solid red;
+    /* border: solid red; */
 }
 .col-2 {
-    //border: solid blue;
+    /* border: solid blue; */
 }
 .col-8 {
-    //border: solid blue;
+    /* border: solid blue; */
 }
 .title{
     font-size: xxx-large;

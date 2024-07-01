@@ -1,14 +1,13 @@
 <script setup>
 
 
-import GameCard from "@/Components/GameCard.vue";
 </script>
 
 <template>
 
     <div class="list-group" >
 
-        <span class="d-flex justify-content-center" style="color: white">POPULAIRE</span>
+        <span class="d-flex justify-content-center list__title">POPULAIRE</span>
         <button type="button" class="list-group-item list-group-item-action cadre " aria-current="true">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2iWB6jGX6Skzi0d0UQ_p1UjxaFT2PgVEHuA&s" class="img-fluid image" alt="...">
         </button>
@@ -32,6 +31,11 @@ import GameCard from "@/Components/GameCard.vue";
 </template>
 
 <style scoped>
+
+.list__title{
+    color: white;
+    font-size: 32px;
+}
 .list-group{
     margin-right: 10px;
 }
@@ -49,7 +53,7 @@ import GameCard from "@/Components/GameCard.vue";
 }
 .image:hover{
     box-shadow:0px 0px 10px 2px rgba(3, 158, 192, 0.9000000095367432);
-    //filter: blur(1px);
+    /* filter: blur(1px); */
     border: 0.5px solid rgba(253, 253, 253, 0.4);
     border-radius: 15px;
     transform: scale(1.2);
