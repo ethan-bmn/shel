@@ -27,15 +27,11 @@ import Sidebar from "@/Components/Sidebar.vue";
                                 <slot />
                             </div>
                         </div>
-                        <div class="row">
-                            <div>
-                                <div class="row d-flex justify-content-center">
-                                    <GameProposition />
-                                </div>
-                            </div>
+                        <div class="row d-flex justify-content-center">
+                            <GameProposition />
                         </div>
                     </div>
-                    <div >
+                    <div>
                         <BestLocation/>
                     </div>
                 </div>
@@ -68,6 +64,8 @@ import Sidebar from "@/Components/Sidebar.vue";
 .layout__height-global{
     height: calc(100vh - 32px);
     padding-bottom: 25px;
+    display: grid;
+    grid-template-columns:auto auto;
 
 }
 </style>
