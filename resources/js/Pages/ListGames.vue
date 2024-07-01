@@ -12,7 +12,6 @@ defineProps(['jeux']
 <template>
     <div class=" min-vh-100 body">
         <div class=" listgames__grid-global">
-
                 <div >
                     <div >
                         <Header/>
@@ -22,26 +21,18 @@ defineProps(['jeux']
                     <Sidebar page="home"/>
                 </div>
                 <div class="listgames__grid-game">
-
                     <div class="listgames__height" >
                         <div class="listgames__border-list">
                             <div class="listgames__scrollbar">
-
                                 <div class="cardGame">
                                     <div v-for="jeu in jeux" :key="jeu.id"
                                          class=" px-0 listgame__card">
                                             <CardGame :playing_time="jeu.playing_time" :number_of_player="jeu.number_of_player" :description="jeu.description" :name="jeu.name"></CardGame>
                                     </div>
-
                                 </div>
-
-
                             </div>
-
                         </div>
-
                     </div>
-
                     <div >
                         <BestLocation/>
                     </div>
