@@ -7,35 +7,47 @@ import Sidebar from "@/Components/Sidebar.vue";
 </script>
 
 <template>
-    <div class="container-fluid min-vh-100 body">
-        <div class="row">
-
-            <div class="layout__grid-global">
+    <div class="container-fluid min-vh-100">
+        <div class="row me-3 my-2">
+            <div class="col-1">
+                <Sidebar />
+            </div>
+            <div class="col-11">
                 <div class="row">
-                    <div>
-                        <Header/>
-                    </div>
+                    <Header/>
                 </div>
-                <div class="layout__grid-navbar mh-100">
-                        <Sidebar page="home"/>
+                <div class="row">
+                    <div class="col-10">
+                        <slot />
                     </div>
-                <div class="row layout__height-global">
-                    
-                    <div class=" mh-100">
-                        <div class="row mb-4">
-                            <div class="d-flex-justify-content-center">
-                                <slot />
-                            </div>
-                        </div>
-                        <div class="row d-flex justify-content-center">
+                    <div class="col-2">
+                        <BestLocation />
+                    </div>
+                    <div class="col-10 mt-4">
+                        <div class="row d-flex justify-content-evenly">
                             <GameProposition />
                         </div>
                     </div>
-                    <div>
-                        <BestLocation/>
-                    </div>
                 </div>
             </div>
+<!--                <div class="layout__grid-navbar mh-100">-->
+<!--                    </div>-->
+<!--                <div class="row layout__height-global">-->
+<!--                    -->
+<!--                    <div class=" mh-100">-->
+<!--                        <div class="row mb-4">-->
+<!--                            <div class="d-flex-justify-content-center">-->
+<!--                                <slot />-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="row d-flex justify-content-center">-->
+<!--                            <GameProposition />-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
 
         </div>
     </div>

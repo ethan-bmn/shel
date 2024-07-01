@@ -1,18 +1,4 @@
 <script setup>
-defineProps({
-    page: {
-        type: String,
-        required: true
-    },
-    body: {
-        type: String,
-        required: true
-    },
-    image: {
-        type: String,
-        required: true
-    }
-});
 
 function goToHomePage() {
     window.location.href = '/';
