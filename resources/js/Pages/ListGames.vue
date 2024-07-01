@@ -9,15 +9,13 @@ defineProps(['jeux']
 
 <template>
     <Layout>
-        <div class="listgames__grid-game">
-            <div class="listgames__height" >
-                <div class="listgames__border-list">
-                    <div class="listgames__scrollbar">
-                        <div class="cardGame">
-                            <div v-for="jeu in jeux" :key="jeu.id"
-                                 class=" px-0 listgame__card">
-                                <ListElem :playing_time="jeu.playing_time" :number_of_player="jeu.number_of_player" :description="jeu.description" :name="jeu.name"></ListElem>
-                            </div>
+        <div>
+            <div class="listgames__border-list">
+                <div class="listgames__scrollbar">
+                    <div class="cardGame">
+                        <div v-for="jeu in jeux" :key="jeu.id"
+                                class=" px-0 listgame__card">
+                            <ListElem :playing_time="jeu.playing_time" :number_of_player="jeu.number_of_player" :description="jeu.description" :name="jeu.name"></ListElem>
                         </div>
                     </div>
                 </div>
@@ -27,27 +25,8 @@ defineProps(['jeux']
 </template>
 
 <style scoped>
-.listgames__grid-global{
-    padding: 16px;
-    display: grid;
-    gap: 16px;
-    grid-template-columns: 20vh auto;
-    grid-template-rows: auto auto;
-    height: 100vh;
-}
-.listgames__grid-navbar{
-    grid-row-start: 1;
-    height: calc(100vh - 32px);
-    grid-row-end: 3;
-}
-.listgames__grid-game{
-    display: grid;
-    grid-template-columns: auto 20%;
-    grid-template-rows: 100vh;
-}
-.listgames__height{
-    height: 100%;
-}
+
+
 .listgame__card{
     padding-bottom: 16px;
     display: flex;
@@ -56,7 +35,7 @@ defineProps(['jeux']
 .listgames__border-list{
     border: 1px solid #039EC0;
     border-radius: 33px;
-    height: 70%;
+    height: 100%;
 }
 .listgames__scrollbar{
     height: calc(100% - 50px);
@@ -105,7 +84,7 @@ defineProps(['jeux']
 }
 .cardGame{
     display:grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     grid-template-rows: repeat(auto-fill);
 }
 </style>
