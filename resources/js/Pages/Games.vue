@@ -1,16 +1,14 @@
 <script setup>
+import BestLocation from "@/Components/BestLocation.vue";
+import Header from "@/Components/Header.vue";
+import Sidebar from "@/Components/Sidebar.vue";
+//
 const props = defineProps({
     jeu: {
         type: Object,
         required: true
     }
 });
-import GameHonor from "@/Components/GameHonor.vue";
-import Header from "@/Components/Header.vue";
-import Sidebar from "@/Components/Sidebar.vue";
-import GameProposition from "@/Components/GameProposition.vue";
-import BestLocation from "@/Components/BestLocation.vue";
-console.log(props.jeu);
 </script>
 
 <template>
@@ -23,6 +21,7 @@ console.log(props.jeu);
                         <Header/>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-2 mh-100">
                         <Sidebar page="home"/>
@@ -78,15 +77,6 @@ console.log(props.jeu);
 .body{
     overflow: hidden;
 }
-.row {
-    //border: solid red;
-}
-.col-2 {
-    //border: solid blue;
-}
-.col-8 {
-    //border: solid blue;
-}
 .title{
     font-size: xxx-large;
     color: white;
@@ -106,12 +96,10 @@ console.log(props.jeu);
     border: none;
     color: white;
     margin: 10px;
-
 }
 .test {
     margin-top: 10px;
     justify-content: space-between;
-
 }
 .button:hover{
     box-shadow:0px 0px 10px 2px rgba(3, 158, 192, 0.9000000095367432);
