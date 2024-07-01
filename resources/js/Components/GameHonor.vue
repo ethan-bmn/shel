@@ -1,16 +1,19 @@
 <script setup>
 import {Link} from "@inertiajs/vue3";
-import {ref} from "vue";
+//import {ref} from "vue";
 
 function goToGamePage(id) {
     router.visit(`/games/${id}`);
 }
-
-const randomJeux = ref([]);
-axios.get('/api/jeux-aleatoires').then((res) => {
-    randomJeux.value = res.data;
-    console.log(randomJeux.value);
+const props = defineProps({
+    jeuRandom: {
+        type: Object,
+        required: true
+    }
 });
+
+console.log(props.jeuRandom.picture);
+
 
 
 </script>
@@ -19,21 +22,14 @@ axios.get('/api/jeux-aleatoires').then((res) => {
     <div class="row d-flex justify-content-center">
         <div class="col-auto cadre">
             <span  class="gamehonor__title">Jeux à l'honneur</span>
-
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                <div class="d-flex justify-content-center">
-                        <div class="carousel-inner cadre_image">
-                            <div v-for="jeu of randomJeux" class="carousel-item">
-                                <Link @click="goToGamePage(jeu.id)">
-                                    <img :src="jeu.picture">
-                                </Link>
-                            </div>
-                        </div>
+                <div class="d-flex justify-content-center cadre_image">
+                            <Link :href="`/games/${jeuRandom.id}`">
+                                <img :src="jeuRandom.picture">
+                            </Link>
                 </div>
-            </div>
-
         </div>
     </div>
+
 </template>
 <style scoped>
 .gamehonor__title{

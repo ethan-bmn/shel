@@ -44,7 +44,7 @@ class BoardgameController extends Controller
     {
         $jeu = Boardgame::find($boardgame);
         return Inertia::render('Games', [
-            'jeu' => $jeu,
+            'jeu' => $jeu
         ]);
     }
 
@@ -72,13 +72,5 @@ class BoardgameController extends Controller
         //
     }
 
-    public function getRandomGames(): JsonResponse
-    {
-        // Sélectionner 3 articles aléatoires
-        $randomJeux = Boardgame::inRandomOrder()->take(3)->get();
 
-        // Retourner les articles en réponse JSON
-        return response()->json($randomJeux);
-
-    }
 }
