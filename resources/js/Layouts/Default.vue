@@ -28,7 +28,7 @@ import Sidebar from "@/Components/Sidebar.vue";
                             </div>
                         </div>
                         <div class="row">
-                            <div class="">
+                            <div>
                                 <div class="row d-flex justify-content-center">
                                     <GameProposition />
                                 </div>
