@@ -34,9 +34,9 @@ class Boardgame extends Model
         return $this->belongsTo('App\Models\Shopping_Cart');
     }
 
-    public function category(): BelongsToMany
+    public function category(): BelongsTo
     {
-        return $this->belongsToMany(category::class, 'categorize');
+        return $this->belongsTo('App\Models\Category');
     }
 
     public function loan(): BelongsToMany
