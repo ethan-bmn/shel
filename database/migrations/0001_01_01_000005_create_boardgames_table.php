@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('number_of_player');
             $table->string('playing_time');
             $table->string('photos')->nullable();
+            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }
