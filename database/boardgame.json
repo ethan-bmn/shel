@@ -28,7 +28,7 @@
     {
         "id": 3,
         "name": "Gloomhaven",
-        "description": "Incarnez un groupe d’aventuriers mercenaires. Chacun caractérisé par des compétences spécifiques et aussi par les raisons qui l’ont poussé à s’aventurer dans ce coin perdu. Les joueurs devront s’entraider afin de terrasser les menaces tapies au fond de donjons ou de ruines oubliées grâce à un système innovant de cartes permettant de déterminer leurs actions et l’ordre de jeu. Ce faisant, ils gagneront expérience et butin, découvriront de nouveaux lieux à explorer et développeront une histoire pleine de rebondissements et d’événements nourris par les décisions des joueurs.",
+        "description": " Incarnez un groupe d’aventuriers mercenaires. Chacun caractérisé par des compétences spécifiques et aussi par les raisons qui l’ont poussé à s’aventurer dans ce coin perdu. Les joueurs devront s’entraider afin de terrasser les menaces tapies au fond de donjons ou de ruines oubliées grâce à un système innovant de cartes permettant de déterminer leurs actions et l’ordre de jeu. Ce faisant, ils gagneront expérience et butin, découvriront de nouveaux lieux à explorer et développeront une histoire pleine de rebondissements et d’événements nourris par les décisions des joueurs.",
         "is_borrowed": 0,
         "is_recommended": 0,
         "number_of_player": "1-4",
