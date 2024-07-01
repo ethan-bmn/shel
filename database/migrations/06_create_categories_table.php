@@ -31,7 +31,7 @@ return new class extends Migration
                 'name_category' => 'Escape Game'
             ],
             [
-                'name_category' => 'Casse-Tête'
+                'name_category' => 'Stratégie'
             ],
             [
                 'name_category' => 'Jeu De Dés'
@@ -40,7 +40,7 @@ return new class extends Migration
                 'name_category' => 'Jeu De Plateau'
             ],
             [
-                'name_category' => 'Jeu Extérieur'
+                'name_category' => 'Deck Building'
             ],
         ]);
     }

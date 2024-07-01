@@ -23,6 +23,7 @@ class BoardgameFactory extends Factory
             'description' => fake()->text(50),
             'number_of_player' => fake()->text(50),
             'playing_time' => "5-10",
+            'category_id' => fake()->numberBetween(1, 8),
         ];
     }
 }

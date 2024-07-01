@@ -1,24 +1,15 @@
 <script setup>
-import Header from "@/Components/Header.vue";
-import Sidebar from "@/Components/Sidebar.vue";
+import Layout from "@/Layouts/Default.vue";
+
+defineOptions({
+    layout: Layout
+});
 //
 
 </script>
 
 <template>
-    <div class="container-fluid min-vh-100 body">
-        <div class="row">
-
-            <div class="panier__grid-global">
-                <div class="row">
-                    <div >
-                        <Header/>
-                    </div>
-                </div>
-                <div class="panier__grid-navbar mh-100">
-                    <Sidebar page="home"/>
-                </div>
-                <div class="row panier__height-global">
+    
                     
                     <div class="mh-100 panier__height" >
                         <div class="panier__border-list">
@@ -29,16 +20,10 @@ import Sidebar from "@/Components/Sidebar.vue";
                                             Jeux
                                         </div>
                                         <div class="entete ">
-                                            Quantités
-                                        </div>
-                                        <div class="entete ">
                                             Début location
                                         </div>
                                         <div class="entete ">
                                             Fin location
-                                        </div>
-                                        <div class="entete ">
-                                            Prix
                                         </div>
                                     </div>
                                 </div>
@@ -50,16 +35,10 @@ import Sidebar from "@/Components/Sidebar.vue";
                                                 Jeux
                                             </div>
                                             <div class="card ">
-                                                Quantités
-                                            </div>
-                                            <div class="card ">
                                                 Début location
                                             </div>
                                             <div class="card ">
                                                 Fin location
-                                            </div>
-                                            <div class="card ">
-                                                Prix
                                             </div>
                                         </div>
                                     </div>
@@ -71,58 +50,25 @@ import Sidebar from "@/Components/Sidebar.vue";
                         <div class="row">
                             <div >
                                 <div class=" d-flex justify-content-end piedPage">
-                                    <div class="panier__total-order">
-                                        TOTAL COMMANDE
-                                    </div>
-                                    <div class="panier__price">
-                                        <div>15.90</div>
-                                        <div>€</div>
-                                    </div>
                                     <button type="button" class="btn btn-primary btn-lg commande">Commander</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                </div>
-            </div>
-
-        </div>
-    </div>
 </template>
 
 <style scoped>
 
 
-.panier__grid-global{
-    padding: 16px;
-    display: grid;
-    gap: 16px;
-    grid-template-columns: 20vh auto;
-    grid-template-rows: auto auto;
-    height: 100vh;
-}
-.panier__grid-navbar{
-    grid-row-start: 1;
-    height: calc(100vh - 32px);
-    grid-row-end: 3;
-}
 
-.panier__grid-game{
-    display: grid;
-    grid-template-columns: auto 20%;
-    grid-template-rows: 100vh;
-}
-.panier__height-global{
-    height: calc(100vh - 32px);
-}
 .panier__height{
     height: 80%;
 }
 .panier__border-list{
     border: 1px solid #039EC0;
     border-radius: 33px;
-    height: 100%;
+    height: 65%;
 }
 .panier__scrollbar{
     height: calc(100% - 50px);
@@ -133,35 +79,9 @@ import Sidebar from "@/Components/Sidebar.vue";
 
 }
 
-.panier__total-order{
-    display: flex;
-    font-size:32px;
-    align-items: center;
-    color: white;
-}
-.panier__price{
-    padding: 0 16px;
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
-    font-size:32px;
-    background-color: #1E2945;
-    width: 268px;
-    border-radius: 20px;
-    
-}
 
-.row {
-    /* border: solid red; */
-}
-.col-2 {
-    /* border: solid blue; */
-}
-.col-8 {
-    /* border: solid blue; */
-}
+
+
 .infos{
     display: flex;
     flex-direction: row;

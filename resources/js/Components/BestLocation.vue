@@ -1,27 +1,31 @@
 <script setup>
 
 
-import GameCard from "@/Components/GameCard.vue";
 import CardBestLocation from "@/Components/CardBestLocation.vue";
 </script>
 
 <template>
-
-    <div  v-for="i in [...Array(5).keys()]"
-         class="col-2 px-0  " >
-        <button @click="goToGamePage" class="list-group-item list-group-item-action cadre ">
-            <CardBestLocation class="hover-image"
-            title="Titre"
-            image="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/869241/header.jpg?t=1555788090"
-            />
-        </button>
-
-
-
+    <div>
+        <p class="d-flex justify-content-center BestLocation__title">POPULAIRE</p>
+        <div  v-for="i in [...Array(5).keys()]"
+            class="px-0 " >
+            <button @click="goToGamePage" class="list-group-item list-group-item-action cadre d-flex justify-content-center">
+                <CardBestLocation class="hover-image"
+                title="Titre"
+                image="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/869241/header.jpg?t=1555788090"
+                />
+            </button>
+        </div>
     </div>
 </template>
 
 <style scoped>
+
+
+.BestLocation__title{
+    color: white;
+    font-size: 32px;
+}
 .list-group-item{
     margin-right: 15px;
 }

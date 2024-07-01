@@ -19,7 +19,8 @@ return new class extends Migration
             $table->boolean('is_recommended')->default(false);
             $table->string('number_of_player');
             $table->string('playing_time');
-            $table->string('photos')->nullable();
+            $table->string('picture')->nullable();
+            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }
