@@ -14,6 +14,22 @@ defineProps({
     }
 });
 
+function goToHomePage() {
+    window.location.href = '/';
+}
+
+function goToFavoritesPage() {
+    window.location.href='/favorites';
+}
+
+function goToCartPage() {
+        window.location.href='/cart';
+}
+
+function goToListPage() {
+        window.location.href='/boardgames';
+}
+
 </script>
 
 <template>
@@ -76,9 +92,7 @@ defineProps({
 
 }
 .logo{
-    width: 80%;
-    margin-bottom: 10rem;
-
+    width: 60%;
 }
 .icon{
     background-color: transparent;
@@ -106,21 +120,3 @@ defineProps({
 }
 
 </style>
-<script>
-export default {
-    methods: {
-        goToHomePage() {
-            window.location.href = '/';
-        },
-        goToFavoritesPage(){
-            window.location.href='/favorites';
-        },
-        goToCartPage(){
-            window.location.href='/cart';
-        },
-        goToListPage(){
-            window.location.href='/boardgames';
-        }
-    }
-}
-</script>
