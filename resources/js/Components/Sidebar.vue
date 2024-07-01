@@ -93,6 +93,7 @@ function goToListPage() {
 }
 .logo{
     width: 60%;
+    padding-bottom: 12rem;
 }
 .icon{
     background-color: transparent;
