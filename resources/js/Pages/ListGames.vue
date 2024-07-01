@@ -11,13 +11,12 @@ defineProps(['jeux']
 
 <template>
     <div class=" min-vh-100 body">
-        <div class=" listgames__grid-global">
+        <div class="listgames__grid-global">
 
-                <div >
                     <div >
                         <Header/>
                     </div>
-                </div>
+            
                 <div class=" listgames__grid-navbar">
                     <Sidebar page="home"/>
                 </div>

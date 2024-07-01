@@ -48,8 +48,8 @@ defineProps({
     padding: 10px 40px;
     border-radius: 5px;
     opacity: 0;
-    //transition: opacity 0.3s ease-in-out;
-}
+    /* transition: opacity 0.3s ease-in-out;*/
+} 
 .image-container:hover .hover-text {
     opacity: 1;
 
