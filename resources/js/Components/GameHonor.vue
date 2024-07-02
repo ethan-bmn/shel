@@ -22,10 +22,10 @@ console.log(props.jeuRandom.picture);
     <div class="row d-flex justify-content-center">
         <div class="col-auto cadre">
             <span  class="gamehonor__title">Jeux à l'honneur</span>
-                <div class="d-flex justify-content-center cadre_image">
-                            <Link :href="`/games/${jeuRandom.id}`">
-                                <img :src="jeuRandom.picture">
-                            </Link>
+                <div class="d-flex justify-content-center">
+                    <Link :href="`/games/${jeuRandom.id}`">
+                        <img :src="jeuRandom.picture" class="img-fluid cadre_image">
+                    </Link>
                 </div>
         </div>
     </div>
