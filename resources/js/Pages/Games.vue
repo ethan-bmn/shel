@@ -1,8 +1,12 @@
 <script setup>
-import BestLocation from "@/Components/BestLocation.vue";
-import Header from "@/Components/Header.vue";
-import Sidebar from "@/Components/Sidebar.vue";
 import Layout from "@/Layouts/Default_without_propal.vue";
+
+
+
+import { ref } from 'vue';
+
+const isFilled = ref(false);
+
 
 defineOptions({
     layout: Layout
@@ -14,6 +18,9 @@ const props = defineProps({
         required: true
     }
 });
+function toggleHeart() {
+    isFilled.value = !isFilled.value;
+}
 </script>
 
 <template>
@@ -26,9 +33,10 @@ const props = defineProps({
         </div>
         <div class="row mb-4 ">
             <div class="col-2 d-flex test">
-                <button class="button">
+                <button @click="toggleHeart" class="button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart icon" viewBox="0 0 16 16">
-                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                        <path v-if="isFilled" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                        <path v-else d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
                     </svg>
                 </button>
                     <button class="button">
@@ -86,7 +94,10 @@ const props = defineProps({
     border-radius: 10px;
     background: linear-gradient(320deg, rgba(7,161,236,1) 0%, rgba(41,124,246,1) 54%, rgba(27,39,94,1) 100%, rgba(26,45,184,1) 100%, rgba(26,151,184,1) 100%);
 }
+   
 .icon{
-    color:#737272;
+    color:#737272; 
+    transition: fill 0.3s ease;
 }
+
 </style>
