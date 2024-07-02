@@ -27,9 +27,7 @@ import AddGame from "@/Components/AddGame.vue";
                     <div class="col-8 mh-100">
                         <AddGame/>
                     </div>
-                    <div class="col-2">
-                        <BestLocation/>
-                    </div>
+
                 </div>
             </div>
 

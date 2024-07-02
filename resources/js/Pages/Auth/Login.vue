@@ -1,5 +1,6 @@
 <script setup>
-import { useForm } from '@inertiajs/vue3';
+import {router} from '@inertiajs/vue3';
+import {ref} from "vue";
 
 defineProps({
     canResetPassword: {
@@ -10,40 +11,61 @@ defineProps({
     },
 });
 
-const form = useForm({
+const form = ref({
     email: '',
     password: '',
     remember: false,
 });
+const error = ref(false);
 
-const submit = () => {
-    form.post(route('login'), {
-        onFinish: () => form.reset('password'),
-    });
-};
+function attemptLogin() {
+    error.value = false;
+    axios.post('/auth/login', form.value)
+        .then((response) => {
+            console.log(response.status)
+            if (response.status === 200) {
+                router.visit('/');
+            } else {
+                form.value.password = '';
+                error.value = true;
+            }
+        })
+        .catch((error) => {
+            form.value.password = '';
+            error.value = true;
+        });
+}
 </script>
 
 <template>
-    <div id="loginPage" class="row d-flex justify-content-center h-100">
-        <div class="col-4 my-5 d-flex justify-content-center">
-            <img src="/images/logo_shel.png" alt="">
-        </div>
-        <div class="col-9">
-            <div v-if="status" class="mb-4 font-medium text-sm text-success">
-                {{ status }}
+    <div class="container-fluid min-vh-100">
+        <div class="row me-3 vh-100 d-flex justify-content-center">
+            <div class="col-12 mt-5">
+                <div class="row d-flex justify-content-center mx-auto">
+                    <div class="col-4 d-flex justify-content-center">
+                        <img src="/images/logo_shel.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+                <div v-if="status" class="mb-4 font-medium text-sm text-success">
+                    {{ status }}
+                </div>
+                <form @submit.prevent="attemptLogin" class="text-light fs-5 w-25 mx-auto">
+                    <div class="mb-3">
+                        <label for="emailInput" class="form-label">Adresse e-mail</label>
+                        <input v-model="form.email" type="email" class="form-control" id="emailInput" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="passwordInput" class="form-label">Password</label>
+                        <input v-model="form.password" type="password" class="form-control" id="passwordInput">
+                    </div>
+                    <div class="mb-3 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-outline-light">Se connecter</button>
+                    </div>
+                    <div v-if="error" class="mb-3">
+                        <p>Mot de passe/e-mail incorrect</p>
+                    </div>
+                </form>
             </div>
-            <form @submit.prevent="submit">
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-
-            </form>
         </div>
     </div>
 </template>

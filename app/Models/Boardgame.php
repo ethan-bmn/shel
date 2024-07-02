@@ -16,6 +16,8 @@ class Boardgame extends Model
         'description',
         'number_of_player',
         'playing_time',
+        'picture',
+
 
     ];
     //Relation avec la table recommendation

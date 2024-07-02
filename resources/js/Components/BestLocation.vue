@@ -1,18 +1,24 @@
 <script setup>
+import { ref, onMounted } from 'vue';
 import { Link, router } from "@inertiajs/vue3";
 import axios from 'axios';
-import { onMounted, ref } from 'vue';
 
-const res = ref(null);  // Créer une propriété réactive pour stocker les données
+
+
+const res = ref(null);
+
 
 function goToGamePage(id) {
     router.visit(`/games/${id}`);
 }
 
+/**
+ * Récupération des jeux populaire depuis l'API
+ */
 onMounted(async () => {
     try {
         const response = await axios.get('/api/jeux-populaires');
-        res.value = response.data;  // Assigner les données récupérées à la propriété réactive
+        res.value = response.data;
         console.log(res.value[0].id, 'console');
     } catch (error) {
         console.error('Erreur lors de la récupération des jeux:', error);
@@ -63,7 +69,7 @@ onMounted(async () => {
     margin-top: 10px;
 }
 
-.img__border{  
+.img__border{
     border-radius: 15px;
 }
 .hover-image:hover {
