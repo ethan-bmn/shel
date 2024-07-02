@@ -55,7 +55,7 @@ class User extends Authenticatable
 
     public function loan() :HasMany
     {
-        return $this->hasMany('App/Models/Loan');
+        return $this->hasMany('App/Models/LoanController');
     }
 
     public function reccomendation() :HasMany

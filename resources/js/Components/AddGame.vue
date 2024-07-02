@@ -35,12 +35,17 @@ onMounted(async () => {
 
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Nombre de joueur(s)</span>
-            <input type="text" name="players" class="form-control" placeholder="beaucoup" aria-label="Nombre de joueur(s)" aria-describedby="basic-addon1">
+            <input type="text" name="number_of_player" class="form-control" placeholder="beaucoup" aria-label="Nombre de joueur(s)" aria-describedby="basic-addon1">
         </div>
 
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Temps de jeux</span>
-            <input type="text" name="play_time" class="form-control" placeholder="15-60 min" aria-label="Temps de jeux" aria-describedby="basic-addon1">
+            <input type="text" name="playing_time" class="form-control" placeholder="15-60 min" aria-label="Temps de jeux" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Image</span>
+            <input type="text" name="picture" class="form-control" placeholder="image" aria-label="Temps de jeux" aria-describedby="basic-addon1">
         </div>
 
         <div class="input-group mb-3">

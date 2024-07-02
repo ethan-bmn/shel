@@ -43,6 +43,7 @@ class BoardgameController extends Controller
             'category_id' => 'required|exists:categories,id',
 
         ]);
+
         $boardgame = Boardgame::create($validatedData);
 
         // Redirigez l'utilisateur vers une autre page ou renvoyez une réponse JSON, etc.
