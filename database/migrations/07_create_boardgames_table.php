@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('boardgames', function (Blueprint $table) {
             $table->id()->primary();
             $table->string('name');
-            $table->string('description');
+            $table->longText('description');
             $table->boolean('is_borrowed')->default(false);
             $table->integer('number_of_recommendation')->nullable();
             $table->string('number_of_player');
