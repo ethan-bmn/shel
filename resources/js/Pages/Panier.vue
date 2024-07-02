@@ -1,61 +1,59 @@
 <script setup>
 import Layout from "@/Layouts/Default.vue";
 
-defineOptions({
-    layout: Layout
-});
+
 //
 
 </script>
 
 <template>
+<Layout :show-proposition="false">
 
-
-    <div class="mh-100 panier__height" >
-        <div class="panier__border-list">
-            <div class="panier__scrollbar">
-                <div class="row mb-4">
-                    <div class="col-12 infos" >
-                        <div class="entete ">
-                            Jeux
-                        </div>
-                        <div class="entete ">
-                            Début location
-                        </div>
-                        <div class="entete ">
-                            Fin location
-                        </div>
-                    </div>
-                </div>
-                <div v-for="i in [...Array(10).keys()]"
-                    class="col-12 px-0 hover-image ">
+        <div class="mh-100 panier__height" >
+            <div class="panier__border-list">
+                <div class="panier__scrollbar">
                     <div class="row mb-4">
-                        <div class="col-12 infos" entete>
-                            <div class="card">
+                        <div class="col-12 infos" >
+                            <div class="entete ">
                                 Jeux
                             </div>
-                            <div class="card ">
+                            <div class="entete ">
                                 Début location
                             </div>
-                            <div class="card ">
+                            <div class="entete ">
                                 Fin location
                             </div>
                         </div>
                     </div>
+                    <div v-for="i in [...Array(10).keys()]"
+                        class="col-12 px-0 hover-image ">
+                        <div class="row mb-4">
+                            <div class="col-12 infos" entete>
+                                <div class="card">
+                                    Jeux
+                                </div>
+                                <div class="card ">
+                                    Début location
+                                </div>
+                                <div class="card ">
+                                    Fin location
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div >
+                    <div class=" d-flex justify-content-end piedPage">
+                        <button type="button" class="btn btn-primary btn-lg commande">Commander</button>
+                    </div>
                 </div>
             </div>
         </div>
-
-
-        <div class="row">
-            <div >
-                <div class=" d-flex justify-content-end piedPage">
-                    <button type="button" class="btn btn-primary btn-lg commande">Commander</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    </Layout>
 </template>
 
 <style scoped>

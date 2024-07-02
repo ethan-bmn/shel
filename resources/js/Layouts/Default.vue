@@ -3,9 +3,8 @@ import BestLocation from "@/Components/BestLocation.vue";
 import GameProposition from "@/Layouts/Elements/GameProposition.vue";
 import Header from "@/Layouts/Elements/Header.vue";
 import Sidebar from "@/Layouts/Elements/Sidebar.vue";
-import NProgress  from 'nprogress';
-import {router} from "@inertiajs/vue3";
-import {onMounted} from "vue";
+import { router } from "@inertiajs/vue3";
+import NProgress from 'nprogress';
 
 defineProps({
     showProposition: {
@@ -59,16 +58,18 @@ router.on('finish', (event) => {
                     <Header/>
                 </div>
                 <div class="row">
-                    <div id="slot" class="col-10">
-                        <slot />
+                    <div class="col-10">
+                        <div id="slot" >
+                            <slot />
+                        </div>
+                        <div v-if="showProposition" class="mt-4">
+                            <div class="row d-flex justify-content-evenly">
+                                <GameProposition />
+                            </div>
+                        </div>
                     </div>
                     <div class="col-2">
                         <BestLocation/>
-                    </div>
-                    <div v-if="showProposition" class="col-10 mt-4">
-                        <div class="row d-flex justify-content-evenly">
-                            <GameProposition />
-                        </div>
                     </div>
                 </div>
             </div>
