@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->boolean('is_borrowed')->default(false);
-            $table->integer('number_of_recommendation');
+            $table->integer('number_of_recommendation')->nullable();
             $table->string('number_of_player');
             $table->string('playing_time');
             $table->string('picture')->nullable();
