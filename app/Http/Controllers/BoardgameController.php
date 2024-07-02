@@ -34,7 +34,19 @@ class BoardgameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request-> validate([
+            'name'=> 'required|string|max:255',
+            'description'=>'required|string|max:255',
+            'number_of_player'=>'required|string|max:20',
+            'playing_time'=>'required|string|max:20',
+            'picture'=>'required|string',
+            'category_id' => 'required|exists:categories,id',
+
+        ]);
+        $boardgame = Boardgame::create($validatedData);
+
+        // Redirigez l'utilisateur vers une autre page ou renvoyez une réponse JSON, etc.
+        return response()->json(['message' => 'Jeu créé avec succès', 'boardgame' => $boardgame]);
     }
 
     /**
