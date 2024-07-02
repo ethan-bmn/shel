@@ -67,4 +67,16 @@ class LoanController extends Controller
         $location = Loan::all();
         return response()->json($location);
     }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     * Récupère les locations par ID utilisateur
+     */
+    public function getLocationByUSer($id)
+    {
+        $locations = Loan::where('user_id', $id)->get();
+
+        return response()->json($locations);
+    }
 }

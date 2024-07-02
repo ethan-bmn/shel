@@ -23,4 +23,4 @@ Route::get('/category-choice', [CategoryController::class,'getCategories']);
 /**
  * Route location
  */
-Route::get('location-list',[LoanController::class,'getLocation']);
+Route::get('/locations/{id}', [LoanController::class, 'getLocationByUSer'])->name('getLocationGames');

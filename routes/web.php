@@ -26,6 +26,9 @@ Route::get('/administration',function (){
     return Inertia::render('Administration');
 })->name('administration');
 
+Route::get('/locations',function(){
+    return Inertia::render('RentalHistory');
+})->name('locations');
 
 Route::get('/login', function(){
     return Inertia::render('Auth/Login');
