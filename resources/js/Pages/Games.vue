@@ -21,7 +21,7 @@ function toggleHeart() {
 
 <template>
     <Layout :show-proposition="false">
-        <div class="col-6 mh-100">
+        <div class="col-9 mh-100">
             <div class="title">
                 {{jeu.name}}
             </div>

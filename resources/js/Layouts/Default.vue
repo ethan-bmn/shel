@@ -59,7 +59,7 @@ router.on('finish', (event) => {
                 </div>
                 <div class="row">
                     <div class="col-10">
-                        <div id="slot" class="slot">
+                        <div id="slot">
                             <slot  />
                         </div>
                         <div v-if="showProposition" class="mt-4">
@@ -79,5 +79,5 @@ router.on('finish', (event) => {
 
 <style scoped>
 
-.slot{height: 666px;}
+
 </style>
