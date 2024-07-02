@@ -1,8 +1,8 @@
 <script setup>
 import GameCard from "@/Components/GameCard.vue";
-import { ref, onMounted } from 'vue';
-import { Link, router } from "@inertiajs/vue3";
+import { router } from "@inertiajs/vue3";
 import axios from 'axios';
+import { onMounted, ref } from 'vue';
 
 const res = ref(null);  // Créer une propriété réactive pour stocker les données
 
@@ -33,7 +33,7 @@ onMounted(async () => {
         <GameCard
             :title="jeu.name"
             :image="jeu.picture"
-            :body="jeu.description"
+            :body="jeu.number_of_player"
             :id="jeu.id"
         />
     </div>

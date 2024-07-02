@@ -8,7 +8,7 @@ defineProps(['jeux']
 </script>
 
 <template>
-    <Layout>
+    <Layout :show-proposition="false">
         <div>
             <div class="listgames__border-list">
                 <div class="listgames__scrollbar">
