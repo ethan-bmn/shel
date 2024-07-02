@@ -3,9 +3,6 @@
 <head>
     <title>Récapitulatif de Location - Shel</title>
     <style>
-        .pdf__center{
-            text-align: center;
-        }
     </style>
 </head>
 <body>
@@ -22,7 +19,7 @@
         <p>Date de fin de location: <strong>07/07/2024</strong></p>
         <br/>
         <h2>Détails de la location</h2>
-        <div class="pdf__center">
+        <div>
             <p>client: leo dumas</p>
             <table>
                 <thead>

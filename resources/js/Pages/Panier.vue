@@ -1,6 +1,8 @@
 <script setup>
 import Layout from "@/Layouts/Default.vue";
-
+function generatePDF() {
+    window.location.href = '/generate-pdf';
+}
 
 //
 
@@ -38,7 +40,11 @@ import Layout from "@/Layouts/Default.vue";
                                 <div class="card ">
                                     Fin location
                                 </div>
+                                <div class="d-flex align-items-center justify-content-center fs-2 trash__color">
+                                    <i class="bi bi-trash3 m-2"></i>
+                                </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -48,7 +54,7 @@ import Layout from "@/Layouts/Default.vue";
             <div class="row">
                 <div >
                     <div class=" d-flex justify-content-end piedPage">
-                        <button type="button" class="btn btn-primary btn-lg commande">Commander</button>
+                        <button type="button" @click="generatePDF" class="btn btn-primary btn-lg commande">Commander</button>
                     </div>
                 </div>
             </div>
@@ -59,7 +65,9 @@ import Layout from "@/Layouts/Default.vue";
 <style scoped>
 
 
-
+.trash__color{
+    color: red;
+}
 .panier__height{
     height: 80%;
 }
