@@ -29,9 +29,10 @@ function toggleHeart() {
                 <img :src="jeu.picture" class="gameImage">
                 <div class="description">
                     Description:
+                    <br>
                     {{jeu.description}}
                 </div>
-                
+
             </div>
             <div class="row mb-4 ">
                 <div class="col-2 d-flex fs-1">
@@ -46,13 +47,13 @@ function toggleHeart() {
                         </button>
                 </div>
                 <div class="description">
-                    Nombre de joueur:
+                    Nombre de joueurs :
                     {{jeu.number_of_player}}
+                    joueurs
                 </div>
                 <div class="description">
-                    Temps pour un partie:
+                    Temps pour une partie:
                     {{jeu.playing_time}}
-                    min
                 </div>
 
             </div>
@@ -76,6 +77,7 @@ function toggleHeart() {
 }
 .description{
     color: white;
+    text-align: justify;
 }
 
 .description__position{
