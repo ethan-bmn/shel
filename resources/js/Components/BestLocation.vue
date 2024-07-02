@@ -11,7 +11,7 @@ function goToGamePage(id) {
 
 onMounted(async () => {
     try {
-        const response = await axios.get('/api/jeux-random');
+        const response = await axios.get('/api/jeux-populaires');
         res.value = response.data;  // Assigner les données récupérées à la propriété réactive
         console.log(res.value[0].id, 'console');
     } catch (error) {
@@ -33,7 +33,7 @@ onMounted(async () => {
             </div>
         </div>
         <div v-else>
-            <p>Chargement...</p>
+            <p style="color: white">Chargement...</p>
         </div>
     </div>
 </template>
