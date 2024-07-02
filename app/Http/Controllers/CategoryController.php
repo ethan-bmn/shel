@@ -68,9 +68,12 @@ class CategoryController extends Controller
         //
     }
 
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     * Récupération des catégories de jeux
+     */
     public function getCategories()
     {
-        // Récupérer 3 jeux de société avec le plus de likes
         $categories = Category::all();
         return response()->json($categories);
     }
