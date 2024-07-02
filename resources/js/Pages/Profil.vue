@@ -1,8 +1,8 @@
 <script setup>
 import GameHonor from "@/Components/GameHonor.vue";
-import Header from "@/Components/Header.vue";
-import Sidebar from "@/Components/Sidebar.vue";
-import GameProposition from "@/Components/GameProposition.vue";
+import Header from "@/Layouts/Elements/Header.vue";
+import Sidebar from "@/Layouts/Elements/Sidebar.vue";
+import GameProposition from "@/Layouts/Elements/GameProposition.vue";
 import BestLocation from "@/Components/BestLocation.vue";
 //
 

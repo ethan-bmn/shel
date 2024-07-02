@@ -1,5 +1,11 @@
 <script setup>
-defineProps({
+import { Link } from '@inertiajs/vue3';
+
+const props = defineProps({
+    id:{
+        type: Number,
+        required:true 
+    },
     name: {
         type: String,
         required: true
@@ -21,27 +27,36 @@ defineProps({
         required: true
     }
 });
+
+function goToGamePage() {
+        window.location.href=`/games/${props.id}`;
+}
 </script>
 
 <template>
-    <div class="listelem__card">
-        <img src="../../../public/images/brassLancashire.png" class="listelem__img" alt="...">
-        <div class="listelem__info listelem__info--hover">
-            <div class="listelem__info-back listelem__info-back--hover">
-                <div class="info">
-                    <p>{{ name }}</p>
-                    <p>{{ number_of_player }}</p>
-                </div>
-                <div class="additional-info">
-                    <p>{{ playing_time }}</p>
-                    <p>{{ description }}</p>
+    <Link class="button" :href="`/games/${id}`">
+        <div class="listelem__card">
+            <img src="../../../public/images/brassLancashire.png" class="listelem__img" alt="...">
+            <div class="listelem__info listelem__info--hover">
+                <div class="listelem__info-back listelem__info-back--hover">
+                    <div class="info">
+                        <p>{{ name }}</p>
+                        <p>{{ number_of_player }}</p>
+                    </div>
+                    <div class="additional-info">
+                        <p>{{ playing_time }}</p>
+                        <p>{{ description }}</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </Link>
 </template>
 
 <style scoped>
+.button{
+    text-decoration: none;
+}
 .listelem__card{
     width: 240px;
     height: 300px;

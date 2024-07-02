@@ -1,15 +1,21 @@
 <script setup>
 import BestLocation from "@/Components/BestLocation.vue";
-import GameProposition from "@/Components/GameProposition.vue";
-import Header from "@/Components/Header.vue";
-import Sidebar from "@/Components/Sidebar.vue";
-
+import GameProposition from "@/Layouts/Elements/GameProposition.vue";
+import Header from "@/Layouts/Elements/Header.vue";
+import Sidebar from "@/Layouts/Elements/Sidebar.vue";
+defineProps({
+    showProposition: {
+        type: Boolean,
+        required: false,
+        default: () => true
+    }
+});
 </script>
 
 <template>
     <div class="container-fluid min-vh-100">
-        <div class="row me-3 my-2">
-            <div class="col-1">
+        <div class="row me-3 vh-100">
+            <div class="col-1 my-3">
                 <Sidebar />
             </div>
             <div class="col-11">
@@ -23,7 +29,7 @@ import Sidebar from "@/Components/Sidebar.vue";
                     <div class="col-2">
                         <BestLocation/>
                     </div>
-                    <div class="col-10 mt-4">
+                    <div v-if="showProposition" class="col-10 mt-4">
                         <div class="row d-flex justify-content-evenly">
                             <GameProposition />
                         </div>

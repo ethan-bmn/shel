@@ -15,7 +15,7 @@ defineProps(['jeux']
                     <div class="cardGame">
                         <div v-for="jeu in jeux" :key="jeu.id"
                                 class=" px-0 listgame__card">
-                            <ListElem :playing_time="jeu.playing_time" :number_of_player="jeu.number_of_player" :description="jeu.description" :name="jeu.name"></ListElem>
+                            <ListElem :playing_time="jeu.playing_time" :number_of_player="jeu.number_of_player" :description="jeu.description" :name="jeu.name" :id="jeu.id"></ListElem>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@ defineProps(['jeux']
     background-color:#1e2945;
     height:77px;
     width:180px;
-    filter:drop-shadow(0px 0px 5px rgba(0.16470588743686676,0.49803921580314636,0.9882352948188782,0.7400000095367432));
+    filter:drop-shadow(0px 0px 5px rgba(0.16,0.5,0.98,0.74));
     border-radius:20px;
     /* border:1px solid rgba(3, 158, 192, 0.7400000095367432); */
     margin: 5px;
