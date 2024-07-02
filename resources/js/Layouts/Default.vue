@@ -14,8 +14,8 @@ defineProps({
 
 <template>
     <div class="container-fluid min-vh-100">
-        <div class="row me-3 my-2">
-            <div class="col-1">
+        <div class="row me-3 vh-100">
+            <div class="col-1 my-3">
                 <Sidebar />
             </div>
             <div class="col-11">

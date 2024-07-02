@@ -32,7 +32,6 @@ import {Link} from "@inertiajs/vue3";
 
 .navbar{
     border-radius: 15px;
-    margin-left: 16px;
     color: white;
     height: 100%;
     border: solid 0.2px rgba(253, 253, 253, 0.2);
@@ -57,7 +56,6 @@ import {Link} from "@inertiajs/vue3";
 .sidebar__scrollbar{
     justify-content: start;
     display: flex;
-    height: 100%;
     flex-direction: column;
     align-items: center;
     width: 100%;
