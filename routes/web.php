@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\BoardgameController;
 
+
+Route::get('generate-pdf', [App\Http\Controllers\PDFController::class, 'generatePDF']);
 Route::get('/', function () {
     return Inertia::render('Dashboard', [
         'jeuRandom'=> Boardgame::inRandomOrder()->take(1)->get()[0]

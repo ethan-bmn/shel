@@ -1,5 +1,8 @@
 <script setup>
 import Layout from "@/Layouts/Default.vue";
+import { ref } from 'vue';
+
+const isFilled = ref(false);
 
 const props = defineProps({
     jeu: {
@@ -7,6 +10,13 @@ const props = defineProps({
         required: true
     }
 });
+
+function toggleHeart() {
+    isFilled.value = !isFilled.value;
+    axios.patch(`/api/games/${props.jeu.id}/like`, {
+        action: isFilled.value ? 'like' : 'unlike'
+    });
+}
 </script>
 
 <template>
@@ -20,8 +30,8 @@ const props = defineProps({
             </div>
             <div class="row mb-4 ">
                 <div class="col-2 d-flex fs-1">
-                    <button class="button">
-                        <i class="bi bi-heart icon" />
+                    <button class="button" @click="toggleHeart">
+                        <i :class="[!isFilled ? 'bi-heart' : 'bi-heart-fill text-danger', 'bi', 'icon']"/>
                     </button>
                         <button class="button">
                             <i class="bi bi-chat-quote icon"/>

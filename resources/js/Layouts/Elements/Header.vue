@@ -1,5 +1,7 @@
 <script setup>
+import {Link, usePage} from "@inertiajs/vue3";
 
+const page = usePage();
 </script>
 
 <template>
@@ -14,9 +16,19 @@
             <button class="btn alerte">
                 <i class="bi bi-bell fs-3 text-light" />
             </button>
-            <button class="btn ">
-                <img src="../../../../public/images/claustrophobia.png" class="profil">
-            </button>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="../../../../public/images/claustrophobia.png" class="profil">
+                </button>
+                <ul class="dropdown-menu text-center fs-5">
+                    <li v-if="page.props.auth.user">
+                        <Link href="/profile">Mon profil</Link>
+                    </li>
+                    <li v-else>
+                        <Link href="/login">Connexion</Link>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 <!--    <div>-->

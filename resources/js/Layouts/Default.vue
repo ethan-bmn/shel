@@ -3,11 +3,46 @@ import BestLocation from "@/Components/BestLocation.vue";
 import GameProposition from "@/Layouts/Elements/GameProposition.vue";
 import Header from "@/Layouts/Elements/Header.vue";
 import Sidebar from "@/Layouts/Elements/Sidebar.vue";
+import { router } from "@inertiajs/vue3";
+import NProgress from 'nprogress';
+
 defineProps({
     showProposition: {
         type: Boolean,
         required: false,
         default: () => true
+    }
+});
+
+//Loading progress indicator config
+NProgress.configure({
+    showSpinner: true,
+    blur: true,
+    parent: '#slot',
+});
+let timeout = null;
+
+router.on('start', () => {
+    timeout = setTimeout(() => NProgress.start(), 250)
+});
+
+router.on('progress', (event) => {
+    if (NProgress.isStarted() && event.detail.progress.percentage) {
+        NProgress.set((event.detail.progress.percentage / 100) * 0.9)
+    }
+});
+
+router.on('finish', (event) => {
+    clearTimeout(timeout);
+    if (!NProgress.isStarted()) {
+        return;
+    } else if (event.detail.visit.completed) {
+        NProgress.done();
+    } else if (event.detail.visit.interrupted) {
+        NProgress.set(0);
+    } else if (event.detail.visit.cancelled) {
+        NProgress.done();
+        NProgress.remove();
     }
 });
 </script>
@@ -24,15 +59,17 @@ defineProps({
                 </div>
                 <div class="row">
                     <div class="col-10">
-                        <slot />
+                        <div id="slot" >
+                            <slot />
+                        </div>
+                        <div v-if="showProposition" class="mt-4">
+                            <div class="row d-flex justify-content-evenly">
+                                <GameProposition />
+                            </div>
+                        </div>
                     </div>
                     <div class="col-2">
                         <BestLocation/>
-                    </div>
-                    <div v-if="showProposition" class="col-10 mt-4">
-                        <div class="row d-flex justify-content-evenly">
-                            <GameProposition />
-                        </div>
                     </div>
                 </div>
             </div>

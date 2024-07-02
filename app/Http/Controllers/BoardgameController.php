@@ -98,6 +98,19 @@ class BoardgameController extends Controller
         $boardgames = Boardgame::orderBy('number_of_recommendation', 'desc')->take(5)->get();
         return response()->json($boardgames);
     }
+
+    public function likeGame(Request $request, string $id)
+    {
+        $info = $request->all();
+        $boardgame = Boardgame::find($id);
+        if ($info['action'] === 'like') {
+            $boardgame->number_of_recommendation++;
+        } else if ($info['action'] == 'unlike') {
+            $boardgame->number_of_recommendation--;
+        }
+        $boardgame->save();
+        return response()->json($boardgame);
+    }
 }
 
 
