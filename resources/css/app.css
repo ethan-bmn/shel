@@ -1,6 +1,7 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 @import "https://use.fontawesome.com/releases/v5.7.2/css/all.css";
 @import 'bootstrap-icons/font/bootstrap-icons.css';
+@import './nprogress.css';
 @font-face {
     font-family: 'Genos';
     src: url('../../public/font/Genos-VariableFont_wght.ttf') format('truetype');

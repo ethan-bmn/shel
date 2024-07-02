@@ -3,11 +3,47 @@ import BestLocation from "@/Components/BestLocation.vue";
 import GameProposition from "@/Layouts/Elements/GameProposition.vue";
 import Header from "@/Layouts/Elements/Header.vue";
 import Sidebar from "@/Layouts/Elements/Sidebar.vue";
+import NProgress  from 'nprogress';
+import {router} from "@inertiajs/vue3";
+import {onMounted} from "vue";
+
 defineProps({
     showProposition: {
         type: Boolean,
         required: false,
         default: () => true
+    }
+});
+
+//Loading progress indicator config
+NProgress.configure({
+    showSpinner: true,
+    blur: true,
+    parent: '#slot',
+});
+let timeout = null;
+
+router.on('start', () => {
+    timeout = setTimeout(() => NProgress.start(), 250)
+});
+
+router.on('progress', (event) => {
+    if (NProgress.isStarted() && event.detail.progress.percentage) {
+        NProgress.set((event.detail.progress.percentage / 100) * 0.9)
+    }
+});
+
+router.on('finish', (event) => {
+    clearTimeout(timeout);
+    if (!NProgress.isStarted()) {
+        return;
+    } else if (event.detail.visit.completed) {
+        NProgress.done();
+    } else if (event.detail.visit.interrupted) {
+        NProgress.set(0);
+    } else if (event.detail.visit.cancelled) {
+        NProgress.done();
+        NProgress.remove();
     }
 });
 </script>
@@ -23,7 +59,7 @@ defineProps({
                     <Header/>
                 </div>
                 <div class="row">
-                    <div class="col-10">
+                    <div id="slot" class="col-10">
                         <slot />
                     </div>
                     <div class="col-2">
