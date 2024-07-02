@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import CardBestLocation from "@/Components/CardBestLocation.vue";
+
 import { Link, router } from "@inertiajs/vue3";
 import axios from 'axios';
 
