@@ -1,5 +1,5 @@
 <script setup>
-import {Link} from "@inertiajs/vue3";
+import { Link } from "@inertiajs/vue3";
 
 </script>
 
@@ -38,9 +38,10 @@ import {Link} from "@inertiajs/vue3";
 
 }
 .logo{
-    width: 60%;
+    width: 100%;
     padding-bottom: 70%;
 }
+
 .icon{
     background-color: transparent;
     border-radius: 15px;
@@ -54,15 +55,11 @@ import {Link} from "@inertiajs/vue3";
     margin: 30px;
 }
 .sidebar__scrollbar{
-    justify-content: start;
+    height: 100%;
+}
+.sidebar__scrollbar div{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    position: relative;
-    overflow-x: hidden;
-    overflow-y: auto;
-    top: 25px;
+    justify-content: center;
 }
 .icon:hover{
     box-shadow:0px 0px 10px 2px rgba(3, 158, 192, 0.9);
