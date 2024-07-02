@@ -13,6 +13,9 @@ const props = defineProps({
 
 function toggleHeart() {
     isFilled.value = !isFilled.value;
+    axios.patch(`/api/games/${props.jeu.id}/like`, {
+        action: isFilled.value ? 'like' : 'unlike'
+    });
 }
 </script>
 
@@ -28,7 +31,7 @@ function toggleHeart() {
             <div class="row mb-4 ">
                 <div class="col-2 d-flex fs-1">
                     <button class="button" @click="toggleHeart">
-                        <i :class="[!isFilled ? 'bi-heart' : 'bi-heart-fill', 'bi', 'icon']"/>
+                        <i :class="[!isFilled ? 'bi-heart' : 'bi-heart-fill text-danger', 'bi', 'icon']"/>
                     </button>
                         <button class="button">
                             <i class="bi bi-chat-quote icon"/>
