@@ -1,7 +1,7 @@
 <script setup>
-import { ref, onMounted } from 'vue';
 import { Link, router } from "@inertiajs/vue3";
 import axios from 'axios';
+import { onMounted, ref } from 'vue';
 
 
 

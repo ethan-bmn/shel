@@ -1,5 +1,5 @@
 <script setup>
-import {Link} from "@inertiajs/vue3";
+import { Link } from "@inertiajs/vue3";
 
 defineProps({
     title: {
@@ -24,13 +24,13 @@ defineProps({
 <template>
     <div class="image-container rounded-3 mx-2">
         <Link :href="`/games/${id}`">
-        <img :src="image" class="img-fluid z-50" alt="...">
+        <img :src="image" class="img-fluid z-50 test" alt="...">
         <div class="hover-text">
             <h5 class="card-title text-light">
                 {{ title }}
             </h5>
             <p class="card-text text-light">
-                {{ body }}
+                {{ body }} joueur
             </p>
         </div>
         </Link>
@@ -38,6 +38,13 @@ defineProps({
 </template>
 
 <style scoped>
+
+
+
+.test{
+    width: 300px;
+    height: 200px;
+}
 .image-container {
     overflow: hidden;
     position: relative;
