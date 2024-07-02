@@ -6,7 +6,7 @@
     <div class="row ">
         <div class="col-10">
             <nav class="navbar navbar-expand-lg bc-color-input-search entete header__nav">
-                <img class="icon-link ms-3" src="../../../public/images/chercher.svg">
+                <img class="icon-link ms-3" src="../../../../public/images/chercher.svg">
                 <input class="form-control header__placeholder me-2 perso" type="search" placeholder="Recherche" aria-label="Search" >
             </nav>
         </div>
@@ -15,7 +15,7 @@
                 <i class="bi bi-bell fs-3 text-light" />
             </button>
             <button class="btn ">
-                <img src="../../../public/images/claustrophobia.png" class="profil">
+                <img src="../../../../public/images/claustrophobia.png" class="profil">
             </button>
         </div>
     </div>

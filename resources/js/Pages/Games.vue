@@ -1,5 +1,4 @@
 <script setup>
-import Layout from "@/Layouts/Default_without_propal.vue";
 
 
 
@@ -8,10 +7,6 @@ import { ref } from 'vue';
 const isFilled = ref(false);
 
 
-defineOptions({
-    layout: Layout
-});
-//
 const props = defineProps({
     jeu: {
         type: Object,
@@ -56,8 +51,9 @@ function toggleHeart() {
                 {{jeu.description}}
             </div>
 
+            </div>
         </div>
-    </div>
+    </Layout>
 </template>
 
 <style scoped>
@@ -89,7 +85,7 @@ function toggleHeart() {
     justify-content: space-between;
 }
 .button:hover{
-    box-shadow:0px 0px 10px 2px rgba(3, 158, 192, 0.9000000095367432);
+    box-shadow:0px 0px 10px 2px rgba(3, 158, 192, 0.9);
     border: 0.7px solid rgba(253, 253, 253, 0.4);
     border-radius: 10px;
     background: linear-gradient(320deg, rgba(7,161,236,1) 0%, rgba(41,124,246,1) 54%, rgba(27,39,94,1) 100%, rgba(26,45,184,1) 100%, rgba(26,151,184,1) 100%);

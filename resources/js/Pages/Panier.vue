@@ -9,52 +9,52 @@ defineOptions({
 </script>
 
 <template>
-    
-                    
-                    <div class="mh-100 panier__height" >
-                        <div class="panier__border-list">
-                            <div class="panier__scrollbar">
-                                <div class="row mb-4">
-                                    <div class="col-12 infos" >
-                                        <div class="entete ">
-                                            Jeux
-                                        </div>
-                                        <div class="entete ">
-                                            Début location
-                                        </div>
-                                        <div class="entete ">
-                                            Fin location
-                                        </div>
-                                    </div>
-                                </div>
-                                <div v-for="i in [...Array(10).keys()]"
-                                    class="col-12 px-0 hover-image ">
-                                    <div class="row mb-4">
-                                        <div class="col-12 infos" entete>
-                                            <div class="card">
-                                                Jeux
-                                            </div>
-                                            <div class="card ">
-                                                Début location
-                                            </div>
-                                            <div class="card ">
-                                                Fin location
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+
+    <div class="mh-100 panier__height" >
+        <div class="panier__border-list">
+            <div class="panier__scrollbar">
+                <div class="row mb-4">
+                    <div class="col-12 infos" >
+                        <div class="entete ">
+                            Jeux
                         </div>
-                        
-                        
-                        <div class="row">
-                            <div >
-                                <div class=" d-flex justify-content-end piedPage">
-                                    <button type="button" class="btn btn-primary btn-lg commande">Commander</button>
-                                </div>
+                        <div class="entete ">
+                            Début location
+                        </div>
+                        <div class="entete ">
+                            Fin location
+                        </div>
+                    </div>
+                </div>
+                <div v-for="i in [...Array(10).keys()]"
+                    class="col-12 px-0 hover-image ">
+                    <div class="row mb-4">
+                        <div class="col-12 infos" entete>
+                            <div class="card">
+                                Jeux
+                            </div>
+                            <div class="card ">
+                                Début location
+                            </div>
+                            <div class="card ">
+                                Fin location
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div >
+                <div class=" d-flex justify-content-end piedPage">
+                    <button type="button" class="btn btn-primary btn-lg commande">Commander</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </template>
 
@@ -96,7 +96,7 @@ defineOptions({
     background-color:#1e2945;
     height:77px;
     width:180px;
-    filter:drop-shadow(0px 0px 5px rgba(0.16470588743686676,0.49803921580314636,0.9882352948188782,0.7400000095367432));
+    filter:drop-shadow(0px 0px 5px rgba(0.16,0.5,0.98,0.74));
     border-radius:20px;
     /* border:1px solid rgba(3, 158, 192, 0.7400000095367432); */
     margin: 5px;
@@ -126,7 +126,7 @@ defineOptions({
     justify-content: center;
 }
 .commande{
-    box-shadow:0px 0px 10px 2px rgba(3, 158, 192, 0.9000000095367432);
+    box-shadow:0px 0px 10px 2px rgba(3, 158, 192, 0.9);
     border: 0.5px solid rgba(253, 253, 253, 0.4);
     border-radius: 15px;
     border: 1px solid white;
