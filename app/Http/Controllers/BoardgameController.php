@@ -80,6 +80,12 @@ class BoardgameController extends Controller
         // Retourner les articles en réponse JSON
         return response()->json($randomBoardgames);
     }
+    public function getPopularBoardgames()
+    {
+        // Récupérer 3 jeux de société avec le plus de likes
+        $boardgames = Boardgame::orderBy('number_of_recommendation', 'desc')->take(5)->get();
+        return response()->json($boardgames);
+    }
 }
 
 
