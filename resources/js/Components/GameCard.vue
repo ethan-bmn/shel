@@ -1,4 +1,6 @@
 <script setup>
+import {Link} from "@inertiajs/vue3";
+
 defineProps({
     title: {
         type: String,
@@ -11,12 +13,17 @@ defineProps({
     image: {
         type: String,
         required: true
+    },
+    id:{
+        type: String,
+        required: true
     }
 });
 </script>
 
 <template>
     <div class="image-container rounded-3 mx-2">
+        <Link :href="`/games/${id}`">
         <img :src="image" class="img-fluid z-50" alt="...">
         <div class="hover-text">
             <h5 class="card-title text-light">
@@ -26,6 +33,7 @@ defineProps({
                 {{ body }}
             </p>
         </div>
+        </Link>
     </div>
 </template>
 

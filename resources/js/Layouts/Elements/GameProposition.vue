@@ -1,22 +1,41 @@
 <script setup>
 import GameCard from "@/Components/GameCard.vue";
+import { ref, onMounted } from 'vue';
+import { Link, router } from "@inertiajs/vue3";
+import axios from 'axios';
+
+const res = ref(null);  // Créer une propriété réactive pour stocker les données
+
+function goToGamePage(id) {
+    router.visit(`/games/${id}`);
+}
+
+onMounted(async () => {
+    try {
+        const response = await axios.get('/api/jeux-random');
+        res.value = response.data;  // Assigner les données récupérées à la propriété réactive
+        console.log(res.value[0].id, 'console');
+    } catch (error) {
+        console.error('Erreur lors de la récupération des jeux:', error);
+    }
+});
 
 
 
 </script>
 
 <template>
-<!--        <CardGame class="carte"/>-->
-<!--        <CardGame class="carte"/>-->
 
     <div
-        v-for="i in [...Array(5).keys()]"
+        v-if="res && res.length" v-for="jeu in res" :key="jeu.id"
         class="col-2 px-0 hover-image "
     >
         <GameCard
-            title="Title"
-            image="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/869241/header.jpg?t=1555788090"
-            body="Body" />
+            :title="jeu.name"
+            :image="jeu.picture"
+            :body="jeu.description"
+            :id="jeu.id"
+        />
     </div>
 
 </template>
