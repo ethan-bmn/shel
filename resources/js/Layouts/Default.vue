@@ -21,7 +21,7 @@ import Sidebar from "@/Components/Sidebar.vue";
                         <slot />
                     </div>
                     <div class="col-2">
-                        <BestLocation />
+                        <BestLocation/>
                     </div>
                     <div class="col-10 mt-4">
                         <div class="row d-flex justify-content-evenly">

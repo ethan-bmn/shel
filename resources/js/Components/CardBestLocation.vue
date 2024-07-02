@@ -11,6 +11,10 @@ defineProps({
     image: {
         type: String,
         required: true
+    },
+    id:{
+        type:String,
+        required: true
     }
 });
 </script>
@@ -49,7 +53,7 @@ defineProps({
     border-radius: 5px;
     opacity: 0;
     /* transition: opacity 0.3s ease-in-out;*/
-} 
+}
 .image-container:hover .hover-text {
     opacity: 1;
 

@@ -1,23 +1,44 @@
 <script setup>
-
-
+import { ref, onMounted } from 'vue';
 import CardBestLocation from "@/Components/CardBestLocation.vue";
+import { Link, router } from "@inertiajs/vue3";
+import axios from 'axios';
+
+const res = ref(null);  // Créer une propriété réactive pour stocker les données
+
+function goToGamePage(id) {
+    router.visit(`/games/${id}`);
+}
+
+onMounted(async () => {
+    try {
+        const response = await axios.get('/api/jeux-random');
+        res.value = response.data;  // Assigner les données récupérées à la propriété réactive
+        console.log(res.value[0].id, 'console');
+    } catch (error) {
+        console.error('Erreur lors de la récupération des jeux:', error);
+    }
+});
 </script>
 
 <template>
     <div>
         <p class="d-flex justify-content-center BestLocation__title">POPULAIRE</p>
-        <div  v-for="i in [...Array(5).keys()]"
-            class="px-0 " >
-            <button @click="goToGamePage" class="list-group-item list-group-item-action cadre d-flex justify-content-center">
-                <CardBestLocation class="hover-image"
-                title="Titre"
-                image="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/869241/header.jpg?t=1555788090"
-                />
-            </button>
+        <div v-if="res && res.length" v-for="jeu in res" :key="jeu.id" class="px-0">
+            <div class="image-container rounded-3 mx-2">
+                <div class="list-group-item list-group-item-action cadre d-flex justify-content-center hover-image">
+                    <Link :href="`/games/${jeu.id}`">
+                        <img :src="jeu.picture" class="img-fluid z-50" alt="...">
+                    </Link>
+                </div>
+            </div>
+        </div>
+        <div v-else>
+            <p>Chargement...</p>
         </div>
     </div>
 </template>
+
 
 <style scoped>
 
@@ -35,8 +56,6 @@ import CardBestLocation from "@/Components/CardBestLocation.vue";
     border-radius: 5px;
     margin-bottom: 10px;
 
-
-
 }
 .cadre{
     background-color: transparent;
@@ -48,17 +67,12 @@ import CardBestLocation from "@/Components/CardBestLocation.vue";
 
 .hover-image:hover {
     transform: scale(1.2);
-    box-shadow:0px 0px 10px 2px rgba(3, 158, 192, 0.9000000095367432);
+    box-shadow:0px 0px 10px 2px rgba(3, 158, 192, 0.90);
     /* filter: blur(1px); */
     border: 0.5px solid rgba(253, 253, 253, 0.4);
     border-radius: 15px;
 }
 </style>
 <script>
-export default {
-    methods:{goToGamePage() {
-            window.location.href = '/games';
-        }
-    }
-}
+
 </script>

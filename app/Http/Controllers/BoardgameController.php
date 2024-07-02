@@ -72,5 +72,14 @@ class BoardgameController extends Controller
         //
     }
 
+    public function getRandomBoardgames(): JsonResponse
+    {
+        // Sélectionner 5 jeux aléatoires
+        $randomBoardgames = Boardgame::inRandomOrder()->take(5)->get();
 
+        // Retourner les articles en réponse JSON
+        return response()->json($randomBoardgames);
+    }
 }
+
+
