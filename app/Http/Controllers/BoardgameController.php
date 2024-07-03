@@ -112,6 +112,11 @@ class BoardgameController extends Controller
         $boardgame->save();
         return response()->json($boardgame);
     }
+    public function getgame($id){
+        $boardgame = Boardgame::find($id);
+        $boardgame->save();
+        return response()->json($boardgame);
+    }
 }
 
 

@@ -14,7 +14,7 @@ Route::get('/jeux-populaires', [BoardgameController::class, 'getPopularBoardgame
 Route::post('/boardgames/{id}/recommandations', [BoardgameController::class, 'storeRecommandation']);
 Route::post('/boardgames', [BoardgameController::class, 'store'])->name('boardgames.store');
 Route::patch('/games/{id}/like', [BoardgameController::class, 'likeGame']);
-
+Route::get('game/{id}',[BoardgameController::class,'getgame'])->name('getGameById');
 /**
  * Route category
  */
