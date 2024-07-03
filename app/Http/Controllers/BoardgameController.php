@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Boardgame;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 
 class BoardgameController extends Controller
@@ -55,8 +56,15 @@ class BoardgameController extends Controller
     public function show(string $boardgame)
     {
         $jeu = Boardgame::find($boardgame);
+        $user_cart = DB::table('shopping_carts')
+            ->where('user_id', auth()->id())
+            ->first();
+        $put_on = DB::table('put_on')
+            ->where('boardgame_id', $jeu->id)
+            ->where('shopping_cart_id', $user_cart->id);
         return Inertia::render('Games', [
-            'jeu' => $jeu
+            'jeu' => $jeu,
+            'isInCart' => $put_on->exists(),
         ]);
     }
 

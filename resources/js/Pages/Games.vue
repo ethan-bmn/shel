@@ -1,6 +1,8 @@
 <script setup>
 import Layout from "@/Layouts/Default.vue";
 import { ref } from 'vue';
+import {router, usePage} from "@inertiajs/vue3";
+
 import axios from "axios";
 const comment = ref('');
 const user_Id=1;
@@ -18,6 +20,8 @@ const props = defineProps({
     }
 });
 console.log(props.recommendation,'recommendation');
+
+const isAdded = ref(props.isInCart);
 
 function toggleHeart() {
     isFilled.value = !isFilled.value;
@@ -40,6 +44,16 @@ async function submitComment() {
     }
     }
 }
+
+function addToCart() {
+    if (!usePage().props.auth.user) {
+        router.visit('/login');
+        return;
+    }
+    isAdded.value = !isAdded.value;
+    router.patch(`/api/add-to-cart/${props.jeu.id}`)
+}
+
 </script>
 
 <template>
@@ -57,6 +71,12 @@ async function submitComment() {
                                 <i :class="[!isFilled ? 'bi-heart' : 'bi-heart-fill text-danger', 'bi', 'icon']"/>
                             </button>
                             <button class="button">
+                                <i class="bi bi-chat-quote icon"/>
+                            </button>
+                            <button class="button" @click="addToCart">
+                                <i :class="`shopping icon bi bi-cart${isInCart ? '-fill' : ''}`"/>
+                            </button>
+                            <button class="button">
                                 <i class="bi bi-cart3 shopping icon" />
                             </button>
                         </div>
@@ -67,6 +87,7 @@ async function submitComment() {
                                 <button type="submit" class="btn btn-light" style="border-left: solid 1px lightgrey">Soumettre</button>
                             </div>
                         </form>
+                        <p v-if="isAdded" class="text-light fs-4">Jeu ajouté au panier</p>
                         <div class="description">
                             Nombre de joueurs :
                             {{jeu.number_of_player}}
@@ -84,9 +105,6 @@ async function submitComment() {
                     Description:
                     <br>
                     {{jeu.description}}
-                </div>
-                <div>
-                    Commentaire:
                 </div>
 
             </div>
