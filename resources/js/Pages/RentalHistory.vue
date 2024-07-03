@@ -1,7 +1,6 @@
-<script setup>import { ref, onMounted } from 'vue';
-import { Link, router } from "@inertiajs/vue3";
+<script setup>import Layout from "@/Layouts/Default.vue";
 import axios from 'axios';
-import Layout from "@/Layouts/Default.vue";
+import { onMounted, ref } from 'vue';
 
 const res = ref([]);
 const games = ref([]);
@@ -85,7 +84,7 @@ onMounted(async () => {
                                     {{ loc.location.end_date }}
                                 </div>
                                 <div  class="card-img">
-                                    <img src="https://www.gigamic.com/1837-large_default/akropolis.jpg" class="img-fluid z-50" alt="...">
+                                    <img src="https://www.gigamic.com/1837-large_default/akropolis.jpg" class="img-fluid  img__form z-50" alt="...">
                                 </div>
 
                             </div>
@@ -101,7 +100,12 @@ onMounted(async () => {
 <style scoped>
 
 
+.img__form{
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
 
+}
 .panier__height{
     height: 80%;
 }

@@ -1,5 +1,5 @@
 <script setup>
-import {Link, usePage} from "@inertiajs/vue3";
+import { Link, usePage } from "@inertiajs/vue3";
 
 const page = usePage();
 </script>
@@ -9,7 +9,9 @@ const page = usePage();
         <div class="col-10">
             <nav class="navbar navbar-expand-lg bc-color-input-search entete header__nav">
                 <img class="icon-link ms-3" src="../../../../public/images/chercher.svg">
-                <input class="form-control header__placeholder me-2 perso" type="search" placeholder="Recherche" aria-label="Search" >
+                <form action="/games/54" class="w-100">
+                    <input class="form-control header__placeholder me-2 perso" type="search" placeholder="Recherche" aria-label="Search" >
+                </form>
             </nav>
         </div>
         <div class="col-2 d-flex justify-content-center">
@@ -31,23 +33,7 @@ const page = usePage();
             </div>
         </div>
     </div>
-<!--    <div>-->
-<!--        <div>-->
-<!--            <nav class="navbar navbar-expand-lg bc-color-input-search entete header__nav">-->
-<!--                <div class="container-fluid header__grid">-->
-<!--                    <div class="collapse navbar-collapse header" id="navbarSupportedContent">-->
-<!--                        <div class="header__search"><img class="icon-link" src="../../../public/images/chercher.svg"></div>-->
-<!--                        <form class="d-flex" role="search">-->
-<!--                            <input class="form-control header__placeholder me-2 perso" type="search" placeholder="Recherche" aria-label="Search" >-->
-<!--                        </form>-->
-<!--                    </div>-->
-<!--                    <div class="header__notif-user">-->
 
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </nav>-->
-<!--        </div>-->
-<!--    </div>-->
 </template>
 
 <style scoped>
@@ -72,6 +58,12 @@ const page = usePage();
 
 .header__placeholder::placeholder{
     font-size: 25px;
+    color: white;
+}
+
+.header__placeholder{
+    font-size: 25px;
+    color: white;
 }
 
 .header__grid{
