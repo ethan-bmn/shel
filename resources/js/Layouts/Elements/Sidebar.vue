@@ -23,6 +23,11 @@ import { Link } from "@inertiajs/vue3";
                     <i class="bi bi-list-ul list" />
                 </Link>
             </div>
+            <div>
+                <Link type="button" class="icon" href="/locations">
+                    <i class="bi bi-backpack"></i>
+                </Link>
+            </div>
         </div>
     </div>
 

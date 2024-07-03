@@ -74,10 +74,10 @@ function generatePDF() {
 .panier__border-list{
     border: 1px solid #039EC0;
     border-radius: 33px;
-    height: 65%;
+    height: 80vh;
 }
 .panier__scrollbar{
-    height: calc(100% - 50px);
+    height: calc(100% - 90px);
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;

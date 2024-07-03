@@ -84,7 +84,7 @@ defineProps(['jeux']
 }
 .cardGame{
     display:grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
     grid-template-rows: repeat(auto-fill);
 }
 </style>
