@@ -38,7 +38,7 @@ defineProps(['jeux']
     height: 100%;
 }
 .listgames__scrollbar{
-    height: calc(100% - 50px);
+    height: 80vh;
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;

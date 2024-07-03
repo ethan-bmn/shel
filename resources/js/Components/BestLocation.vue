@@ -47,8 +47,11 @@ onMounted(async () => {
 
 <style scoped>
 .scroll{
+    padding-bottom: 16px;
     max-height: 80vh;
-    overflow:auto;
+    margin-left: 10px;
+    overflow-x: hidden;
+    overflow-y:auto;
 }
 
 .BestLocation__title{
