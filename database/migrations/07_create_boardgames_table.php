@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //Création de la table jeux de société
         Schema::create('boardgames', function (Blueprint $table) {
             $table->id()->primary();
             $table->string('name');

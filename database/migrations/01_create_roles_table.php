@@ -12,11 +12,13 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //Création de la table role
         Schema::create('roles', function (Blueprint $table) {
             $table->id()->primary();
             $table->string('role_name');
         });
 
+        //Insertion automatique des rôles Client et Admin
         DB::table('roles')->insert([
             [
                 'role_name' => 'client'

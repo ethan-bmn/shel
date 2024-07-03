@@ -15,11 +15,14 @@ class Recommendation extends Model
         'boardgame_id',
 
     ];
+
+    //Relation avec la table boardgame 1-1
     public function boardgame(): BelongsTo
     {
         return $this->belongsTo('App\Models\Boardgame');
     }
 
+    //Relation avec la table users 1-1
     public function user(): BelongsTo
     {
         return $this->belongsTo('App\Models\User');

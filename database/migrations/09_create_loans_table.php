@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //Création de la table emprunts
         Schema::create('loans', function (Blueprint $table) {
             $table->id();
             $table->date('start_date');

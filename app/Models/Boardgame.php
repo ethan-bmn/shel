@@ -20,27 +20,19 @@ class Boardgame extends Model
         'category_id',
 
     ];
-    //Relation avec la table recommendation
+    //Relation avec la table recommendation 0-n
     public function recommendation(): HasMany
     {
         return $this->hasMany('App\Models\Recommendation');
     }
 
-    public function photo(): HasMany
-    {
-        return $this->hasMany('App\Models\Photo');
-    }
-
-    public function shopping_cart(): BelongsTo
-    {
-        return $this->belongsTo('App\Models\Shopping_Cart');
-    }
-
+    //Relation avec la table category 1-1
     public function category(): BelongsTo
     {
         return $this->belongsTo('App\Models\Category');
     }
 
+    //Relation avec la table borrow 0-n
     public function loan(): BelongsToMany
     {
         return $this->belongsToMany(loan::class, 'borrow');

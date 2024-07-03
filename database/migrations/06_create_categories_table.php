@@ -12,11 +12,13 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //Création de la table catégorie
         Schema::create('categories', function (Blueprint $table) {
             $table->id()->primary();
             $table->string('name_category');
         });
 
+        //Insertion automatique des catégories
         DB::table('categories')->insert([
             [
                 'name_category' => 'Ambiance'
