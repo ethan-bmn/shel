@@ -2,6 +2,12 @@
 import {Link, usePage} from "@inertiajs/vue3";
 
 const page = usePage();
+console.log(page.props.auth.user);
+async function logout() {
+    axios.post('/auth/logout').then(() => {
+        window.location.assign(route(route().current()))
+    });
+}
 </script>
 
 <template>
@@ -21,9 +27,10 @@ const page = usePage();
                     <img src="../../../../public/images/claustrophobia.png" class="profil">
                 </button>
                 <ul class="dropdown-menu text-center fs-5">
-                    <li v-if="page.props.auth.user">
-                        <Link href="/profile">Mon profil</Link>
-                    </li>
+                    <template v-if="page.props.auth.user">
+                        <li><Link href="/profile">Mon profil</Link></li>
+                        <li><button class="btn btn-danger" @click="logout">Se déconnecter</button></li>
+                    </template>
                     <li v-else>
                         <Link href="/login">Connexion</Link>
                     </li>

@@ -1,5 +1,5 @@
 <script setup>
-import {router} from '@inertiajs/vue3';
+import {router, useForm} from '@inertiajs/vue3';
 import {ref} from "vue";
 
 defineProps({
@@ -11,7 +11,7 @@ defineProps({
     },
 });
 
-const form = ref({
+const form = useForm({
     email: '',
     password: '',
     remember: false,
@@ -20,20 +20,16 @@ const error = ref(false);
 
 function attemptLogin() {
     error.value = false;
-    axios.post('/auth/login', form.value)
-        .then((response) => {
-            console.log(response.status)
-            if (response.status === 200) {
-                router.visit('/');
-            } else {
-                form.value.password = '';
-                error.value = true;
-            }
-        })
-        .catch((error) => {
-            form.value.password = '';
+    form.post('/auth/login', {
+        onSuccess: () => {
+            window.location.assign(route(route().current()));
+        },
+        onError: () => {
             error.value = true;
-        });
+            form.reset();
+        }
+    });
+
 }
 </script>
 
