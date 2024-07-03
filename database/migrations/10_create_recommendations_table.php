@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //Création de la table recommendations
         Schema::create('recommendations', function (Blueprint $table) {
             $table->id()->primary();
             $table->string('commentary');

@@ -10,6 +10,7 @@ class Role extends Model
 {
     use HasFactory;
 
+    //Relation avec la table users 0-n
     public function user(): HasMany
     {
         return $this->hasMany('App\Models\User');

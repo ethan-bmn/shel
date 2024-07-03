@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //Création de la table personnal_access_tokens qui correspond au token d'authentification
         Schema::create('personal_access_tokens', function (Blueprint $table) {
             $table->id();
             $table->morphs('tokenable');

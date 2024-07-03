@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //Création de la table notifications
         Schema::create('notifications', function (Blueprint $table) {
             $table->id()->primary();
             $table->boolean('is_read');

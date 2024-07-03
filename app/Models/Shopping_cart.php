@@ -11,11 +11,7 @@ class Shopping_cart extends Model
 {
     use HasFactory;
 
-    public function boardgame(): HasMany
-    {
-        return $this->hasMany('App\Models\Boardgame');
-    }
-
+    //Relation avec la table users 1-1
     public function user(): BelongsTo
     {
         return $this->belongsTo('App\Models\User');

@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //Création de la table shopping carts
         Schema::create('shopping_carts', function (Blueprint $table) {
             $table->id()->primary();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');

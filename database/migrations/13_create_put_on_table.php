@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //Création de la table put_on qui correspond à l'association entre les tables shopping_carts et boardgames
         Schema::create('put_on', function (Blueprint $table) {
             $table->foreignId('shopping_cart_id')->constrained('shopping_carts')->onDelete('cascade');
             $table->foreignId('boardgame_id')->constrained('boardgames')->onDelete('cascade');

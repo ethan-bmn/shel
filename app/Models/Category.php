@@ -15,6 +15,7 @@ class Category extends Model
         'name_category',
     ];
 
+    //Relation avec la table boardgames 0-n
     public function boardgame(): HasMany
     {
         return $this->hasMany('App\Models\Boardgame');

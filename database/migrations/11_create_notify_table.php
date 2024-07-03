@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //Création de la table notify qui correspond à l'association entre la table users et notifications
         Schema::create('notify', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('notification_id')->constrained('notifications')->onDelete('cascade');

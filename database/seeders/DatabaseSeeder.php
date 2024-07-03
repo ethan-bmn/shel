@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        //Génération aléatoire de 50 users
         User::factory(50)->create();
         //Boardgame::factory(50)->create();
     }

@@ -48,31 +48,31 @@ class User extends Authenticatable
         ];
     }
 
+    //Relation avec la table notify 0-n
     public function notification(): BelongsToMany
     {
         return $this->belongsToMany(notification::class, 'notify');
     }
 
+    //Relation avec la table Loan 0-n
     public function loan() :HasMany
     {
         return $this->hasMany('App/Models/LoanController');
     }
 
+    //Relation avec la table recommendation 0-n
     public function reccomendation() :HasMany
     {
         return $this->hasMany('App/Models/Recommendation');
     }
 
+    //Relation avec la table shopping-cart 0-1
     public function shopping_cart() :BelongsTo
     {
         return $this->belongsTo('App/Models/Shopping_cart');
     }
 
-    public function photo_user() :BelongsTo
-    {
-        return $this->belongsTo('App/Models/Photo_User');
-    }
-
+    //Relation avec la table role 1-1
     public function role() :BelongsTo
     {
         return $this->belongsTo('App/Models/Role');
