@@ -54,8 +54,8 @@ onMounted(async () => {
     margin-right: 15px;
 }
 .hover-image{
-    height: 130px;
-    width: 230px;
+    height: 110px;
+    width: 210px;
     border-radius: 5px;
     margin-bottom: 10px;
 

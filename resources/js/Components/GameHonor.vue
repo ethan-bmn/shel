@@ -45,7 +45,7 @@ console.log(props.jeuRandom.picture);
 }
 .cadre_image{
     border-radius: 15px;
-    max-height: 50vh;
+    height: 50vh;
 }
 .cadre_image:hover{
     box-shadow:0px 0px 10px 2px rgba(3, 158, 192, 0.9000000095367432);

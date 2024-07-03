@@ -35,10 +35,10 @@ defineProps(['jeux']
 .listgames__border-list{
     border: 1px solid #039EC0;
     border-radius: 33px;
-    height: 100%;
+    height: 80vh;
 }
 .listgames__scrollbar{
-    height: calc(100% - 50px);
+    height: 82%;
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
@@ -84,7 +84,7 @@ defineProps(['jeux']
 }
 .cardGame{
     display:grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
     grid-template-rows: repeat(auto-fill);
 }
 </style>

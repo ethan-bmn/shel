@@ -8,7 +8,7 @@
 <body>
 
     <div class="pdf___header">
-        <!-- <img src="{{ public_path('images/logo_shel.png') }}"> -->
+        <img src="{{ public_path('images/logo_shel.png') }}">
         <h1>Récapitulatif de Location</h1>
         <p>Magasin de location de jeux de société - Shel</p>
         
