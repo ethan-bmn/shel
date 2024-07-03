@@ -61,6 +61,10 @@ class BoardgameController extends Controller
             $user_cart = DB::table('shopping_carts')
                 ->where('user_id', auth()->id())
                 ->first();
+            if (!$user_cart) {
+                $user_cart = DB::table('shopping_carts')
+                    ->insert(['user_id' => auth()->id()]);
+            }
             $put_on = DB::table('put_on')
                 ->where('boardgame_id', $jeu->id)
                 ->where('shopping_cart_id', $user_cart->id);
