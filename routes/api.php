@@ -3,6 +3,7 @@
 use App\Http\Controllers\BoardgameController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LoanController;
+use App\Http\Controllers\ShoppingCartController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -24,3 +25,7 @@ Route::get('/category-choice', [CategoryController::class,'getCategories']);
  * Route location
  */
 Route::get('/locations/{id}', [LoanController::class, 'getLocationByUSer'])->name('getLocationGames');
+
+Route::patch('/add-to-cart/{id}', [ShoppingCartController::class, 'addToCart'])
+    ->middleware('web')
+    ->name('addToCart');

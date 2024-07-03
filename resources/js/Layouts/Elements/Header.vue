@@ -2,7 +2,6 @@
 import { Link, usePage } from "@inertiajs/vue3";
 
 const page = usePage();
-console.log(page.props.auth.user);
 async function logout() {
     axios.post('/auth/logout').then(() => {
         window.location.assign(route(route().current()))

@@ -1,6 +1,8 @@
 <script setup>
 import Layout from "@/Layouts/Default.vue";
 import { ref } from 'vue';
+import {router, usePage} from "@inertiajs/vue3";
+import Toastify from 'toastify-js'
 
 const isFilled = ref(false);
 
@@ -8,8 +10,14 @@ const props = defineProps({
     jeu: {
         type: Object,
         required: true
+    },
+    isInCart: {
+        type: Boolean,
+        required: true
     }
 });
+
+const isAdded = ref(props.isInCart);
 
 function toggleHeart() {
     isFilled.value = !isFilled.value;
@@ -17,6 +25,16 @@ function toggleHeart() {
         action: isFilled.value ? 'like' : 'unlike'
     });
 }
+
+function addToCart() {
+    if (!usePage().props.auth.user) {
+        router.visit('/login');
+        return;
+    }
+    isAdded.value = !isAdded.value;
+    router.patch(`/api/add-to-cart/${props.jeu.id}`)
+}
+
 </script>
 
 <template>
@@ -26,20 +44,21 @@ function toggleHeart() {
                 {{jeu.name}}
             </div>
             <div id="img_pic" class="description__position">
-                <div> 
+                <div>
                     <img :src="jeu.picture" class="gameImage">
                     <div class="row mb-4 ">
                         <div class="col-2 d-flex fs-1">
                             <button class="button" @click="toggleHeart">
                                 <i :class="[!isFilled ? 'bi-heart' : 'bi-heart-fill text-danger', 'bi', 'icon']"/>
                             </button>
-                                <button class="button">
-                                    <i class="bi bi-chat-quote icon"/>
-                                </button>
-                                <button class="button">
-                                    <i class="bi bi-cart3 shopping icon"/>
-                                </button>
+                            <button class="button">
+                                <i class="bi bi-chat-quote icon"/>
+                            </button>
+                            <button class="button" @click="addToCart">
+                                <i :class="`shopping icon bi bi-cart${isInCart ? '-fill' : ''}`"/>
+                            </button>
                         </div>
+                        <p v-if="isAdded" class="text-light fs-4">Jeu ajouté au panier</p>
                         <div class="description">
                             Nombre de joueurs :
                             {{jeu.number_of_player}}
@@ -52,7 +71,7 @@ function toggleHeart() {
 
                     </div>
                 </div>
-               
+
                 <div class="description">
                     Description:
                     <br>
@@ -60,7 +79,7 @@ function toggleHeart() {
                 </div>
 
             </div>
-            
+
         </div>
     </Layout>
 </template>
