@@ -6,10 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Reccomendation extends Model
+class Recommendation extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'commentary',
+        'user_id',
+        'boardgame_id',
 
+    ];
     public function boardgame(): BelongsTo
     {
         return $this->belongsTo('App\Models\Boardgame');

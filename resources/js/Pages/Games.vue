@@ -3,6 +3,10 @@ import Layout from "@/Layouts/Default.vue";
 import { ref } from 'vue';
 import {router, usePage} from "@inertiajs/vue3";
 
+import axios from "axios";
+const comment = ref('');
+const user_Id=1;
+//const game_Id=55;
 const isFilled = ref(false);
 
 const props = defineProps({
@@ -10,11 +14,12 @@ const props = defineProps({
         type: Object,
         required: true
     },
-    isInCart: {
-        type: Boolean,
-        required: true
+    recommendation:{
+        type: Object,
+        required:true
     }
 });
+console.log(props.recommendation,'recommendation');
 
 const isAdded = ref(props.isInCart);
 
@@ -23,6 +28,21 @@ function toggleHeart() {
     axios.patch(`/api/games/${props.jeu.id}/like`, {
         action: isFilled.value ? 'like' : 'unlike'
     });
+}
+async function submitComment() {
+    try {
+        await axios.post('/api/recommendation', {
+            user_id: user_Id,
+            boardgame_id: props.jeu.id,
+            commentary: comment.value
+        });
+        comment.value = ''; // Reset the comment input after submission
+    } catch (error) {if (error.response && error.response.status === 422) {
+        errors.value = error.response.data.errors; // Stocker les erreurs de validation
+    } else {
+        console.error('Erreur lors de l\'ajout du commentaire:', error);
+    }
+    }
 }
 
 function addToCart() {
@@ -56,7 +76,17 @@ function addToCart() {
                             <button class="button" @click="addToCart">
                                 <i :class="`shopping icon bi bi-cart${isInCart ? '-fill' : ''}`"/>
                             </button>
+                            <button class="button">
+                                <i class="bi bi-cart3 shopping icon" />
+                            </button>
                         </div>
+                        <form @submit.prevent="submitComment">
+                            <div class="input-group flex-nowrap">
+                                <span class="input-group-text" id="addon-wrapping"><i class="bi bi-chat-quote icon"/></span>
+                                <input type="text" v-model="comment" class="form-control" placeholder="Votre commentaire" aria-label="Commentaire" aria-describedby="addon-wrapping">
+                                <button type="submit" class="btn btn-light" style="border-left: solid 1px lightgrey">Soumettre</button>
+                            </div>
+                        </form>
                         <p v-if="isAdded" class="text-light fs-4">Jeu ajouté au panier</p>
                         <div class="description">
                             Nombre de joueurs :
