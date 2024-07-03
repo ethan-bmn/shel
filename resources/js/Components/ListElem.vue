@@ -28,9 +28,6 @@ const props = defineProps({
     }
 });
 
-function goToGamePage() {
-        window.location.href=`/games/${props.id}`;
-}
 </script>
 
 <template>
@@ -41,11 +38,10 @@ function goToGamePage() {
                 <div class="listelem__info-back listelem__info-back--hover">
                     <div class="info">
                         <p>{{ name }}</p>
-                        <p>{{ number_of_player }}</p>
+                        <p>{{ number_of_player }} joueur</p>
                     </div>
                     <div class="additional-info">
                         <p>{{ playing_time }}</p>
-                        <p>{{ description }}</p>
                     </div>
                 </div>
             </div>
