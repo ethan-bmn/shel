@@ -4,7 +4,7 @@ import { Link } from '@inertiajs/vue3';
 const props = defineProps({
     id:{
         type: Number,
-        required:true 
+        required:true
     },
     name: {
         type: String,
@@ -25,7 +25,12 @@ const props = defineProps({
     playing_time:{
         type: String,
         required: true
+    },
+    picture:{
+        type: String,
+        required: true
     }
+
 });
 
 </script>
@@ -33,7 +38,7 @@ const props = defineProps({
 <template>
     <Link class="button" :href="`/games/${id}`">
         <div class="listelem__card">
-            <img src="../../../public/images/brassLancashire.png" class="listelem__img" alt="...">
+            <img :src="picture" class="listelem__img" alt="...">
             <div class="listelem__info listelem__info--hover">
                 <div class="listelem__info-back listelem__info-back--hover">
                     <div class="info">
