@@ -2,7 +2,6 @@
 import Layout from "@/Layouts/Default.vue";
 import { ref } from 'vue';
 import {router, usePage} from "@inertiajs/vue3";
-import Toastify from 'toastify-js'
 
 const isFilled = ref(false);
 
