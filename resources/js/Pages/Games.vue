@@ -26,7 +26,33 @@ function toggleHeart() {
                 {{jeu.name}}
             </div>
             <div id="img_pic" class="description__position">
-                <img :src="jeu.picture" class="gameImage">
+                <div> 
+                    <img :src="jeu.picture" class="gameImage">
+                    <div class="row mb-4 ">
+                        <div class="col-2 d-flex fs-1">
+                            <button class="button" @click="toggleHeart">
+                                <i :class="[!isFilled ? 'bi-heart' : 'bi-heart-fill text-danger', 'bi', 'icon']"/>
+                            </button>
+                                <button class="button">
+                                    <i class="bi bi-chat-quote icon"/>
+                                </button>
+                                <button class="button">
+                                    <i class="bi bi-cart3 shopping icon"/>
+                                </button>
+                        </div>
+                        <div class="description">
+                            Nombre de joueurs :
+                            {{jeu.number_of_player}}
+                            joueurs
+                        </div>
+                        <div class="description">
+                            Temps pour une partie:
+                            {{jeu.playing_time}}
+                        </div>
+
+                    </div>
+                </div>
+               
                 <div class="description">
                     Description:
                     <br>
@@ -34,29 +60,7 @@ function toggleHeart() {
                 </div>
 
             </div>
-            <div class="row mb-4 ">
-                <div class="col-2 d-flex fs-1">
-                    <button class="button" @click="toggleHeart">
-                        <i :class="[!isFilled ? 'bi-heart' : 'bi-heart-fill text-danger', 'bi', 'icon']"/>
-                    </button>
-                        <button class="button">
-                            <i class="bi bi-chat-quote icon"/>
-                        </button>
-                        <button class="button">
-                            <i class="bi bi-cart3 shopping icon"/>
-                        </button>
-                </div>
-                <div class="description">
-                    Nombre de joueurs :
-                    {{jeu.number_of_player}}
-                    joueurs
-                </div>
-                <div class="description">
-                    Temps pour une partie:
-                    {{jeu.playing_time}}
-                </div>
-
-            </div>
+            
         </div>
     </Layout>
 </template>
