@@ -21,10 +21,7 @@ async function logout() {
             </nav>
         </div>
         <div class="col-2 d-flex justify-content-center">
-            <button class="btn alerte">
-                <i class="bi bi-bell fs-3 text-light" />
-            </button>
-            <div class="dropdown">
+            <div class="dropdown my-auto">
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="../../../../public/images/claustrophobia.png" class="profil">
                 </button>
