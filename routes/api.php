@@ -3,6 +3,7 @@
 use App\Http\Controllers\BoardgameController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LoanController;
+use App\Http\Controllers\PDFController;
 use App\Http\Controllers\ShoppingCartController;
 use App\Http\Controllers\RecommendationController;
 use Illuminate\Support\Facades\Route;
