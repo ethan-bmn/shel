@@ -131,6 +131,10 @@ class BoardgameController extends Controller
         $boardgame->save();
         return response()->json($boardgame);
     }
+    public function getAllGames(){
+        $jeux = Boardgame::all();
+        return response()->json(['message' => 'Liste des jeux', 'boardgame' => $jeux]);
+    }
 }
 
 

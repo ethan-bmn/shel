@@ -5,6 +5,8 @@ import Layout from "@/Layouts/Default.vue";
 //
 defineProps(['jeux']
 );
+
+
 </script>
 
 <template>
