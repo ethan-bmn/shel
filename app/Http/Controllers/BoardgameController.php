@@ -67,7 +67,7 @@ class BoardgameController extends Controller
         }
         return Inertia::render('Games', [
             'jeu' => $jeu,
-            'isInCart' => $put_on && $put_on->exists(),
+            'isInCart' => isset($put_on) && $put_on->exists(),
         ]);
     }
 
