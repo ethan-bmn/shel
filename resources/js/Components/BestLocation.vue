@@ -27,8 +27,7 @@ onMounted(async () => {
 <template>
     <div>
         <p class="d-flex justify-content-center BestLocation__title">POPULAIRE</p>
-        <div class="scroll">
-            <div v-if="res && res.length" v-for="jeu in res" :key="jeu.id" class="px-0">
+        <div v-if="res && res.length" v-for="jeu in res" :key="jeu.id" class="px-0">
             <div class="image-container rounded-3 mx-2">
                 <div class="list-group-item list-group-item-action cadre d-flex justify-content-center hover-image">
                     <Link :href="`/games/${jeu.id}`" class="h-100 w-100">
@@ -36,23 +35,16 @@ onMounted(async () => {
                     </Link>
                 </div>
             </div>
-            </div>
-            <div v-else>
-                <p style="color: white">Chargement...</p>
-            </div> 
+        </div>
+        <div v-else>
+            <p style="color: white">Chargement...</p>
         </div>
     </div>
 </template>
 
 
 <style scoped>
-.scroll{
-    padding-bottom: 16px;
-    max-height: 80vh;
-    margin-left: 10px;
-    overflow-x: hidden;
-    overflow-y:auto;
-}
+
 
 .BestLocation__title{
     color: white;
@@ -62,8 +54,8 @@ onMounted(async () => {
     margin-right: 15px;
 }
 .hover-image{
-    height: 130px;
-    width: 230px;
+    height: 110px;
+    width: 210px;
     border-radius: 5px;
     margin-bottom: 10px;
 
