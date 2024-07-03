@@ -48,7 +48,6 @@ class BoardgameController extends Controller
 
         $boardgame = Boardgame::create($validatedData);
 
-        // Redirigez l'utilisateur vers une autre page ou renvoyez une réponse JSON, etc.
         return response()->json(['message' => 'Jeu créé avec succès', 'boardgame' => $boardgame]);
     }
 

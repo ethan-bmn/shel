@@ -17,7 +17,7 @@ onMounted(async () => {
     try {
         const response = await axios.get('/api/jeux-populaires');
         res.value = response.data;
-        console.log(res.value[0].id, 'console');
+        /*console.log(res.value[0].id, 'console');*/
     } catch (error) {
         console.error('Erreur lors de la récupération des jeux:', error);
     }

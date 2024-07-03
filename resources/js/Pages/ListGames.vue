@@ -15,7 +15,7 @@ defineProps(['jeux']
                     <div class="cardGame">
                         <div v-for="jeu in jeux" :key="jeu.id"
                                 class=" px-0 listgame__card">
-                            <ListElem :playing_time="jeu.playing_time" :number_of_player="jeu.number_of_player" :description="jeu.description" :name="jeu.name" :id="jeu.id"></ListElem>
+                            <ListElem :playing_time="jeu.playing_time" :number_of_player="jeu.number_of_player" :description="jeu.description" :name="jeu.name" :id="jeu.id" :picture="jeu.picture"></ListElem>
                         </div>
                     </div>
                 </div>
