@@ -35,10 +35,10 @@ defineProps(['jeux']
 .listgames__border-list{
     border: 1px solid #039EC0;
     border-radius: 33px;
-    height: 100%;
+    height: 80vh;
 }
 .listgames__scrollbar{
-    height: 80vh;
+    height: 82%;
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
