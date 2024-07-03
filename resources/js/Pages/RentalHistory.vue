@@ -80,8 +80,11 @@ onMounted(async () => {
                                 <div class="card ">
                                     {{loc.location.start_date}}
                                 </div>
-                                <div class="card ">
+                                <div v-if="loc.location.end_date" class="card ">
                                     {{ loc.location.end_date }}
+                                </div>
+                                <div v-else class="card ">
+                                    En cours
                                 </div>
                                 <div  class="card-img">
                                     <img src="https://www.gigamic.com/1837-large_default/akropolis.jpg" class="img-fluid  img__form z-50" alt="...">
