@@ -5,19 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Recommendation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Inertia\Inertia;
 
 class RecommendationController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function getRecommendation()
     {
         $recommendation = Recommendation::all();
 
-        return Inertia::render('ListGames', [
-            'recommendation' => $recommendation,
-        ]);
+        return response()->json($recommendation);
     }
 
     /**

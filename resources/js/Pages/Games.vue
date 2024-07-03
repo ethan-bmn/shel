@@ -1,10 +1,12 @@
 <script setup>
 import Layout from "@/Layouts/Default.vue";
-import { ref } from 'vue';
+import {onMounted, ref} from 'vue';
 import {router, usePage} from "@inertiajs/vue3";
-
 import axios from "axios";
+
+const res = ref([]);
 const comment = ref('');
+const commentaires = ref([]);
 const user_Id=1;
 //const game_Id=55;
 const isFilled = ref(false);
@@ -13,13 +15,9 @@ const props = defineProps({
     jeu: {
         type: Object,
         required: true
-    },
-    recommendation:{
-        type: Object,
-        required:true
     }
 });
-console.log(props.recommendation,'recommendation');
+
 
 const isAdded = ref(props.isInCart);
 
@@ -53,7 +51,24 @@ function addToCart() {
     isAdded.value = !isAdded.value;
     router.patch(`/api/add-to-cart/${props.jeu.id}`)
 }
+onMounted(async () => {
+    try {
+        const response = await axios.get('/api/read-recommendation');
+        res.value = response.data;
+        const filteredComments = [];
+        for (const com of res.value) {
+            if (com.boardgame_id === props.jeu.id) {
+                filteredComments.push(com.commentary);
+            }
+        }
+        commentaires.value = filteredComments;
+        console.log(commentaires.value[0], 'commentaire');
+        return commentaires;
 
+    } catch (error) {
+        console.error('Erreur lors de la récupération des commentaire:', error);
+    }
+});
 </script>
 
 <template>
@@ -70,14 +85,8 @@ function addToCart() {
                             <button class="button" @click="toggleHeart">
                                 <i :class="[!isFilled ? 'bi-heart' : 'bi-heart-fill text-danger', 'bi', 'icon']"/>
                             </button>
-                            <button class="button">
-                                <i class="bi bi-chat-quote icon"/>
-                            </button>
                             <button class="button" @click="addToCart">
                                 <i :class="`shopping icon bi bi-cart${isInCart ? '-fill' : ''}`"/>
-                            </button>
-                            <button class="button">
-                                <i class="bi bi-cart3 shopping icon" />
                             </button>
                         </div>
                         <form @submit.prevent="submitComment">
@@ -97,18 +106,28 @@ function addToCart() {
                             Temps pour une partie:
                             {{jeu.playing_time}}
                         </div>
-
                     </div>
                 </div>
-
-                <div class="description">
+                <div class="description" >
                     Description:
                     <br>
                     {{jeu.description}}
                 </div>
-
+                <table class="table" >
+                    <thead>
+                    <tr class="d-flex justify-content-center">
+                        <th scope="col">#</th>
+                        <th scope="col">commentaire</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="(comment, index) in commentaires" :key="index" class="d-flex justify-content-center">
+                        <th scope="row">{{ index + 1 }}</th>
+                        <td>{{ comment }}</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
-
         </div>
     </Layout>
 </template>
@@ -154,4 +173,5 @@ function addToCart() {
 .icon{
     color:#737272;
 }
+
 </style>

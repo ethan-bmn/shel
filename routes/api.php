@@ -31,7 +31,7 @@ Route::get('/locations/{id}', [LoanController::class, 'getLocationByUSer'])->nam
  * Route Commentaire
  */
 Route::post('/recommendation', [RecommendationController::class,'store'])->name('comment.store');
-Route::get('read-recommendation', [RecommendationController::class,'getRecommendation'])->name('getRecommendation');
+Route::get('read-recommendation', [RecommendationController::class,'getRecommendation']);
 
 Route::patch('/add-to-cart/{id}', [ShoppingCartController::class, 'addToCart'])
     ->middleware('web')
