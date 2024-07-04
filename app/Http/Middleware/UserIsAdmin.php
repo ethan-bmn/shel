@@ -14,10 +14,10 @@ class UserIsAdmin
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next)
     {
         if (!$request->user()?->isAdmin()) {
-            return response()->json(['message' => 'Vous n\'avez pas les droits pour accéder à cette page'], 401);
+            return 403;
         }
         return $next($request);
     }

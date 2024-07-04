@@ -20,4 +20,9 @@ class UserController extends Controller {
         $user->save();
         return response()->json(['message' => 'Rôle mis à jour']);
     }
+
+    public function destroy($user_id) {
+        User::find($user_id)->delete();
+        return 204;
+    }
 }
