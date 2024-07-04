@@ -1,8 +1,6 @@
 <script setup>
 import Layout from "@/Layouts/Default.vue";
-function generatePDF() {
-    window.location.href = '/generate-pdf';
-}
+import { Link } from '@inertiajs/vue3';
 
 //
 
@@ -54,7 +52,9 @@ function generatePDF() {
             <div class="row">
                 <div >
                     <div class=" d-flex justify-content-end piedPage">
-                        <button type="button" @click="generatePDF" class="btn btn-primary btn-lg commande">Commander</button>
+                        <Link :href="`/generate-pdf/2`">
+                            <button type="button" class="btn btn-primary btn-lg commande">Commander</button>
+                        </Link>
                     </div>
                 </div>
             </div>
