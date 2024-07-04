@@ -1,8 +1,8 @@
 <script setup>
-import {Link, useForm} from '@inertiajs/vue3';
-import {ref} from "vue";
 import Layout from '@/Layouts/Guest.vue';
-
+import { Link, useForm } from '@inertiajs/vue3';
+import { ref } from "vue";
+// Définition des propriétés requises que le composant reçoit via les props
 defineOptions({
     layout: Layout
 });
@@ -16,13 +16,14 @@ defineProps({
     },
 });
 
+// Initialisation du formulaire avec useForm
 const form = useForm({
     email: '',
     password: '',
     remember: false,
 });
 const error = ref(false);
-
+// Fonction pour tenter de se connecter
 function attemptLogin() {
     error.value = false;
     form.post('/auth/login', {
@@ -42,6 +43,7 @@ function attemptLogin() {
     <div v-if="status" class="mb-4 font-medium text-sm text-success">
         {{ status }}
     </div>
+                <!-- Formulaire de connexion -->
     <form @submit.prevent="attemptLogin" class="text-light fs-5 w-25 mx-auto">
         <div class="mb-3">
             <label for="emailInput" class="form-label">Adresse e-mail</label>

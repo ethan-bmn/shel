@@ -1,19 +1,17 @@
 <script setup>
 import GameCard from "@/Components/GameCard.vue";
-import { router } from "@inertiajs/vue3";
 import axios from 'axios';
 import { onMounted, ref } from 'vue';
 
-const res = ref(null);  // Créer une propriété réactive pour stocker les données
 
-function goToGamePage(id) {
-    router.visit(`/games/${id}`);
-}
+// Déclare une référence réactive pour stocker les données des jeux
+const res = ref(null);  
+
 
 onMounted(async () => {
     try {
         const response = await axios.get('/api/jeux-random');
-        res.value = response.data;  // Assigner les données récupérées à la propriété réactive
+        res.value = response.data;  
         console.log(res.value[0].id, 'console');
     } catch (error) {
         console.error('Erreur lors de la récupération des jeux:', error);

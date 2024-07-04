@@ -1,6 +1,6 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
-
+// Définition des propriétés requises que le composant reçoit via les props
 const props = defineProps({
     id:{
         type: Number,
@@ -37,6 +37,7 @@ const props = defineProps({
 
 <template>
     <Link class="button" :href="`/games/${id}`">
+        <!-- Affichage d'un jeu-->
         <div class="listelem__card">
             <img :src="picture" class="listelem__img" alt="...">
             <div class="listelem__info listelem__info--hover">

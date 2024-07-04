@@ -1,11 +1,11 @@
 <script setup>
-import GuestLayout from '@/Layouts/GuestLayout.vue';
 import InputError from '@/Components/old/InputError.vue';
 import InputLabel from '@/Components/old/InputLabel.vue';
 import PrimaryButton from '@/Components/old/PrimaryButton.vue';
 import TextInput from '@/Components/old/TextInput.vue';
+import GuestLayout from '@/Layouts/GuestLayout.vue';
 import { Head, useForm } from '@inertiajs/vue3';
-
+// Définition des propriétés requises que le composant reçoit via les props
 const props = defineProps({
     email: {
         type: String,
@@ -17,6 +17,7 @@ const props = defineProps({
     },
 });
 
+// Initialisation du formulaire avec useForm
 const form = useForm({
     token: props.token,
     email: props.email,
@@ -24,6 +25,7 @@ const form = useForm({
     password_confirmation: '',
 });
 
+// Fonction pour soumettre le formulaire de réinitialisation de mot de passe
 const submit = () => {
     form.post(route('password.store'), {
         onFinish: () => form.reset('password', 'password_confirmation'),

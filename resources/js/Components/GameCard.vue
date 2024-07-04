@@ -1,6 +1,6 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
-
+// Définition des propriétés requises que le composant reçoit via les props
 defineProps({
     title: {
         type: String,
@@ -22,6 +22,7 @@ defineProps({
 </script>
 
 <template>
+    <!-- Affichage du jeu -->
     <div class="image-container rounded-3 mx-2">
         <Link :href="`/games/${id}`">
         <img :src="image" class="img-fluid z-50 test" alt="...">

@@ -2,7 +2,7 @@
 import ListElem from "@/Components/ListElem.vue";
 import Layout from "@/Layouts/Default.vue";
 
-//
+// Définition des propriétés requises que le composant reçoit via les props
 defineProps(['jeux']
 );
 

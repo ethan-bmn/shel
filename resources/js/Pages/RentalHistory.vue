@@ -5,26 +5,25 @@ import { onMounted, ref } from 'vue';
 const res = ref([]);
 const games = ref([]);
 const user_Id = 1;
+
+// Définition des propriétés requises que le composant reçoit via les props
 defineProps(['jeux'])
 
 
-/*function goToGamePage(id) {
-    router.visit(`/games/${id}`);
-}*/
 
-/**
- * Récupération des jeux populaire depuis l'API
- */
+
+// Récupération des jeux populaire depuis l'API
+
 const fetchGame = async (gameId)=>{
     try{
         const response = await axios.get(`/api/game/${gameId}`);
         return response.data.name
-        /*console.log(game.value.name,'game');*/
 
     }catch (error){
         console.log('Erreur lors de la récupération des info du jeu', error);
     }
 }
+
 onMounted(async () => {
     try {
         const response = await axios.get(`/api/locations/${user_Id}`);

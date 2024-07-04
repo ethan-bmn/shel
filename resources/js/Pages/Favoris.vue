@@ -1,11 +1,9 @@
 <script setup>
-import GameHonor from "@/Components/GameHonor.vue";
+import AddGame from "@/Components/AddGame.vue";
+import BestLocation from "@/Components/BestLocation.vue";
 import Header from "@/Layouts/Elements/Header.vue";
 import Sidebar from "@/Layouts/Elements/Sidebar.vue";
-import GameProposition from "@/Layouts/Elements/GameProposition.vue";
-import BestLocation from "@/Components/BestLocation.vue";
-import AddGame from "@/Components/AddGame.vue";
-import axios from "axios";
+
 
 //
 

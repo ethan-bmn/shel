@@ -3,6 +3,7 @@
 </script>
 
 <template>
+     <!-- Champs du formulaire pour créer un utilisateur -->
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Nom</span>
         <input type="text" class="form-control" placeholder="Nom" aria-label="Nom" aria-describedby="basic-addon1" action="{{ route('boardgames.store') }}" method="POST">

@@ -1,16 +1,16 @@
 <script setup>
 import Layout from "@/Layouts/Default.vue";
-import {onMounted, ref} from 'vue';
-import {router, usePage} from "@inertiajs/vue3";
+import { router, usePage } from "@inertiajs/vue3";
 import axios from "axios";
+import { onMounted, ref } from 'vue';
 
 const res = ref([]);
 const comment = ref('');
 const commentaires = ref([]);
 const user_Id=1;
-//const game_Id=55;
 const isFilled = ref(false);
 
+// Définition des propriétés requises que le composant reçoit via les props
 const props = defineProps({
     jeu: {
         type: Object,
