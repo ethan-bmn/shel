@@ -25,8 +25,14 @@ const getAndDate = () => {
     const day = String(date.getDate()+15).padStart(2, '0');
     return `${year}-${month}-${day}`;
 };
-console.log(props.content);
-//
+console.log(props.content,'panier');
+
+function downloadPdf() {
+    axios.get('/generate-pdf/2')
+        .then((res) => {
+            axios.get(res.data);
+        });
+}
 
 </script>
 
@@ -87,9 +93,7 @@ console.log(props.content);
 
             <div class="row  justify-content-end">
                 <div class="col-auto d-flex justify-content-end piedPage">
-                    <Link :href="`/generate-pdf/2`">
-                        <button type="button" class="btn btn-primary btn-lg commande">Commander</button>
-                    </Link>
+                    <a as="button" class="btn btn-primary btn-lg commande" href="/generate-pdf/2" target="_blank    ">Commander</a>
                 </div>
             </div>
         </div>
