@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+class Role extends Model
+{
+    use HasFactory;
+
+    //Relation avec la table users 0-n
+    public function user(): HasMany
+    {
+        return $this->hasMany('App\Models\User');
+    }
+}

@@ -1,1 +1,48 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
+@import "https://use.fontawesome.com/releases/v5.7.2/css/all.css";
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import './nprogress.css';
+@font-face {
+    font-family: 'Genos';
+    src: url('../../public/font/Genos-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    background-image: linear-gradient(to left top, #050505, #151431, #1a1d5b, #1a2689, #1a2db8);
+    font-family: 'Genos', sans-serif;
+    /*overflow: hidden;*/
+    ::-webkit-scrollbar {
+        width: 2px;
+        height: 20px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #039EC0;
+        border-radius: 33px;
+        order: 3px solid transparent;
+        background-clip: padding-box;
+      }
+
+      /* Handle on hover */
+}
+
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+
+

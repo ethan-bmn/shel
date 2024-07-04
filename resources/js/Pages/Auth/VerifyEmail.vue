@@ -1,9 +1,9 @@
 <script setup>
-import { computed } from 'vue';
-import GuestLayout from '@/Layouts/GuestLayout.vue';
 import PrimaryButton from '@/Components/old/PrimaryButton.vue';
+import GuestLayout from '@/Layouts/GuestLayout.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
-
+import { computed } from 'vue';
+// Définition des propriétés requises que le composant reçoit via les props
 const props = defineProps({
     status: {
         type: String,
