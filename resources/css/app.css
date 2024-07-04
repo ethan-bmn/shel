@@ -10,6 +10,8 @@
 }
 body{
     background-image: linear-gradient(to left top, #050505, #151431, #1a1d5b, #1a2689, #1a2db8);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: 'Genos', sans-serif;
     /*overflow: hidden;*/
     ::-webkit-scrollbar {

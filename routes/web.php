@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Models\Boardgame;
+use App\Models\User;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -24,6 +25,10 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/administration',function (){
         return Inertia::render('Administration');
     })->name('administration');
+
+    Route::get('/roles', [\App\Http\Controllers\UserController::class, 'roles'])
+        ->middleware(\App\Http\Middleware\UserIsAdmin::class)
+        ->name('roles');
 
     Route::get('/locations',function(){
         return Inertia::render('RentalHistory');

@@ -6,6 +6,8 @@ use App\Http\Controllers\LoanController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\ShoppingCartController;
 use App\Http\Controllers\RecommendationController;
+use App\Http\Controllers\UserController;
+use App\Http\Middleware\UserIsAdmin;
 use Illuminate\Support\Facades\Route;
 
 
@@ -38,3 +40,7 @@ Route::get('read-recommendation', [RecommendationController::class,'getRecommend
 Route::patch('/add-to-cart/{id}', [ShoppingCartController::class, 'addToCart'])
     ->middleware('web')
     ->name('addToCart');
+
+Route::patch('/user/{user_id}/role/{role_id}', [UserController::class, 'updateRole'])
+    ->middleware(['web', UserIsAdmin::class])
+    ->name('updateRole');
