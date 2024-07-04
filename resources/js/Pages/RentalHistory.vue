@@ -28,7 +28,6 @@ onMounted(async () => {
     try {
         const response = await axios.get(`/api/locations/${user_Id}`);
         const locations =response.data;
-        /*console.log(locations,'locations');*/
         games.value = await Promise.all(locations.map(async (location)=>{
             const game =await fetchGame(location.game_id);
             return{
