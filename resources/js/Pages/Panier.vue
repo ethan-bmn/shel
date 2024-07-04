@@ -25,13 +25,13 @@ const getAndDate = () => {
     const day = String(date.getDate()+15).padStart(2, '0');
     return `${year}-${month}-${day}`;
 };
-console.log(props.content,'panier');
-
-function downloadPdf() {
-    axios.get('/generate-pdf/2')
-        .then((res) => {
-            axios.get(res.data);
-        });
+function addToCart(game_id) {
+    if (!usePage().props.auth.user) {
+        router.visit('/login');
+        return;
+    }
+    console.log('test')
+    router.patch(`/api/add-to-cart/${game_id}`)
 }
 
 </script>
@@ -79,9 +79,9 @@ function downloadPdf() {
                                 <div  class="card-img">
                                     <img :src="loc.picture" class="img-fluid  img__form z-50" alt="...">
                                 </div>
-                                <div class="d-flex align-items-center justify-content-center fs-2 trash__color">
-                                    <i class="bi bi-trash3 m-2"></i>
-                                </div>
+                                <button @click="addToCart(loc)" class="d-flex align-items-center justify-content-center fs-2 trash__color">
+                                        <i class="bi bi-trash3 m-2"></i>
+                                </button>
 
                             </div>
 
