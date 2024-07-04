@@ -1,7 +1,6 @@
 <script setup>
 import AddGame from "@/Components/AddGame.vue";
-import Header from "@/Layouts/Elements/Header.vue";
-import Sidebar from "@/Layouts/Elements/Sidebar.vue";
+import Layout from '@/Layouts/Default.vue';
 import axios from "axios";
 import { onMounted, ref } from "vue";
 
@@ -51,30 +50,12 @@ function exportCSV(){
 </script>
 
 <template>
-    <div class="container-fluid min-vh-100 body">
-        <div class="row">
-
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-12">
-                        <Header/>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-2 mh-100">
-                        <Sidebar page="home"/>
-                    </div>
-                    <div class="col-8 mh-100">
-                        <AddGame/>
-                        <button @click="exportCSV" class="btn btn-primary mt-3">Exporter en CSV</button>
-                    </div>
-
-                </div>
-            </div>
-
+    <Layout :show-proposition="false">
+        <div class="mx-auto w-75">
+            <AddGame/>
+            <button @click="exportCSV" class="btn btn-primary mt-3">Exporter en CSV</button>
         </div>
-    </div>
+    </Layout>
 </template>
 
 <style scoped>
