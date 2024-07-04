@@ -37,9 +37,25 @@ async function logout() {
                     </li>
                 </ul>
             </div>
-            <Link v-if="page.props.is_admin" as="button" class="btn my-auto" :href="route('roles')">
-                <i class="bi bi-gear text-light fs-2" />
-            </Link>
+            <!-- Admin routes -->
+            <div v-if="page.props.auth.user.role_id === 2" class="dropdown my-auto">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-gear text-light fs-2" />
+                </button>
+                <ul class="dropdown-menu text-center fs-5">
+                    <li>
+                        <Link :href="route('roles')">
+                            Rôles
+                        </Link>
+                    </li>
+                    <hr class="mx-auto w-50">
+                    <li>
+                        <Link :href="route('administration')">
+                            Administration
+                        </Link>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 

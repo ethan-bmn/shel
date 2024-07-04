@@ -47,3 +47,7 @@ Route::patch('/add-to-cart/{id}', [ShoppingCartController::class, 'addToCart'])
 Route::patch('/user/{user_id}/role/{role_id}', [UserController::class, 'updateRole'])
     ->middleware(['web', UserIsAdmin::class])
     ->name('updateRole');
+
+Route::delete('/user/{user_id}', [UserController::class, 'destroy'])
+    ->middleware(['web', UserIsAdmin::class])
+    ->name('deleteUser');
