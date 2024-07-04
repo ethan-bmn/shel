@@ -99,6 +99,9 @@ class BoardgameController extends Controller
         //
     }
 
+    /** 
+     * Select random game 
+    */
     public function getRandomBoardgames(): JsonResponse
     {
         // Sélectionner 5 jeux aléatoires
@@ -113,7 +116,10 @@ class BoardgameController extends Controller
         $boardgames = Boardgame::orderBy('number_of_recommendation', 'desc')->take(5)->get();
         return response()->json($boardgames);
     }
-
+    
+    /** 
+     *  like a game 
+    */
     public function likeGame(Request $request, string $id)
     {
         $info = $request->all();
