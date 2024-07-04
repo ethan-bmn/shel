@@ -25,7 +25,7 @@ class PDFController extends Controller
             'end_date' => '',
             'client_name' => Auth::user()->name,
         ];
-        Log::info($data);
+
         if (!$data->isEmpty()) {
             $viewData['start_date'] = "test";//$data[0]->start_date;
             $viewData['end_date'] = "test2";//$data[0]->end_date;
