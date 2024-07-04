@@ -26,7 +26,7 @@ const getAndDate = () => {
     const day = String(date.getDate()+15).padStart(2, '0');
     return `${year}-${month}-${day}`;
 };
-console.log(getCurrentDate());
+console.log(props.content);
 //
 
 </script>
@@ -72,7 +72,7 @@ console.log(getCurrentDate());
                                     {{getAndDate()}}
                                 </div>
                                 <div  class="card-img">
-                                    <img src="https://www.gigamic.com/1837-large_default/akropolis.jpg" class="img-fluid  img__form z-50" alt="...">
+                                    <img :src="loc.picture" class="img-fluid  img__form z-50" alt="...">
                                 </div>
                                 <div class="d-flex align-items-center justify-content-center fs-2 trash__color">
                                     <i class="bi bi-trash3 m-2"></i>
