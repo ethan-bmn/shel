@@ -70,9 +70,7 @@
                     @foreach($data as $item)
                         <tr>
                             <td>{{ $item->id }}</td>
-                            <td>{{ $item->game_name }}</td>
-                            <td>{{ $item->start_date }}</td>
-                            <td>{{ $item->end_date }}</td>
+                            <td>{{ $item->name }}</td>
                         </tr>
                     @endforeach
                 </tbody>

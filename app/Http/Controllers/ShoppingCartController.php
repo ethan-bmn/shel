@@ -39,6 +39,7 @@ class ShoppingCartController extends Controller {
             'content' => $content
         ]);
     }
+
      /**
      * add a game to a cart
      */

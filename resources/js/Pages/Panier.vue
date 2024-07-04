@@ -93,16 +93,12 @@ function addToCart(game_id) {
 
             <div class="row  justify-content-end">
                 <div class="col-auto d-flex justify-content-end piedPage">
-                    <Link :href="`/generate-pdf/2`">
-                        <button type="button" class="btn btn-primary btn-lg commande">Commander</button>
-                    </Link>
+                    <a as="button" class="btn btn-primary btn-lg commande" href="/generate-pdf/2" target="_blank    ">Commander</a>
                 </div>
             </div>
         </div>
     </Layout>
-    <div class="d-flex align-items-center justify-content-center fs-2 trash__color">
-        <i class="bi bi-trash3 m-2"></i>
-    </div>
+
 </template>
 
 <style scoped>
@@ -117,7 +113,7 @@ function addToCart(game_id) {
     color: red;
     background: transparent;
     box-shadow: none;
-    border: none;
+    border : none;
 }
 .panier__height{
     height: 80%;

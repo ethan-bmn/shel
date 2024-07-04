@@ -38,7 +38,7 @@ async function logout() {
                 </ul>
             </div>
             <!-- Admin routes -->
-            <div v-if="page.props.auth.user.role_id === 2" class="dropdown my-auto">
+            <div v-if="page.props.auth.user && page.props.auth.user.role_id === 2" class="dropdown my-auto">
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-gear text-light fs-2" />
                 </button>
