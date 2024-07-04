@@ -5,7 +5,7 @@ const page = usePage();
 // fonction de deconecxion
 async function logout() {
     axios.post('/auth/logout').then(() => {
-        window.location.assign(route(route().current()))
+        window.location.assign(route(route().current(), route().params));
     });
 }
 </script>
