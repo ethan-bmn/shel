@@ -69,11 +69,13 @@ class ProfileController extends Controller
         if (!Auth::user()) {
             return response()->json(['message' => 'Vous devez être connecté pour accéder au panier'], 401);
         }
-        $user = auth();
+        $user = Auth::user();
+        
             
         return Inertia::render('Profil', [
-            'content' => $user
+            'user' => $user
         ]);
 
     }
+    
 }

@@ -98,9 +98,7 @@ function addToCart(game_id) {
             </div>
         </div>
     </Layout>
-    <div class="d-flex align-items-center justify-content-center fs-2 trash__color">
-        <i class="bi bi-trash3 m-2"></i>
-    </div>
+
 </template>
 
 <style scoped>
@@ -113,6 +111,9 @@ function addToCart(game_id) {
 
 .trash__color{
     color: red;
+    background: transparent;
+    box-shadow: none;
+    border : none;
 }
 .panier__height{
     height: 80%;
