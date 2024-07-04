@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 
+
 class ShoppingCartController extends Controller {
 
     public function __construct() {
@@ -63,6 +64,7 @@ class ShoppingCartController extends Controller {
             }
             DB::table('put_on')
                 ->insert(['shopping_cart_id' => $shopping_cart->id, 'boardgame_id' => $id]);
+                
         }
     }
 }
