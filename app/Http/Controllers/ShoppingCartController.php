@@ -12,6 +12,16 @@ class ShoppingCartController extends Controller {
         $this->middleware = 'auth';
     }
 
+    public function getCart(){
+        $user_cart = DB::table('shopping_carts')
+        ->where('user_id', auth()->id())
+        ->get();
+
+        return Inertia::render('Cart', [
+            'user_cart' => $user_cart,
+        ]);
+    }
+
     public function addToCart(Request $request, $id) {
         if (!Auth::user()) {
             return response()->json(['message' => 'Vous devez être connecté pour ajouter un jeu au panier'], 401);
