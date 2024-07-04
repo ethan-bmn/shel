@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderMail;
 use App\Models\Shopping_cart;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class PDFController extends Controller
@@ -41,6 +43,8 @@ class PDFController extends Controller
         }
 
         $pdf = PDF::loadView('pdf', $viewData);
+
+        Mail::to(Auth::user()->email)->send(new OrderMail);
 
         Storage::disk('public')->put('/orders/'.Auth::user()->id.'.pdf', $pdf->download()->content());
         return $pdf->download(Auth::user()->id.'.pdf');
