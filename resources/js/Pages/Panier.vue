@@ -1,7 +1,6 @@
 <script setup>
 import Layout from "@/Layouts/Default.vue";
 import { Link } from '@inertiajs/vue3';
-import ListElem from "@/Components/ListElem.vue";
 
 
 // Définition des propriétés requises que le composant reçoit via les props
@@ -86,7 +85,7 @@ console.log(getCurrentDate());
             </div>
 
 
-            <div class="row">
+            <div class="row  justify-content-end">
                 <div class="col-auto d-flex justify-content-end piedPage">
                     <Link :href="`/generate-pdf/2`">
                         <button type="button" class="btn btn-primary btn-lg commande">Commander</button>
@@ -101,7 +100,12 @@ console.log(getCurrentDate());
 </template>
 
 <style scoped>
+.img__form{
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
 
+}
 
 .trash__color{
     color: red;
