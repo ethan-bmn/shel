@@ -1,11 +1,13 @@
 <script setup>
+import AddGame from "@/Components/AddGame.vue";
 import Header from "@/Layouts/Elements/Header.vue";
 import Sidebar from "@/Layouts/Elements/Sidebar.vue";
-import AddGame from "@/Components/AddGame.vue";
-import {onMounted, ref} from "vue";
 import axios from "axios";
+import { onMounted, ref } from "vue";
+
 const res =ref([]);
-//
+
+// Appelée lorsque le composant est monté sur le DOM
 onMounted(async () => {
     try {
         const response = await axios.get('/api/games');
@@ -21,6 +23,8 @@ onMounted(async () => {
         console.error('Erreur lors de la récupération des jeux pour csv:', error);
     }
 });
+
+// Fonction pour exporter les jeux en format CSV
 function exportCSV(){
     const headers = ['#','Nom du jeux', 'Nombre de joueurs', 'Durée de partie', 'Recommandation'];
     const data= res.value.map((game, index)=>[
