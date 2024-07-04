@@ -1,4 +1,5 @@
 <script setup>
+// Définition des propriétés requises que le composant reçoit via les props
 defineProps({
     title: {
         type: String,

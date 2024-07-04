@@ -5,7 +5,7 @@ import Header from "@/Layouts/Elements/Header.vue";
 import Sidebar from "@/Layouts/Elements/Sidebar.vue";
 import { router } from "@inertiajs/vue3";
 import NProgress from 'nprogress';
-
+// Définition des propriétés requises que le composant reçoit via les props
 defineProps({
     showProposition: {
         type: Boolean,

@@ -6,6 +6,7 @@ import { Link } from "@inertiajs/vue3";
 <template>
 
     <div class="navbar">
+        <!-- barre de navigation -->
         <div class="sidebar__scrollbar fs-1">
                 <img src="../../../../public/images/logo_shel.png" class="logo">
             <div>

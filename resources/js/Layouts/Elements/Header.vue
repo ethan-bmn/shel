@@ -2,6 +2,7 @@
 import { Link, usePage } from "@inertiajs/vue3";
 
 const page = usePage();
+// fonction de deconecxion
 async function logout() {
     axios.post('/auth/logout').then(() => {
         window.location.assign(route(route().current()))
@@ -12,6 +13,7 @@ async function logout() {
 <template>
     <div class="row ">
         <div class="col-10">
+            <!-- Recherche d'un jeu -->
             <nav class="navbar navbar-expand-lg bc-color-input-search entete header__nav">
                 <img class="icon-link ms-3" src="../../../../public/images/chercher.svg">
                 <form action="/games/54" class="w-100">
@@ -20,6 +22,7 @@ async function logout() {
             </nav>
         </div>
         <div class="col-2 d-flex justify-content-center">
+            <!-- profil -->
             <div class="dropdown my-auto">
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="../../../../public/images/claustrophobia.png" class="profil">
