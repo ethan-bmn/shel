@@ -60,4 +60,20 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show()
+    {
+        if (!Auth::user()) {
+            return response()->json(['message' => 'Vous devez être connecté pour accéder au panier'], 401);
+        }
+        $user = auth();
+            
+        return Inertia::render('Profil', [
+            'content' => $user
+        ]);
+
+    }
 }

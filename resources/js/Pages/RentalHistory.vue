@@ -17,7 +17,8 @@ defineProps(['jeux'])
 const fetchGame = async (gameId)=>{
     try{
         const response = await axios.get(`/api/game/${gameId}`);
-        return response.data.name
+
+        return response.data
 
     }catch (error){
         console.log('Erreur lors de la récupération des info du jeu', error);
@@ -73,7 +74,7 @@ onMounted(async () => {
                         <div class="row mb-4">
                             <div class="col-12 infos">
                                 <div class="card " >
-                                    {{loc.game}}
+                                    {{loc.game.name}}
                                 </div>
                                 <div class="card ">
                                     {{loc.location.start_date}}
@@ -85,7 +86,7 @@ onMounted(async () => {
                                     En cours
                                 </div>
                                 <div  class="card-img">
-                                    <img src="https://www.gigamic.com/1837-large_default/akropolis.jpg" class="img-fluid  img__form z-50" alt="...">
+                                    <img :src="loc.game.picture" class="img-fluid  img__form z-50" alt="...">
                                 </div>
 
                             </div>
@@ -182,3 +183,4 @@ onMounted(async () => {
     color: white;
 }
 </style>
+
