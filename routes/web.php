@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Models\Boardgame;
-use App\Models\User;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;

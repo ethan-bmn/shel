@@ -1,15 +1,32 @@
 <script setup>
 import Layout from "@/Layouts/Default.vue";
 import { Link } from '@inertiajs/vue3';
+import ListElem from "@/Components/ListElem.vue";
 
+
+// Définition des propriétés requises que le composant reçoit via les props
 const props = defineProps({
     content: {
         type: Object,
         required: true
-    }
-});
+    },
 
-console.log(props.content);
+});
+const getCurrentDate = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+};
+const getAndDate = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()+15).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+};
+console.log(getCurrentDate());
 //
 
 </script>
@@ -31,24 +48,36 @@ console.log(props.content);
                             <div class="entete ">
                                 Fin location
                             </div>
+                            <div class="entete ">
+                                Image
+                            </div>
+                            <div class="entete">
+                                supprimer
+                            </div>
                         </div>
                     </div>
-                    <div v-for="i in [...Array(10).keys()]"
-                        class="col-12 px-0 hover-image ">
+                    <div v-if="content" v-for="loc in content" :key="loc.id"
+
+                         class="col-12 px-0 hover-image ">
                         <div class="row mb-4">
-                            <div class="col-12 infos" entete>
-                                <div class="card">
-                                    Jeux
+                            <div class="col-12 infos">
+                                <div class="card " >
+                                    {{loc.name}}
                                 </div>
                                 <div class="card ">
-                                    Début location
+                                    {{ getCurrentDate() }}
                                 </div>
+
                                 <div class="card ">
-                                    Fin location
+                                    {{getAndDate()}}
+                                </div>
+                                <div  class="card-img">
+                                    <img src="https://www.gigamic.com/1837-large_default/akropolis.jpg" class="img-fluid  img__form z-50" alt="...">
                                 </div>
                                 <div class="d-flex align-items-center justify-content-center fs-2 trash__color">
                                     <i class="bi bi-trash3 m-2"></i>
                                 </div>
+
                             </div>
 
                         </div>
@@ -66,6 +95,9 @@ console.log(props.content);
             </div>
         </div>
     </Layout>
+    <div class="d-flex align-items-center justify-content-center fs-2 trash__color">
+        <i class="bi bi-trash3 m-2"></i>
+    </div>
 </template>
 
 <style scoped>
@@ -148,5 +180,18 @@ console.log(props.content);
 .piedPage{
     margin-top: 16px;
     gap: 16px;
+}
+.card-img{
+
+    height: 77px;
+    width: 180px;
+    filter: drop-shadow(0px 0px 5px rgba(0.16, 0.5, 0.98, 0.74));
+    border-radius: 20px;
+    /* border: 1px solid rgba(3, 158, 192, 0.7400000095367432); */
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 </style>
