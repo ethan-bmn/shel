@@ -21,14 +21,7 @@ console.log(props.user);
                 <!-- <div>{{ user.name }}</div> -->
             </div>
             <form action="" class="row">
-                <div class="m-2">
-                    <p class="text-white fs-5">Prenom</p>
-                    <input type="text">
-                </div>
-                <div class="m-2">
-                    <p class="text-white">Nom</p>
-                    <input type="text">
-                </div>
+
                 <div class="m-2">
                     <p class="text-white">Mail</p>
                     <input type="text">
