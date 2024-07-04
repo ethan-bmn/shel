@@ -2,6 +2,14 @@
 import Layout from "@/Layouts/Default.vue";
 import { Link } from '@inertiajs/vue3';
 
+const props = defineProps({
+    content: {
+        type: Object,
+        required: true
+    }
+});
+
+console.log(props.content);
 //
 
 </script>
@@ -42,7 +50,7 @@ import { Link } from '@inertiajs/vue3';
                                     <i class="bi bi-trash3 m-2"></i>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -50,12 +58,10 @@ import { Link } from '@inertiajs/vue3';
 
 
             <div class="row">
-                <div >
-                    <div class=" d-flex justify-content-end piedPage">
-                        <Link :href="`/generate-pdf/2`">
-                            <button type="button" class="btn btn-primary btn-lg commande">Commander</button>
-                        </Link>
-                    </div>
+                <div class="col-auto d-flex justify-content-end piedPage">
+                    <Link :href="`/generate-pdf/2`">
+                        <button type="button" class="btn btn-primary btn-lg commande">Commander</button>
+                    </Link>
                 </div>
             </div>
         </div>

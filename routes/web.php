@@ -18,9 +18,8 @@ Route::group(['middleware' => ['web']], function () {
         return Inertia::render('Favoris');
     })->name('favorites');
 
-    Route::get('/cart', function () {
-        return Inertia::render('Panier');
-    })->name('cart');
+    Route::get('/cart', [App\Http\Controllers\ShoppingCartController::class, 'show'])
+        ->name('cart');
 
     Route::get('/administration',function (){
         return Inertia::render('Administration');

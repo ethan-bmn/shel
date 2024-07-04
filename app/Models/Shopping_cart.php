@@ -11,6 +11,10 @@ class Shopping_cart extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id'
+    ];
+
     //Relation avec la table users 1-1
     public function user(): BelongsTo
     {
