@@ -2,15 +2,37 @@
 import Layout from "@/Layouts/Default.vue";
 import { Link } from '@inertiajs/vue3';
 
+
+// Définition des propriétés requises que le composant reçoit via les props
 const props = defineProps({
     content: {
         type: Object,
         required: true
-    }
-});
+    },
 
-console.log(props.content);
-//
+});
+const getCurrentDate = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+};
+const getAndDate = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()+15).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+};
+function addToCart(game_id) {
+    if (!usePage().props.auth.user) {
+        router.visit('/login');
+        return;
+    }
+    console.log('test')
+    router.patch(`/api/add-to-cart/${game_id}`)
+}
 
 </script>
 
@@ -31,24 +53,36 @@ console.log(props.content);
                             <div class="entete ">
                                 Fin location
                             </div>
+                            <div class="entete ">
+                                Image
+                            </div>
+                            <div class="entete">
+                                supprimer
+                            </div>
                         </div>
                     </div>
-                    <div v-for="i in [...Array(10).keys()]"
-                        class="col-12 px-0 hover-image ">
+                    <div v-if="content" v-for="loc in content" :key="loc.id"
+
+                         class="col-12 px-0 hover-image ">
                         <div class="row mb-4">
-                            <div class="col-12 infos" entete>
-                                <div class="card">
-                                    Jeux
+                            <div class="col-12 infos">
+                                <div class="card " >
+                                    {{loc.name}}
                                 </div>
                                 <div class="card ">
-                                    Début location
+                                    {{ getCurrentDate() }}
                                 </div>
+
                                 <div class="card ">
-                                    Fin location
+                                    {{getAndDate()}}
                                 </div>
-                                <div class="d-flex align-items-center justify-content-center fs-2 trash__color">
-                                    <i class="bi bi-trash3 m-2"></i>
+                                <div  class="card-img">
+                                    <img :src="loc.picture" class="img-fluid  img__form z-50" alt="...">
                                 </div>
+                                <button @click="addToCart(loc)" class="d-flex align-items-center justify-content-center fs-2 trash__color">
+                                        <i class="bi bi-trash3 m-2"></i>
+                                </button>
+
                             </div>
 
                         </div>
@@ -57,22 +91,29 @@ console.log(props.content);
             </div>
 
 
-            <div class="row">
+            <div class="row  justify-content-end">
                 <div class="col-auto d-flex justify-content-end piedPage">
-                    <Link :href="`/generate-pdf/2`">
-                        <button type="button" class="btn btn-primary btn-lg commande">Commander</button>
-                    </Link>
+                    <a as="button" class="btn btn-primary btn-lg commande" href="/generate-pdf/2" target="_blank    ">Commander</a>
                 </div>
             </div>
         </div>
     </Layout>
+
 </template>
 
 <style scoped>
+.img__form{
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
 
+}
 
 .trash__color{
     color: red;
+    background: transparent;
+    box-shadow: none;
+    border : none;
 }
 .panier__height{
     height: 80%;
@@ -148,5 +189,18 @@ console.log(props.content);
 .piedPage{
     margin-top: 16px;
     gap: 16px;
+}
+.card-img{
+
+    height: 77px;
+    width: 180px;
+    filter: drop-shadow(0px 0px 5px rgba(0.16, 0.5, 0.98, 0.74));
+    border-radius: 20px;
+    /* border: 1px solid rgba(3, 158, 192, 0.7400000095367432); */
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 </style>

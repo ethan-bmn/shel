@@ -9,12 +9,15 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 
+
 class ShoppingCartController extends Controller {
 
     public function __construct() {
         $this->middleware = 'auth';
     }
-
+     /**
+     * Display the specified resource.
+     */
     public function show(){
         if (!Auth::user()) {
             return response()->json(['message' => 'Vous devez être connecté pour accéder au panier'], 401);
@@ -37,6 +40,9 @@ class ShoppingCartController extends Controller {
         ]);
     }
 
+     /**
+     * add a game to a cart
+     */
     public function addToCart(Request $request, $id) {
         if (!Auth::user()) {
             return response()->json(['message' => 'Vous devez être connecté pour ajouter un jeu au panier'], 401);
@@ -59,6 +65,7 @@ class ShoppingCartController extends Controller {
             }
             DB::table('put_on')
                 ->insert(['shopping_cart_id' => $shopping_cart->id, 'boardgame_id' => $id]);
+                
         }
     }
 }

@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class RegisterMail extends Mailable
+class OrderMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -27,7 +27,7 @@ class RegisterMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'SHEL',
+            subject: 'SHEL - Confirmation de votre commande',
         );
     }
 

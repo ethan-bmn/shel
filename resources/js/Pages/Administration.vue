@@ -1,11 +1,12 @@
 <script setup>
-import Header from "@/Layouts/Elements/Header.vue";
-import Sidebar from "@/Layouts/Elements/Sidebar.vue";
 import AddGame from "@/Components/AddGame.vue";
-import {onMounted, ref} from "vue";
+import Layout from '@/Layouts/Default.vue';
 import axios from "axios";
+import { onMounted, ref } from "vue";
+
 const res =ref([]);
-//
+
+// Appelée lorsque le composant est monté sur le DOM
 onMounted(async () => {
     try {
         const response = await axios.get('/api/games');
@@ -21,6 +22,8 @@ onMounted(async () => {
         console.error('Erreur lors de la récupération des jeux pour csv:', error);
     }
 });
+
+// Fonction pour exporter les jeux en format CSV
 function exportCSV(){
     const headers = ['#','Nom du jeux', 'Nombre de joueurs', 'Durée de partie', 'Recommandation'];
     const data= res.value.map((game, index)=>[
@@ -47,30 +50,12 @@ function exportCSV(){
 </script>
 
 <template>
-    <div class="container-fluid min-vh-100 body">
-        <div class="row">
-
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-12">
-                        <Header/>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-2 mh-100">
-                        <Sidebar page="home"/>
-                    </div>
-                    <div class="col-8 mh-100">
-                        <AddGame/>
-                        <button @click="exportCSV" class="btn btn-primary mt-3">Exporter en CSV</button>
-                    </div>
-
-                </div>
-            </div>
-
+    <Layout :show-proposition="false">
+        <div class="mx-auto w-75">
+            <AddGame/>
+            <button @click="exportCSV" class="btn btn-primary mt-3">Exporter en CSV</button>
         </div>
-    </div>
+    </Layout>
 </template>
 
 <style scoped>

@@ -1,11 +1,12 @@
 <script setup>
 import Layout from '@/Layouts/Guest.vue';
-import {Head, Link, useForm, usePage} from '@inertiajs/vue3';
+import { useForm, usePage } from '@inertiajs/vue3';
 
+// Définition des propriétés requises que le composant reçoit via les props
 defineOptions({
     layout: Layout
 });
-
+// Initialisation du formulaire avec useForm
 const form = useForm({
     name: '',
     surname: '',
@@ -15,7 +16,7 @@ const form = useForm({
 });
 
 const page = usePage();
-
+// Fonction pour valider la création de compte
 const submit = () => {
     page.props.errors = {};
     form.post(route('auth.register'), {
