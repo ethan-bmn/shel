@@ -8,34 +8,31 @@ use Inertia\Inertia;
 use App\Http\Controllers\BoardgameController;
 
 Route::group(['middleware' => ['web']], function () {
-    
     Route::get('generate-pdf/{order}', [App\Http\Controllers\PDFController::class, 'generatePDF']);
-    
     Route::get('/', function () {
         return Inertia::render('Dashboard', [
             'jeuRandom'=> Boardgame::inRandomOrder()->take(1)->get()[0]
         ]);
     })->name('dashboard');
-    
     Route::get('/favorites', function () {
         return Inertia::render('Favoris');
     })->name('favorites');
 
-    
     Route::get('/cart', [App\Http\Controllers\ShoppingCartController::class, 'show'])
         ->name('cart');
 
-    
     Route::get('/administration',function (){
         return Inertia::render('Administration');
     })->name('administration');
 
-    
+    Route::get('/roles', [\App\Http\Controllers\UserController::class, 'roles'])
+        ->middleware(\App\Http\Middleware\UserIsAdmin::class)
+        ->name('roles');
+
     Route::get('/locations',function(){
         return Inertia::render('RentalHistory');
     })->name('locations');
 
-    
     Route::get('/login', function(){
         return Inertia::render('Auth/Login');
     })->name('login');

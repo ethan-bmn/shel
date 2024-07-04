@@ -36,6 +36,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+
+    public function isAdmin() {
+        return $this->role->role_name === 'admin';
+    }
+
     /**
      * Get the attributes that should be cast.
      *
@@ -76,6 +81,6 @@ class User extends Authenticatable
     //Relation avec la table role 1-1
     public function role() :BelongsTo
     {
-        return $this->belongsTo('App/Models/Role');
+        return $this->belongsTo('App\Models\Role');
     }
 }

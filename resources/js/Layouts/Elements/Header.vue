@@ -37,6 +37,9 @@ async function logout() {
                     </li>
                 </ul>
             </div>
+            <Link v-if="page.props.is_admin" as="button" class="btn my-auto" :href="route('roles')">
+                <i class="bi bi-gear text-light fs-2" />
+            </Link>
         </div>
     </div>
 
