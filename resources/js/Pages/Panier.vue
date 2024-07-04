@@ -1,7 +1,6 @@
 <script setup>
 import Layout from "@/Layouts/Default.vue";
 import { Link } from '@inertiajs/vue3';
-import ListElem from "@/Components/ListElem.vue";
 
 
 // Définition des propriétés requises que le composant reçoit via les props
@@ -26,7 +25,7 @@ const getAndDate = () => {
     const day = String(date.getDate()+15).padStart(2, '0');
     return `${year}-${month}-${day}`;
 };
-console.log(getCurrentDate());
+console.log(props.content);
 //
 
 </script>
@@ -72,7 +71,7 @@ console.log(getCurrentDate());
                                     {{getAndDate()}}
                                 </div>
                                 <div  class="card-img">
-                                    <img src="https://www.gigamic.com/1837-large_default/akropolis.jpg" class="img-fluid  img__form z-50" alt="...">
+                                    <img :src="loc.picture" class="img-fluid  img__form z-50" alt="...">
                                 </div>
                                 <div class="d-flex align-items-center justify-content-center fs-2 trash__color">
                                     <i class="bi bi-trash3 m-2"></i>
@@ -86,7 +85,7 @@ console.log(getCurrentDate());
             </div>
 
 
-            <div class="row">
+            <div class="row  justify-content-end">
                 <div class="col-auto d-flex justify-content-end piedPage">
                     <Link :href="`/generate-pdf/2`">
                         <button type="button" class="btn btn-primary btn-lg commande">Commander</button>
@@ -101,7 +100,12 @@ console.log(getCurrentDate());
 </template>
 
 <style scoped>
+.img__form{
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
 
+}
 
 .trash__color{
     color: red;
