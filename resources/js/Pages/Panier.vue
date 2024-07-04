@@ -3,6 +3,8 @@ import Layout from "@/Layouts/Default.vue";
 import { Link } from '@inertiajs/vue3';
 import ListElem from "@/Components/ListElem.vue";
 
+
+// Définition des propriétés requises que le composant reçoit via les props
 const props = defineProps({
     content: {
         type: Object,

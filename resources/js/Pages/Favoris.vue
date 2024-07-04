@@ -5,8 +5,6 @@ import Header from "@/Layouts/Elements/Header.vue";
 import Sidebar from "@/Layouts/Elements/Sidebar.vue";
 
 
-//
-
 </script>
 
 <template>

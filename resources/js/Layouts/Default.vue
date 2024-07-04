@@ -48,6 +48,7 @@ router.on('finish', (event) => {
 </script>
 
 <template>
+    <!-- layout de toutes les pages -->
     <div class="container-fluid min-vh-100">
         <div class="row me-3 vh-100">
             <div class="col-1 my-3">
