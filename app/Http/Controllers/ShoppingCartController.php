@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Boardgame;
+use App\Models\Shopping_cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Inertia\Inertia;
 
 class ShoppingCartController extends Controller {
 
@@ -12,13 +15,25 @@ class ShoppingCartController extends Controller {
         $this->middleware = 'auth';
     }
 
-    public function getCart(){
+    public function show(){
+        if (!Auth::user()) {
+            return response()->json(['message' => 'Vous devez être connecté pour accéder au panier'], 401);
+        }
         $user_cart = DB::table('shopping_carts')
-        ->where('user_id', auth()->id())
-        ->get();
+            ->where('user_id', auth()->id())
+            ->first();
 
-        return Inertia::render('Cart', [
-            'user_cart' => $user_cart,
+        if (!$user_cart) {
+            $user_cart = Shopping_cart::create(['user_id' => auth()->id()]);
+        }
+
+        $content = DB::table('boardgames')
+            ->join('put_on', 'put_on.boardgame_id', '=', 'boardgames.id')
+            ->where('put_on.shopping_cart_id', '=', $user_cart->id)
+            ->get();
+
+        return Inertia::render('Panier', [
+            'content' => $content
         ]);
     }
 
